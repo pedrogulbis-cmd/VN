@@ -36,6 +36,11 @@
 
 * { box-sizing: border-box; }
 
+/* L'attribut hidden doit gagner sur toute règle d'affichage de composant.
+   Sans cette ligne, .boot / .title / .panel / .modal / .ending / .choices
+   restent visibles alors que le JavaScript les a masqués. */
+[hidden] { display: none !important; }
+
 html, body {
   margin: 0; padding: 0; height: 100%;
   background: var(--ink);
