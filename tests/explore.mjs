@@ -3,8 +3,8 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const chapters=read('data/chapters.json');
 const story={}; for(const f of chapters.files) Object.assign(story, read(f).scenes);
 const endings=read('data/endings.json').endings;
-const {evaluate}=await import('/home/claude/serments/js/condition-parser.js');
-const S=await import('/home/claude/serments/js/state.js');
+const {evaluate}=await import('./js/condition-parser.js');
+const S=await import('./js/state.js');
 function run(rng){
  const s=S.newState({name:'X'});
  s.stats={courage:6,empathie:6,perspicacite:8,influence:6,sangfroid:6,ingeniosite:6,integrite:7};
