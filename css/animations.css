@@ -1,0 +1,41 @@
+/* Animations : toutes neutralisables par .reduce-motion / .no-transitions. */
+@keyframes sprite-in { from { opacity: 0; transform: translateX(-50%) translateY(18px) scale(var(--scale, 1)); } to { opacity: var(--opacity, 1); transform: translateX(-50%) translateY(0) scale(var(--scale, 1)); } }
+@keyframes sprite-out { to { opacity: 0; transform: translateX(-50%) translateY(14px) scale(var(--scale, 1)); } }
+.sprite.enter { animation: sprite-in .34s ease both; }
+.sprite.leave { animation: sprite-out .3s ease both; }
+
+@keyframes shake-k { 0%,100% { transform: translate(0,0); } 20% { transform: translate(-7px,3px); } 40% { transform: translate(6px,-4px); } 60% { transform: translate(-4px,-2px); } 80% { transform: translate(4px,3px); } }
+.stage.shake { animation: shake-k .48s ease; }
+.sprite.shake { animation: shake-k .4s ease; }
+
+@keyframes impact-k { 0% { filter: brightness(2.1) contrast(1.3); } 100% { filter: none; } }
+.stage.impact { animation: impact-k .3s ease; }
+
+@keyframes zoom-k { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+.stage.zoom { animation: zoom-k .9s ease; }
+
+@keyframes darken-k { 0% { filter: brightness(1); } 45% { filter: brightness(.35); } 100% { filter: brightness(1); } }
+.stage.darken { animation: darken-k 1.2s ease; }
+
+@keyframes flash-k { 0% { opacity: 0; } 12% { opacity: .85; } 100% { opacity: 0; } }
+.flash.on { animation: flash-k .42s ease; }
+@keyframes softflash-k { 0% { filter: brightness(1); } 50% { filter: brightness(1.22); } 100% { filter: brightness(1); } }
+.stage.softflash { animation: softflash-k .5s ease; }
+
+.stage.silhouette .sprite img { filter: brightness(0) drop-shadow(0 0 22px rgba(79,216,232,.45)); }
+.stage.parallax .bg { transform: scale(1.05); transition: transform 12s linear; }
+
+/* pluie / particules / brume */
+.fx-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.fx-rain span { position: absolute; top: -12%; width: 1.5px; height: 68px; background: linear-gradient(180deg, rgba(190,226,255,0), rgba(190,226,255,.55)); animation: rain-k 1s linear infinite; }
+@keyframes rain-k { to { transform: translateY(130vh) translateX(-26px); } }
+.fx-particles span { position: absolute; bottom: -6%; width: 5px; height: 5px; border-radius: 50%; background: rgba(143,231,255,.75); box-shadow: 0 0 10px rgba(143,231,255,.8); animation: part-k 9s linear infinite; }
+@keyframes part-k { to { transform: translateY(-115vh) translateX(30px); opacity: 0; } }
+.fx-mist span { position: absolute; bottom: 0; width: 60vw; height: 40vh; background: radial-gradient(50% 50% at 50% 50%, rgba(180,200,230,.10), transparent 70%); animation: mist-k 22s ease-in-out infinite alternate; }
+@keyframes mist-k { to { transform: translateX(18vw); } }
+
+@keyframes toast-in { from { opacity: 0; transform: translateY(-10px); } }
+.toast { animation: toast-in .28s ease; }
+
+@keyframes hint-k { 0%,100% { opacity: .3; transform: rotate(45deg) translate(0,0); } 50% { opacity: 1; transform: rotate(45deg) translate(2px,2px); } }
+.dialogue__next { animation: hint-k 1.4s ease infinite; }

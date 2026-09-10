@@ -1,0 +1,664 @@
+{
+ "scenes": {
+  "ep_opposition": {
+   "id": "ep_opposition",
+   "chapter": 6,
+   "route": "opposition",
+   "title": "Épilogue — l’ordre",
+   "background": "bg_pont_confluence_dawn",
+   "music": "music_ending",
+   "ambiance": "amb_ville_nuit",
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    {
+     "text": "Trois mois plus tard, la Faille n’est plus qu’une ligne claire au-dessus des toits. Les touristes la photographient."
+    },
+    {
+     "text": "Personne ne rompt plus, parce que personne ne peut plus rompre. On tient ses promesses à Vaurance : ce n’est plus une vertu, c’est une plomberie."
+    },
+    {
+     "text": "Il y a une plaque, sur le quai bas. Deux cents noms. Le Bureau l’a fait poser lui-même, ce qui est la manière la plus efficace de clore un débat.",
+     "condition": {
+      "clue": "clue_liste_deux_cents"
+     }
+    },
+    {
+     "text": "Théo est sorti de la lumière. Il a dormi quatorze heures d’affilée pour la première fois en six ans. Il ne t’a pas encore posé de questions.",
+     "thought": true
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "kael",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "kael",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "noam",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "noam",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    }
+   ],
+   "next": "ep_opposition_fin"
+  },
+  "ep_opposition_fin": {
+   "id": "ep_opposition_fin",
+   "chapter": 6,
+   "route": "opposition",
+   "title": "Le Grand Serment",
+   "background": "bg_grand_hall_bureau",
+   "music": "music_ending",
+   "ambiance": null,
+   "cg": "cg_grand_serment",
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "neutral",
+     "expression": "epilogue_bad",
+     "position": "center"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "damien",
+     "text": "On me remerciera dans trente ans. On me haïra pendant vingt-neuf."
+    },
+    {
+     "text": "Il vient toujours le mardi. La chambre est vide depuis mars, et il s’assoit quand même quarante minutes.",
+     "condition": {
+      "clue": "clue_fille_damien"
+     }
+    },
+    {
+     "text": "Tu as sauvé quatre cent mille personnes. Tu sais exactement combien ça a coûté, et tu es la seule personne de cette ville qui le sache.",
+     "thought": true
+    }
+   ],
+   "ending": "e4_grand_serment"
+  },
+  "ep_coop": {
+   "id": "ep_coop",
+   "chapter": 6,
+   "route": "coop",
+   "title": "Épilogue — la Main Creuse",
+   "background": "bg_quai_rompus_dawn",
+   "music": "music_ending",
+   "ambiance": "amb_ville_nuit",
+   "autosave": true,
+   "characters": [
+    {
+     "id": "ysee",
+     "pose": "neutral",
+     "expression": "epilogue_good",
+     "position": "center"
+    }
+   ],
+   "lines": [
+    {
+     "text": "Cent quatre-vingt-une personnes sont sorties des réservoirs le lendemain matin. Dix-neuf n’en sont jamais descendues.",
+     "condition": {
+      "not": {
+       "flag": "dix_neuf_sauves"
+      }
+     }
+    },
+    {
+     "text": "Deux cents personnes sont sorties des réservoirs le lendemain matin. Tu en as porté six sur ton dos.",
+     "condition": {
+      "flag": "dix_neuf_sauves"
+     }
+    },
+    {
+     "speaker": "ysee",
+     "text": "J’ai enlevé les anneaux verts. Pas parce que j’ai arrêté de compter. Parce que j’ai arrêté de compter tout seul."
+    },
+    {
+     "text": "La clinique a une enseigne maintenant. Une vraie. Elle est laide.",
+     "thought": true
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "kael",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "kael",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "noam",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "noam",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    }
+   ],
+   "next": "ep_coop_fin"
+  },
+  "ep_coop_fin": {
+   "id": "ep_coop_fin",
+   "chapter": 6,
+   "route": "coop",
+   "title": "La Main Creuse",
+   "background": "bg_clinique_ysee",
+   "music": "music_ending",
+   "ambiance": null,
+   "characters": [
+    {
+     "id": "ysee",
+     "pose": "neutral",
+     "expression": "smile_soft",
+     "position": "center"
+    }
+   ],
+   "lines": [
+    {
+     "text": "La Faille est toujours là. Elle bat un peu plus vite chaque année, et chaque année quelqu’un accepte de la tenir quatre ans."
+    },
+    {
+     "text": "Ce n’est pas une solution. C’est un système de garde, et il est tenu par des gens qui se connaissent tous par leur prénom."
+    },
+    {
+     "text": "Ce n’est pas la ville que tu voulais. C’est une ville où personne ne meurt seul. Tu as décidé que ça suffisait.",
+     "thought": true
+    }
+   ],
+   "ending": "e3_main_creuse"
+  },
+  "ep_truth": {
+   "id": "ep_truth",
+   "chapter": 6,
+   "route": "truth",
+   "title": "Épilogue — la vérité",
+   "background": "bg_coeur_faille",
+   "music": "music_ending",
+   "ambiance": "amb_faille",
+   "weather": "particles",
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    {
+     "text": "La vérité n’a pas renversé le Bureau. Elle a fait pire : elle l’a rendu discutable."
+    },
+    {
+     "text": "Des commissions, des rapports, un mot nouveau dans les journaux — « ancrage » — et pour la première fois depuis dix-neuf ans, des gens qui refusent en connaissance de cause."
+    },
+    {
+     "text": "Théo est descendu de la lumière un lundi de novembre. Il a mis onze jours à retrouver le prénom de votre mère.",
+     "condition": {
+      "not": {
+       "flag": "sacrifice_ilan"
+      }
+     }
+    },
+    {
+     "text": "Tu es monté dans la lumière un lundi de novembre. Ça n’a pas fait mal.",
+     "condition": {
+      "flag": "sacrifice_ilan"
+     },
+     "thought": true
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "all": [
+       {
+        "not": {
+         "flag": "sacrifice_ilan"
+        }
+       },
+       {
+        "rel": "kael",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "not": {
+         "flag": "sacrifice_ilan"
+        }
+       },
+       {
+        "rel": "noam",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    }
+   ],
+   "next": "ep_truth_fin"
+  },
+  "ep_truth_fin": {
+   "id": "ep_truth_fin",
+   "chapter": 6,
+   "route": "truth",
+   "title": "Ce qui reste de Théo",
+   "background": "bg_coeur_faille",
+   "music": "music_ending",
+   "ambiance": "amb_faille",
+   "cg": "cg_theo_revelation_ancre",
+   "characters": [],
+   "lines": [
+    {
+     "text": "On vient te parler, parfois. Des gens que tu n’as jamais rencontrés montent au niveau zéro et disent des choses dans le vide.",
+     "condition": {
+      "flag": "sacrifice_ilan"
+     }
+    },
+    {
+     "text": "Théo t’a apporté un manteau la semaine dernière. Il l’a posé sur une chaise, en bas, et il ne l’a pas repris.",
+     "condition": {
+      "flag": "sacrifice_ilan"
+     }
+    },
+    {
+     "text": "Il y a un volontaire dans la lumière. Il s’appelait Bastien, il avait trente-quatre ans, et il a levé la main dans le Grand hall devant trois mille personnes.",
+     "condition": {
+      "flag": "volontaire_trouve"
+     }
+    },
+    {
+     "text": "Le chancelier est monté de lui-même, le lendemain matin, sans discours. Il avait retiré son alliance noire.",
+     "condition": {
+      "flag": "damien_ancre"
+     }
+    },
+    {
+     "text": "La ville sait. C’est peu. C’est tout ce que tu avais à donner.",
+     "thought": true
+    }
+   ],
+   "ending": "e5_ce_qui_reste"
+  },
+  "ep_secret": {
+   "id": "ep_secret",
+   "chapter": 6,
+   "route": "secret",
+   "title": "Épilogue — l’aube sans serment",
+   "background": "bg_pont_confluence_dawn",
+   "music": "music_ending",
+   "ambiance": "amb_ville_nuit",
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    {
+     "text": "Le premier matin fut catastrophique. Quatre cent mille personnes déliées de tout : des mariages qui s’effondrent à sept heures, des dettes qui s’évaporent à huit, trois émeutes avant midi."
+    },
+    {
+     "text": "Le deuxième matin fut pire."
+    },
+    {
+     "text": "Le troisième, une boulangère du quai bas a rouvert. Personne ne l’y obligeait plus. C’est précisément pour ça qu’on en a parlé pendant des semaines.",
+     "thought": true
+    },
+    {
+     "text": "La Faille s’est refermée sans plaie. Il n’y a plus d’ancre, plus de Rompus, plus de sceau à sept anneaux. Il n’y a plus non plus de garantie que quiconque tienne parole."
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "kael",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "kael",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    },
+    {
+     "when": {
+      "all": [
+       {
+        "rel": "noam",
+        "field": "attraction",
+        "op": ">=",
+        "value": 55
+       },
+       {
+        "rel": "noam",
+        "field": "affinity",
+        "op": ">=",
+        "value": 45
+       }
+      ]
+     },
+     "scene": "ep_lien"
+    }
+   ],
+   "next": "ep_secret_fin"
+  },
+  "ep_secret_fin": {
+   "id": "ep_secret_fin",
+   "chapter": 6,
+   "route": "secret",
+   "title": "L’Aube sans serment",
+   "background": "bg_pont_confluence_dawn",
+   "music": "music_ending",
+   "ambiance": null,
+   "cg": "cg_aube_sans_serment",
+   "characters": [
+    {
+     "id": "theo",
+     "outfit": "civil",
+     "pose": "neutral",
+     "expression": "epilogue_good",
+     "position": "center"
+    }
+   ],
+   "lines": [
+    {
+     "speaker": "theo",
+     "text": "Tu sais ce qui me manque ? Rien. Absolument rien. C’est extrêmement reposant."
+    },
+    {
+     "text": "Il a repris du poids. Ses cheveux redeviennent bruns par la racine, ce qui le rend ridicule et il le sait.",
+     "thought": true
+    },
+    {
+     "text": "Tu as prêté le premier serment de la ville nouvelle devant quatre cent mille personnes, et il ne t’a rien coûté. C’était le but.",
+     "condition": {
+      "promise": "prom_premier_nouveau",
+      "status": "made"
+     }
+    },
+    {
+     "text": "Personne ne sait exactement ce que vous avez fait, tous les deux. Vous avez décidé de ne jamais l’expliquer.",
+     "thought": true
+    }
+   ],
+   "ending": "e6_aube_sans_serment"
+  },
+  "ep_kael": {
+   "id": "ep_kael",
+   "chapter": 6,
+   "route": "kael",
+   "title": "Deux ombres sur le pont",
+   "background": "bg_pont_confluence_dawn",
+   "music": "music_romance",
+   "ambiance": "amb_ville_nuit",
+   "cg": "cg_kael_serment_partage",
+   "autosave": true,
+   "toneTarget": "kael",
+   "characters": [
+    {
+     "id": "kael",
+     "pose": "neutral",
+     "expression": "epilogue_good",
+     "position": "center"
+    }
+   ],
+   "speaker": "kael",
+   "lines": [
+    {
+     "speaker": "kael",
+     "text": "Je n’ai jamais tenu en place plus de six mois. Je te préviens honnêtement."
+    },
+    {
+     "speaker": "kael",
+     "text": "Mais je n’ai jamais eu de raison de rester non plus. Alors on va faire une expérience.",
+     "set": [
+      {
+       "id": "kael",
+       "expression": "amused"
+      }
+     ]
+    },
+    {
+     "text": "Il a toujours la cicatrice. Elle ne partira pas. Tu as arrêté d’espérer qu’elle parte, et c’est à ce moment-là que ça a commencé à ressembler à quelque chose.",
+     "thought": true
+    },
+    {
+     "speaker": "kael",
+     "text": "Une seule règle : rien de solennel. Pas de formule, pas de Faille, pas d’anneau. On se le redit tous les matins, et si un matin on ne le redit pas, on arrête.",
+     "set": [
+      {
+       "id": "kael",
+       "expression": "closeness"
+      }
+     ]
+    },
+    {
+     "text": "Ce n’est pas un serment. C’est la seule chose que tu as jamais réussi à tenir.",
+     "thought": true,
+     "condition": {
+      "promise": "prom_kael_revenir",
+      "status": "made"
+     }
+    }
+   ],
+   "ending": "e1_deux_ombres"
+  },
+  "ep_noam": {
+   "id": "ep_noam",
+   "chapter": 6,
+   "route": "noam",
+   "title": "La loi et l’homme",
+   "background": "bg_toit_orage",
+   "music": "music_romance",
+   "ambiance": "amb_pluie",
+   "cg": "cg_noam_aveu_pluie",
+   "autosave": true,
+   "toneTarget": "noam",
+   "characters": [
+    {
+     "id": "noam",
+     "outfit": "civil",
+     "pose": "neutral",
+     "expression": "epilogue_good",
+     "position": "center"
+    }
+   ],
+   "speaker": "noam",
+   "lines": [
+    {
+     "speaker": "noam",
+     "text": "J’ai démissionné mardi. Ils ont mis quatre jours à trouver quelqu’un pour signer l’acceptation. Personne ne voulait."
+    },
+    {
+     "speaker": "noam",
+     "text": "Je reste. Pas dans la Garde — dans la commission d’enquête. Quelqu’un doit relire les dix-neuf dernières années, et je suis très bon en paperasse.",
+     "set": [
+      {
+       "id": "noam",
+       "expression": "smile_soft"
+      }
+     ]
+    },
+    {
+     "text": "Les sept anneaux sont dans une boîte, chez toi, sur l’étagère du haut. Il ne les a jamais repris et il n’a jamais demandé où ils étaient.",
+     "thought": true
+    },
+    {
+     "speaker": "noam",
+     "text": "Je t’avais promis de te dire la vérité, même la pire. J’ai tenu. C’est la seule chose dont je sois sûr.",
+     "condition": {
+      "promise": "prom_noam_verite",
+      "status": "kept"
+     },
+     "set": [
+      {
+       "id": "noam",
+       "expression": "closeness"
+      }
+     ]
+    },
+    {
+     "speaker": "noam",
+     "text": "Alors voilà la vérité du jour : je ne sais pas faire ça. Je vais apprendre lentement et mal. Reste quand même."
+    }
+   ],
+   "ending": "e2_loi_et_homme"
+  },
+  "ep_bad_nom": {
+   "id": "ep_bad_nom",
+   "chapter": 6,
+   "route": "commune",
+   "title": "Le nom effacé",
+   "background": "bg_archives_bureau_dark",
+   "music": "music_ending",
+   "ambiance": null,
+   "cg": "cg_ilan_rompu",
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    {
+     "text": "Tu avais promis d’aller jusqu’au bout. À voix haute. Dans une ville où les mots pèsent."
+    },
+    {
+     "text": "Tu n’es pas allé jusqu’au bout.",
+     "fx": "darken"
+    },
+    {
+     "text": "La main gauche d’abord. Puis les jours de la semaine. Puis le visage de ton frère, qui était pourtant la dernière chose que tu voulais garder."
+    },
+    {
+     "text": "Le troisième mois, un archiviste ouvre ton dossier et trouve une fiche sans nom. Il la classe. Il ne trouve pas ça étrange.",
+     "thought": true
+    }
+   ],
+   "ending": "bad_nom_efface"
+  },
+  "ep_bad_faille": {
+   "id": "ep_bad_faille",
+   "chapter": 6,
+   "route": "commune",
+   "title": "La Faille ne pardonne pas",
+   "background": "bg_faille_embrasee",
+   "music": "music_ending",
+   "ambiance": "amb_faille",
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    {
+     "text": "Le Grand Serment a été prononcé sans toi. Il a fonctionné. Deux cents personnes sont mortes, dont une jeune femme qui recopiait son prénom sur une feuille."
+    },
+    {
+     "text": "Tu es resté assis. Tu as tout compris et tu n’as rien fait, ce qui est la seule faute que cette ville ne pardonne à personne — surtout pas à ceux qui savaient lire."
+    },
+    {
+     "text": "Théo est sorti de la lumière. Il t’a demandé ce que tu avais fait, ce jour-là, dans le hall.",
+     "thought": true
+    },
+    {
+     "text": "Tu lui as répondu la vérité. Il n’a rien dit. Il ne dit plus grand-chose, maintenant.",
+     "fx": "darken"
+    }
+   ],
+   "ending": "bad_faille_ne_pardonne"
+  },
+  "ep_lien": {
+   "id": "ep_lien",
+   "chapter": 6,
+   "route": "commune",
+   "title": "Avant que tout change",
+   "background": "bg_pont_confluence_dawn",
+   "music": "music_romance",
+   "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    {
+     "text": "Il y a un moment, entre la fin de tout et le début de ce qui suit, où la ville ne demande rien à personne."
+    },
+    {
+     "text": "Tu le passes avec quelqu’un.",
+     "thought": true
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "rel": "kael",
+      "field": "attraction",
+      "op": ">=",
+      "value": 55
+     },
+     "scene": "ep_kael"
+    },
+    {
+     "when": {
+      "rel": "noam",
+      "field": "attraction",
+      "op": ">=",
+      "value": 55
+     },
+     "scene": "ep_noam"
+    }
+   ],
+   "next": "ep_coop_fin"
+  }
+ }
+}

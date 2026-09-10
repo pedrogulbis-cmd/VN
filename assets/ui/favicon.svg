@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Les Serments de la Faille">
+  <rect width="64" height="64" rx="12" fill="#0b1024"/>
+  <path d="M32 6 L38 32 L32 58 L26 32 Z" fill="#4fd8e8" opacity="0.9"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#d9a441" stroke-width="2.4"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#d9a441" stroke-width="1.1" opacity="0.5"/>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "name": "les-serments-de-la-faille",
+  "version": "1.0.0",
+  "description": "Visual novel narratif francophone : enquête, serments contraignants et relations complexes dans la ville de Vaurance.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "validate": "node tests/validate.mjs",
+    "test:explore": "node tests/explore.mjs",
+    "test:integration": "node tests/integration.mjs",
+    "test": "npm run validate && npm run test:explore",
+    "serve": "python3 -m http.server 8000",
+    "build:assets": "python3 tools/gen_art.py && python3 tools/gen_audio.py && python3 tools/gen_ui.py",
+    "build:data": "python3 tools/gen_data.py && python3 tools/gen_docs.py",
+    "build": "npm run build:data && npm run validate"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les Serments de la Faille</title>
+<meta name="description" content="Visual novel narratif : enquête, serments contraignants et relations complexes dans la ville de Vaurance.">
+<meta name="theme-color" content="#0a0d1a">
+<meta property="og:title" content="Les Serments de la Faille">
+<meta property="og:description" content="Un serment tenu coûte. Un serment brisé coûte davantage.">
+<meta property="og:image" content="assets/ui/share.webp">
+<link rel="icon" href="assets/ui/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/ui/icon.webp">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/mobile.css" media="(max-width: 719px)">
+<link rel="stylesheet" href="css/desktop.css" media="(min-width: 720px)">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+<a class="skip-link" href="#dialogue">Aller au texte</a>
+<div id="live-region" class="sr-only" role="status" aria-live="polite"></div>
+
+<!-- ------------------------------------------------------------ chargement -->
+<div id="boot" class="boot">
+  <div class="boot__mark" aria-hidden="true"></div>
+  <h1 class="boot__title">Les Serments de la Faille</h1>
+  <p id="boot-status" class="boot__status">Initialisation…</p>
+</div>
+
+<!-- ----------------------------------------------------------- écran-titre -->
+<section id="title-screen" class="title" hidden aria-label="Écran-titre">
+  <div class="title__inner">
+    <p class="title__over">Vaurance, dix-neuf ans après l’ouverture</p>
+    <h1 class="title__name">Les Serments<span>de la Faille</span></h1>
+    <p class="title__tag">Un serment tenu coûte. Un serment brisé coûte davantage.</p>
+    <nav class="title__menu" aria-label="Menu principal">
+      <button id="btn-continue" class="btn btn--major" type="button">Continuer</button>
+      <button id="btn-newgame" class="btn" type="button">Nouvelle partie</button>
+      <button id="btn-newgame-plus" class="btn" type="button" hidden>Nouvelle partie enrichie</button>
+      <button id="btn-title-load" class="btn" type="button">Charger</button>
+      <button id="btn-title-gallery" class="btn" type="button">Galerie</button>
+      <button id="btn-title-endings" class="btn" type="button">Fins</button>
+      <button id="btn-title-settings" class="btn" type="button">Paramètres</button>
+      <button id="btn-title-credits" class="btn" type="button">Crédits</button>
+    </nav>
+    <p id="title-progress" class="title__progress"></p>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------ création de partie -->
+<section id="creation" class="modal" hidden aria-label="Création du protagoniste">
+  <div class="modal__box">
+    <h2>Qui es-tu ?</h2>
+    <p class="note">Tu es liseur de serments au Bureau. Ton frère a disparu il y a six ans. Le reste dépend de toi.</p>
+    <label class="set-row" for="pc-name"><span>Prénom</span>
+      <input id="pc-name" type="text" maxlength="20" autocomplete="off" value="Ilan"></label>
+    <p class="pc-pool">Points à répartir : <output id="pc-pool">5</output></p>
+    <div id="pc-stats" class="pc-stats"></div>
+    <div class="modal__actions">
+      <button id="pc-cancel" class="btn" type="button">Retour</button>
+      <button id="pc-start" class="btn btn--major" type="button">Commencer</button>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------------ scène -->
+<main id="stage" class="stage" aria-label="Scène">
+  <div id="bg-a" class="bg show" role="img" aria-label="Décor"></div>
+  <div id="bg-b" class="bg" role="img" aria-hidden="true"></div>
+  <div id="fx-layer" class="fx-layer" aria-hidden="true"></div>
+  <div id="characters" class="characters" aria-hidden="true"></div>
+  <div id="cg-layer" class="cg-layer" aria-hidden="true"></div>
+  <div id="flash" class="flash" aria-hidden="true"></div>
+
+  <div id="chapter-card" class="chapter-card" aria-hidden="true">
+    <p class="chapter-card__title"></p>
+    <p class="chapter-card__sub"></p>
+  </div>
+
+  <div id="stage-tap" class="stage-tap" tabindex="0" role="button"
+       aria-label="Avancer le dialogue"></div>
+
+  <header class="hud">
+    <div class="hud__left">
+      <span id="chapter-label" class="hud__chapter"></span>
+      <div class="progress" aria-hidden="true"><i id="progress-fill"></i></div>
+    </div>
+    <div class="hud__right">
+      <button class="icon-btn" id="btn-hide" type="button" aria-label="Masquer l’interface">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-quicksave" type="button" aria-label="Sauvegarde rapide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12l4 4v12H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v5h7V4M8 20v-6h8v6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-quickload" type="button" aria-label="Chargement rapide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="icon-btn" id="btn-fullscreen" type="button" aria-label="Plein écran">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="icon-btn" data-panel="menu" type="button" aria-label="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="save-indicator" class="save-indicator" aria-hidden="true">Sauvegardé</div>
+
+  <section id="dialogue" class="dialogue" aria-live="off">
+    <p id="speaker" class="dialogue__speaker"></p>
+    <p id="dialogue-text" class="dialogue__text"></p>
+    <span id="next-hint" class="dialogue__next" aria-hidden="true"></span>
+  </section>
+
+  <div id="choices" class="choices" role="group" aria-label="Choix disponibles" hidden></div>
+</main>
+
+<!-- --------------------------------------------------------------- panneaux -->
+<section id="panel" class="panel" hidden aria-modal="true" role="dialog" aria-label="Panneau">
+  <div class="panel__box">
+    <header class="panel__head">
+      <h2 class="panel__title"></h2>
+      <button class="panel__close btn" type="button" aria-label="Fermer">Fermer</button>
+    </header>
+    <nav class="panel__tabs" aria-label="Sections">
+      <button class="tab" data-panel="stats" type="button">Statistiques</button>
+      <button class="tab" data-panel="relations" type="button">Relations</button>
+      <button class="tab" data-panel="clues" type="button">Indices</button>
+      <button class="tab" data-panel="deductions" type="button">Déductions</button>
+      <button class="tab" data-panel="promises" type="button">Promesses</button>
+      <button class="tab" data-panel="journal" type="button">Journal</button>
+      <button class="tab" data-panel="history" type="button">Historique</button>
+      <button class="tab" data-panel="codex" type="button">Codex</button>
+      <button class="tab" data-panel="gallery" type="button">Galerie</button>
+      <button class="tab" data-panel="endings" type="button">Fins</button>
+      <button class="tab" data-panel="achievements" type="button">Succès</button>
+      <button class="tab" data-panel="saves" type="button">Sauvegardes</button>
+      <button class="tab" data-panel="settings" type="button">Paramètres</button>
+      <button class="tab" data-panel="credits" type="button">Crédits</button>
+      <button class="tab" id="btn-restart-chapter" type="button">Recommencer le chapitre</button>
+      <button class="tab" id="btn-menu-title" type="button">Écran-titre</button>
+    </nav>
+    <div class="panel__body"></div>
+  </div>
+</section>
+
+<section id="confirm" class="modal" hidden role="alertdialog" aria-modal="true" aria-label="Confirmation">
+  <div class="modal__box modal__box--small">
+    <h2 class="confirm__title"></h2>
+    <p class="confirm__text"></p>
+    <div class="modal__actions">
+      <button class="btn confirm__no" type="button">Annuler</button>
+      <button class="btn btn--major confirm__yes" type="button">Confirmer</button>
+    </div>
+  </div>
+</section>
+
+<section id="ending-screen" class="ending" hidden aria-label="Fin atteinte">
+  <div class="ending__box">
+    <img class="ending__cg" alt="">
+    <p class="ending__code"></p>
+    <h2 class="ending__title"></h2>
+    <p class="ending__text"></p>
+    <div class="modal__actions">
+      <button id="ending-gallery" class="btn" type="button">Galerie</button>
+      <button id="ending-restart" class="btn btn--major" type="button">Retour au titre</button>
+    </div>
+    <p class="ending__credits">Les Serments de la Faille — production autonome, assets procéduraux documentés dans docs/asset.md</p>
+  </div>
+</section>
+
+<div id="toasts" class="toasts" aria-hidden="true"></div>
+
+<script type="module" src="js/app.js"></script>
+<noscript><p class="boot__status">Ce jeu nécessite JavaScript.</p></noscript>
+</body>
+</html>

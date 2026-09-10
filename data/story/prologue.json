@@ -1,0 +1,264 @@
+{
+ "scenes": {
+  "p01_archives": {
+   "id": "p01_archives", "chapter": 0, "route": "commune",
+   "title": "Ce que la vitre a retenu",
+   "background": "bg_archives_bureau", "music": "music_calm", "ambiance": "amb_pluie",
+   "weather": "rain", "autosave": true,
+   "enter": { "codex": ["cod_faille", "cod_serment"] },
+   "characters": [],
+   "lines": [
+    { "text": "La pluie tombe sur Vaurance depuis onze jours. Au troisième sous-sol du Bureau des Serments, on l’entend quand même : elle passe par les conduits et vient s’écraser quelque part derrière les murs, comme quelqu’un qui frappe sans espérer qu’on ouvre." },
+    { "text": "Devant toi, une vitre de deux mètres, arrachée à la devanture d’une pharmacie du quai. Deux personnes se sont juré quelque chose devant elle. La Faille l’a entendu. La vitre s’en souvient." },
+    { "text": "Tu poses la paume dessus. Le froid remonte jusqu’au coude, puis les mots arrivent — pas des sons, une pression, une forme dans la bouche.", "thought": true },
+    { "speaker": null, "text": "« Je ne te laisserai pas seul. » Trois secondes de silence. Puis : « Moi non plus. »" },
+    { "text": "Ils ont tenu, ou ils sont morts. La vitre ne dit jamais la suite. C’est le métier : lire le début des histoires et ne jamais en connaître la fin.", "thought": true }
+   ],
+   "toneTarget": null,
+   "choices": [
+    {
+     "id": "p01_c_methode", "text": "Noter la formule exacte, l’heure estimée, la position des mains.",
+     "tone": "methodique", "preview": "Renforce la rigueur d’enquête.",
+     "effects": { "stats": { "perspicacite": 1 }, "flags": { "style_methodique": true }, "rewardId": "p01" },
+     "next": "p02_convocation"
+    },
+    {
+     "id": "p01_c_ironie", "text": "Écrire dans la marge : « deux idiots, un mardi ».",
+     "tone": "ironique", "preview": "Prend de la distance avec le travail.",
+     "effects": { "stats": { "sangfroid": 1 }, "flags": { "style_ironique": true }, "rewardId": "p01" },
+     "next": "p02_convocation"
+    },
+    {
+     "id": "p01_c_obstine", "text": "Relire la vitre une quatrième fois pour chercher un troisième nom.",
+     "tone": "obstine", "preview": "Fatigue, mais rien ne t’échappe.",
+     "effects": { "stats": { "perspicacite": 1, "integrite": 1 }, "flags": { "style_obstine": true }, "rewardId": "p01" },
+     "next": "p02_convocation"
+    }
+   ]
+  },
+
+  "p02_convocation": {
+   "id": "p02_convocation", "chapter": 0, "route": "commune",
+   "title": "Le capitaine descend",
+   "background": "bg_archives_bureau", "music": "music_tension", "ambiance": "amb_pluie",
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "outfit": "default", "pose": "neutral", "expression": "calm", "state": "normal", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "text": "On ne descend pas au troisième sous-sol. On y envoie des notes de service. Alors quand l’ascenseur s’ouvre, tu sais déjà que ta nuit est finie.", "sfx": "sfx_menu" },
+    { "speaker": "noam", "text": "Vasseur. Lecteur de serments, matricule quatre-vingt-onze." },
+    { "speaker": "noam", "text": "Un homme est mort sur le pont de la Confluence il y a une heure. Rompu. La Garde a besoin d’une lecture avant que la pluie n’efface tout.", "set": [{ "id": "noam", "expression": "determined" }] },
+    { "text": "Noam Sardou. Capitaine de la Garde des Serments. Sept anneaux à l’épaule, un par serment public tenu. On dit qu’il ne les a jamais comptés lui-même.", "thought": true },
+    { "speaker": "noam", "text": "Je vous préviens tout de suite : ce n’est pas une invitation." }
+   ],
+   "choices": [
+    {
+     "id": "p02_c_respect", "text": "« Le temps de prendre ma sacoche, capitaine. »",
+     "tone": "respectueux", "preview": "Noam apprécie l’efficacité.",
+     "effects": { "rel": { "noam": { "respect": 8, "trust": 5 } }, "stats": { "influence": 1 }, "rewardId": "p02" },
+     "next": "p03_pont"
+    },
+    {
+     "id": "p02_c_defi", "text": "« Et si je refusais, vous descendriez me chercher vous-même ? »",
+     "tone": "provocateur", "preview": "Tension immédiate, mais il te regarde vraiment.",
+     "effects": { "rel": { "noam": { "tension": 12, "affinity": 4, "respect": 4 } }, "stats": { "courage": 1 }, "flags": { "noam_provoque": true }, "rewardId": "p02" },
+     "next": "p03_pont"
+    },
+    {
+     "id": "p02_c_evasif", "text": "Rassembler tes affaires sans répondre.",
+     "tone": "distant", "preview": "Tu ne donnes rien. Il le remarque.",
+     "effects": { "rel": { "noam": { "distrust": 8 } }, "stats": { "sangfroid": 1 }, "rewardId": "p02" },
+     "next": "p03_pont"
+    }
+   ]
+  },
+
+  "p03_pont": {
+   "id": "p03_pont", "chapter": 0, "route": "commune",
+   "title": "Le pont de la Confluence",
+   "background": "bg_pont_confluence_night", "music": "music_danger", "ambiance": "amb_pluie",
+   "weather": "rain",
+   "characters": [{ "id": "noam", "pose": "defensive", "expression": "worried", "position": "right" }],
+   "lines": [
+    { "text": "Le pont est barré aux deux extrémités. Sous les lampes, la pierre mouillée renvoie une lumière jaune et sale.", "fx": "shake" },
+    { "text": "L’homme est assis contre le garde-corps, jambes tendues, comme s’il s’était installé pour regarder le fleuve. Il respire encore. Il ne devrait pas." },
+    { "speaker": "noam", "text": "Marcel Ourdan. Cinquante-huit ans. Il a rompu un serment il y a environ quarante minutes.", "set": [{ "id": "noam", "expression": "determined" }] },
+    { "text": "Sa main gauche est déjà translucide. La Faille reprend ce qu’on lui a promis, en commençant toujours par le plus loin du cœur.", "thought": true },
+    { "speaker": null, "text": "« … le nom », souffle Ourdan. « Ils ont pris le nom. »" }
+   ],
+   "choices": [
+    {
+     "id": "p03_c_aider", "text": "Lui prendre la main et rester avec lui.",
+     "tone": "chaleureux",
+     "effects": { "stats": { "empathie": 2, "courage": 1 }, "clues": ["clue_dernier_mot"], "flags": { "a_tenu_la_main": true }, "rel": { "noam": { "respect": 6, "vulnerability": 5 } }, "rewardId": "p03" },
+     "next": "p04_kael"
+    },
+    {
+     "id": "p03_c_observer", "text": "S’accroupir et lire ce qui reste du serment sur ses poignets.",
+     "tone": "methodique",
+     "effects": { "stats": { "perspicacite": 2 }, "clues": ["clue_dernier_mot", "clue_rupture_forcee"], "rewardId": "p03" },
+     "next": "p04_kael"
+    },
+    {
+     "id": "p03_c_garde", "text": "Demander un périmètre élargi et un procès-verbal immédiat.",
+     "tone": "institutionnel",
+     "effects": { "stats": { "influence": 2 }, "factions": { "bureau": 10 }, "rel": { "noam": { "respect": 8 } }, "clues": ["clue_dernier_mot"], "rewardId": "p03" },
+     "next": "p04_kael"
+    }
+   ]
+  },
+
+  "p04_kael": {
+   "id": "p04_kael", "chapter": 0, "route": "commune",
+   "title": "L’homme qui ne jure plus",
+   "background": "bg_pont_confluence_night", "music": "music_tension", "ambiance": "amb_pluie",
+   "weather": "rain", "toneTarget": "kael",
+   "characters": [{ "id": "kael", "pose": "dynamic", "expression": "wary", "state": "wet", "position": "left" }],
+   "speaker": "kael",
+   "lines": [
+    { "text": "Une silhouette passe sous la barrière côté nord. Rapide, sans hésitation : quelqu’un qui connaît le pont mieux que la Garde.", "fx": "impact", "sfx": "sfx_menu" },
+    { "text": "Il s’accroupit près d’Ourdan, glisse deux doigts dans la poche intérieure du manteau et en sort une fiole d’un vert malade.", "set": [{ "id": "kael", "expression": "determined" }] },
+    { "speaker": "kael", "text": "Tu vas crier, ou tu vas réfléchir ?" },
+    { "text": "Manteau bleu nuit, écharpe cyan trempée, une cicatrice qui court sur tout l’avant-bras gauche. Un serment rompu, ancien, cautérisé. Il a survécu à quelque chose que Marcel Ourdan est en train de perdre.", "thought": true },
+    { "speaker": "kael", "text": "Cette fiole, c’est la seule chose qui prouve qu’on l’a rompu de force. Dans dix minutes elle sera dans un sac scellé du Bureau et personne ne la reverra.", "set": [{ "id": "kael", "expression": "angry" }] }
+   ],
+   "choices": [
+    {
+     "id": "p04_c_retenir", "text": "Le saisir par le poignet.",
+     "tone": "direct",
+     "effects": { "stats": { "courage": 2 }, "rel": { "kael": { "tension": 18, "respect": 6, "affinity": -4 } }, "flags": { "kael_saisi": true }, "rewardId": "p04" },
+     "next": "p05_appartement"
+    },
+    {
+     "id": "p04_c_laisser", "text": "Détourner le regard et le laisser partir.",
+     "tone": "complice", "irreversible": false,
+     "effects": { "stats": { "sangfroid": 1 }, "rel": { "kael": { "affinity": 14, "trust": 10 } }, "factions": { "rompus": 8, "bureau": -5 }, "flags": { "kael_laisse_partir": true }, "rewardId": "p04" },
+     "next": "p05_appartement"
+    },
+    {
+     "id": "p04_c_parler", "text": "« Montre-la-moi. Après, tu la gardes. »",
+     "tone": "negociateur",
+     "effects": { "stats": { "perspicacite": 1, "influence": 1 }, "clues": ["clue_fiole_verte"], "rel": { "kael": { "affinity": 8, "respect": 12, "trust": 6 } }, "flags": { "kael_negocie": true }, "rewardId": "p04" },
+     "next": "p05_appartement"
+    }
+   ]
+  },
+
+  "p05_appartement": {
+   "id": "p05_appartement", "chapter": 0, "route": "commune",
+   "title": "Six ans, quatre mois",
+   "background": "bg_appartement_ilan", "music": "music_emotion", "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    { "text": "Ton appartement sent le papier humide. Sur la table, la même pile de dossiers depuis six ans, la même écriture sur la première page : Vasseur, Théo. Disparition non élucidée." },
+    { "text": "Ton frère avait vingt-quatre ans. Il travaillait aux archives, comme toi. Un soir de mars, il a laissé son manteau sur le dossier de sa chaise et il n’est jamais revenu le chercher." },
+    { "text": "Le Bureau a classé l’affaire en onze jours. Toi, tu n’as jamais réussi à la classer du tout.", "thought": true },
+    { "text": "Tu n’as jamais prêté serment. Pas une fois. Ni à un amant, ni à un ami, ni à l’institution qui te paie. C’est la seule discipline que tu t’imposes, et elle t’a coûté à peu près tout le monde.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "p05_c_promesse", "text": "« Cette fois je vais jusqu’au bout. » — se le promettre à voix haute.",
+     "tone": "sincere", "irreversible": true,
+     "confirmText": "Prononcer un serment à voix haute dans Vaurance n’est jamais anodin. Continuer ?",
+     "preview": "Une promesse faite à soi-même reste une promesse.",
+     "effects": { "stats": { "integrite": 1, "courage": 1 }, "promises": { "prom_soi_jusquau_bout": "made" }, "flags": { "a_jure_seul": true }, "sfx": "sfx_promise", "rewardId": "p05" },
+     "next": "p06_indice"
+    },
+    {
+     "id": "p05_c_silence", "text": "Ne rien dire. Ranger le dossier.",
+     "tone": "distant",
+     "effects": { "stats": { "sangfroid": 2 }, "flags": { "refuse_de_jurer": true }, "rewardId": "p05" },
+     "next": "p06_indice"
+    },
+    {
+     "id": "p05_c_boire", "text": "Se servir un verre et relire la liste des Rompus de l’année.",
+     "tone": "obstine",
+     "effects": { "stats": { "perspicacite": 1 }, "clues": ["clue_serie_rompus"], "rewardId": "p05" },
+     "next": "p06_indice"
+    }
+   ]
+  },
+
+  "p06_indice": {
+   "id": "p06_indice", "chapter": 0, "route": "commune",
+   "title": "Ce qui manque au registre",
+   "background": "bg_archives_bureau_dark", "music": "music_tension", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "Quatre heures du matin. Le registre central affiche la fiche d’Ourdan, Marcel. Serment enregistré : néant. Rupture : confirmée." },
+    { "text": "Un homme ne peut pas rompre un serment qu’il n’a jamais prêté. Sauf si quelqu’un a effacé la ligne.", "thought": true, "fx": "impact" },
+    { "text": "Tu remontes la colonne. Onze fiches en dix-huit mois portent la même anomalie. Toutes closes par le même sceau : sept anneaux imbriqués.", "sfx": "sfx_discovery", "effects": { "clues": ["clue_nom_efface", "clue_sceau_sept"] } }
+   ],
+   "choices": [
+    {
+     "id": "p06_c_ded", "text": "Formuler une première hypothèse à partir de ce que tu as vu cette nuit.",
+     "tone": "methodique",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_nom_efface" }, { "any": [{ "clue": "clue_rupture_forcee" }, { "clue": "clue_fiole_verte" }, { "clue": "clue_serie_rompus" }] }] },
+      "successEffects": { "deductions": ["ded_rompu_force"], "stats": { "perspicacite": 1 }, "rel": { "damien": { "distrust": 5 } } },
+      "failEffects": { "falseLead": "fl_suicide_collectif", "stats": { "sangfroid": 1 } },
+      "successScene": "p07_ysee", "failScene": "p07_ysee"
+     },
+     "next": "p07_ysee"
+    },
+    {
+     "id": "p06_c_prudence", "text": "Ne rien écrire nulle part. Mémoriser, refermer, partir.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 2 }, "flags": { "prudent_archives": true }, "rewardId": "p06" },
+     "next": "p07_ysee"
+    }
+   ]
+  },
+
+  "p07_ysee": {
+   "id": "p07_ysee", "chapter": 0, "route": "commune",
+   "title": "La médecin des Rompus",
+   "background": "bg_clinique_ysee", "music": "music_calm", "ambiance": null,
+   "toneTarget": "ysee",
+   "characters": [{ "id": "ysee", "pose": "defensive", "expression": "wary", "position": "center" }],
+   "speaker": "ysee",
+   "lines": [
+    { "text": "La clinique n’a pas d’enseigne. On y descend par une trappe de livraison, derrière une poissonnerie fermée depuis dix ans." },
+    { "speaker": "ysee", "text": "Un lecteur du Bureau chez moi. Vous voulez que je vous serve le thé, ou que je vous montre directement les lits ?" },
+    { "text": "Ysée Marchand. Trois anneaux de fil vert au poignet gauche. Elle ne les explique jamais, et tout le monde sait ce qu’ils comptent.", "thought": true },
+    { "speaker": "ysee", "text": "Ourdan est mon quatrième ce trimestre. Aucun n’avait de serment enregistré. Tous avaient la même chose dans le sang.", "set": [{ "id": "ysee", "expression": "determined" }] },
+    { "speaker": "ysee", "text": "Une suspension de sève de Faille. Ça ne se boit pas par accident, et ça ne se fabrique pas dans une cave." }
+   ],
+   "choices": [
+    {
+     "id": "p07_c_franchise", "text": "« Onze noms ont été effacés du registre. Je vous le dis parce que vous le saurez de toute façon. »",
+     "tone": "sincere",
+     "effects": { "rel": { "ysee": { "trust": 16, "respect": 10 } }, "stats": { "integrite": 1 }, "factions": { "rompus": 6 }, "clues": ["clue_suspension"], "rewardId": "p07" },
+     "next": "p08_transition"
+    },
+    {
+     "id": "p07_c_retenue", "text": "Poser des questions sans rien donner en retour.",
+     "tone": "methodique",
+     "effects": { "rel": { "ysee": { "distrust": 12 } }, "stats": { "perspicacite": 1 }, "clues": ["clue_suspension"], "rewardId": "p07" },
+     "next": "p08_transition"
+    },
+    {
+     "id": "p07_c_aide", "text": "Retirer votre manteau et aider à changer les perfusions avant de parler.",
+     "tone": "chaleureux",
+     "requires": { "stat": "empathie", "op": ">=", "value": 4 },
+     "lockedHint": "Il faudrait savoir se rendre utile sans qu’on te le demande.",
+     "effects": { "rel": { "ysee": { "trust": 20, "respect": 14, "affinity": 10, "memory": "mem_ysee_perfusions" } }, "stats": { "empathie": 1 }, "clues": ["clue_suspension"], "factions": { "rompus": 10 }, "rewardId": "p07" },
+     "next": "p08_transition"
+    }
+   ]
+  },
+
+  "p08_transition": {
+   "id": "p08_transition", "chapter": 0, "route": "commune",
+   "title": "Ce qui commence",
+   "background": "bg_quai_rompus_dawn", "music": "music_revelation", "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    { "text": "L’aube monte sur le quai. Le fleuve charrie une lumière grise, et au-dessus des toits, très haut, la Faille bat lentement — une cicatrice ouverte dans le ciel depuis dix-neuf ans." },
+    { "text": "Onze noms effacés. Un poison qui n’existe pas. Un sceau à sept anneaux. Et quelque part sous tout ça, peut-être, un manteau resté sur le dossier d’une chaise.", "thought": true },
+    { "text": "Tu ne le sais pas encore, mais tu viens de commencer à tirer sur un fil qui tient toute la ville.", "fx": "darken" }
+   ],
+   "next": "ch1_01_convocation"
+  }
+ }
+}

@@ -1,0 +1,418 @@
+{
+ "scenes": {
+  "ch4_01_neuf_jours": {
+   "id": "ch4_01_neuf_jours", "chapter": 4, "route": "commune",
+   "title": "Le prix du silence",
+   "background": "bg_ruelle_pluie", "music": "music_tension", "ambiance": "amb_pluie",
+   "weather": "rain", "autosave": true,
+   "characters": [],
+   "lines": [
+    { "text": "Neuf jours. La ville s’organise avec un calme qui fait peur : on repeint le Grand hall, on installe des gradins, on distribue des brassards numérotés." },
+    { "text": "Personne ne demande ce qu’est une « consolidation ». À Vaurance, on apprend très tôt à ne pas demander.", "thought": true },
+    { "text": "Toi, tu as neuf jours et deux cents noms que tu n’as pas encore." }
+   ],
+   "next": "ch4_02_liste"
+  },
+
+  "ch4_02_liste": {
+   "id": "ch4_02_liste", "chapter": 4, "route": "commune",
+   "title": "Deux cents noms",
+   "background": "bg_archives_bureau", "music": "music_tension", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "La liste des Rompus vivants existe. Elle est mise à jour chaque semaine par le service statistique, qui ignore parfaitement ce qu’il compte." }
+   ],
+   "choices": [
+    {
+     "id": "ch4_02_c_voler", "text": "La voler pendant la relève de nuit.",
+     "tone": "obstine",
+     "requires": { "stat": "ingeniosite", "op": ">=", "value": 5 },
+     "lockedHint": "La relève de nuit dure quatre minutes. Il t’en faudrait sept.",
+     "effects": { "items": ["item_liste_rompus"], "clues": ["clue_liste_deux_cents"], "stats": { "ingeniosite": 1 }, "flags": { "liste_volee": true }, "rewardId": "ch4_02" },
+     "next": "ch4_03_branche"
+    },
+    {
+     "id": "ch4_02_c_noam", "text": "Demander à Noam de la réquisitionner officiellement.",
+     "tone": "institutionnel",
+     "requires": { "rel": "noam", "field": "trust", "op": ">=", "value": 40 },
+     "lockedHint": "Il ne mettra pas sa signature sur ça pour toi.",
+     "effects": { "items": ["item_liste_rompus"], "clues": ["clue_liste_deux_cents"], "rel": { "noam": { "trust": 10, "tension": 12 } }, "stats": { "influence": 1 }, "rewardId": "ch4_02" },
+     "next": "ch4_03_branche"
+    },
+    {
+     "id": "ch4_02_c_ysee", "text": "Reconstituer la liste à partir des registres de la clinique.",
+     "tone": "chaleureux",
+     "requires": { "rel": "ysee", "field": "trust", "op": ">=", "value": 40 },
+     "lockedHint": "Ysée ne te confiera pas ses patients.",
+     "effects": { "items": ["item_liste_rompus"], "clues": ["clue_liste_deux_cents"], "rel": { "ysee": { "trust": 12, "affinity": 10 } }, "stats": { "empathie": 1 }, "rewardId": "ch4_02" },
+     "next": "ch4_03_branche"
+    },
+    {
+     "id": "ch4_02_c_renoncer", "text": "Renoncer à la liste. Les chiffres ne changeront rien.",
+     "tone": "distant",
+     "effects": { "stats": { "sangfroid": 1 }, "flags": { "sans_liste": true }, "deferred": [{ "id": "def_sans_liste", "chapter": 5, "when": { "flag": "sans_liste" }, "effects": { "stats": { "influence": -1 } }, "note": "Sans les deux cents noms, personne ne t’écoute au Grand hall." }], "rewardId": "ch4_02" },
+     "next": "ch4_03_branche"
+    }
+   ]
+  },
+
+  "ch4_03_branche": {
+   "id": "ch4_03_branche", "chapter": 4, "route": "commune",
+   "title": "À qui tu tiens",
+   "background": "bg_appartement_ilan", "music": "music_calm", "ambiance": "amb_pluie",
+   "characters": [],
+   "lines": [
+    { "text": "Il est deux heures. Tu as neuf jours, une liste, et le besoin très concret de ne pas être seul dans cette pièce." }
+   ],
+   "nextIf": [
+    { "when": { "all": [{ "rel": "kael", "field": "affinity", "op": ">=", "value": 45 }, { "rel": "kael", "field": "attraction", "op": ">=", "value": 25 }] }, "scene": "ch4_k_intimite" },
+    { "when": { "all": [{ "rel": "noam", "field": "affinity", "op": ">=", "value": 45 }, { "rel": "noam", "field": "attraction", "op": ">=", "value": 25 }] }, "scene": "ch4_n_intimite" },
+    { "when": { "rel": "ysee", "field": "trust", "op": ">=", "value": 45 }, "scene": "ch4_y_reseau" }
+   ],
+   "next": "ch4_solo"
+  },
+
+  "ch4_k_intimite": {
+   "id": "ch4_k_intimite", "chapter": 4, "route": "kael",
+   "title": "Ce qu’on se dit à voix basse",
+   "background": "bg_appartement_ilan", "music": "music_romance", "ambiance": "amb_pluie",
+   "toneTarget": "kael",
+   "characters": [{ "id": "kael", "outfit": "combat", "pose": "neutral", "expression": "closeness", "position": "center" }],
+   "speaker": "kael",
+   "lines": [
+    { "speaker": "kael", "text": "Ton appartement est exactement comme je l’imaginais. C’est déprimant à quel point j’avais raison." },
+    { "text": "Il enlève ses gants, s’assoit sur le rebord de la fenêtre, et regarde la pluie plutôt que toi. C’est sa manière d’être présent.", "thought": true },
+    { "speaker": "kael", "text": "Je n’ai jamais eu envie de rester quelque part. Jamais. C’est pratique, quand on traverse la Faille pour vivre." },
+    { "speaker": "kael", "text": "Et depuis trois semaines, j’ai envie de rester. Ça me met dans une colère noire.", "set": [{ "id": "kael", "expression": "flustered" }] },
+    { "speaker": "kael", "text": "Alors dis-moi tout de suite si c’est réciproque, parce que je n’ai pas le temps de faire ça élégamment." }
+   ],
+   "choices": [
+    {
+     "id": "ch4_k_c_oui", "text": "Traverser la pièce et lui prendre le visage à deux mains.",
+     "tone": "sincere", "irreversible": true,
+     "confirmText": "Choisir Kaël ferme la route romantique de Noam. Continuer ?",
+     "effects": { "routes": { "open": ["kael"], "lock": ["noam"] }, "rel": { "kael": { "attraction": 32, "affinity": 24, "trust": 18, "narrative": "amants", "memory": "mem_kael_fenetre" }, "noam": { "routeStatus": "locked" } }, "cg": "cg_kael_serment_partage", "stats": { "courage": 1 }, "rewardId": "ch4_k" },
+     "next": "ch4_05_celia"
+    },
+    {
+     "id": "ch4_k_c_pas_maintenant", "text": "« Pas maintenant. Pas avec neuf jours devant nous. »",
+     "tone": "prudent",
+     "effects": { "rel": { "kael": { "tension": 16, "respect": 12, "attraction": 8 } }, "stats": { "sangfroid": 1 }, "flags": { "kael_ajourne": true }, "rewardId": "ch4_k" },
+     "next": "ch4_05_celia"
+    },
+    {
+     "id": "ch4_k_c_non", "text": "« Je ne peux pas te donner ça. Je suis désolé. »",
+     "tone": "sincere",
+     "effects": { "rel": { "kael": { "affinity": -14, "tension": 18, "boundary": "bnd_kael_refus", "narrative": "amis blessés" } }, "routes": { "close": ["kael"] }, "stats": { "integrite": 1 }, "rewardId": "ch4_k" },
+     "next": "ch4_05_celia"
+    }
+   ]
+  },
+
+  "ch4_n_intimite": {
+   "id": "ch4_n_intimite", "chapter": 4, "route": "noam",
+   "title": "Sans les anneaux",
+   "background": "bg_appartement_ilan", "music": "music_romance", "ambiance": "amb_pluie",
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "outfit": "civil", "pose": "neutral", "expression": "closeness", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "speaker": "noam", "text": "J’ai retiré les anneaux. Tous les sept. Ils sont dans un tiroir de mon bureau et je ne sais pas quoi en penser." },
+    { "text": "Sans l’uniforme, il occupe moins de place et il en prend plus. Tu ne sais pas encore quoi faire de cette information.", "thought": true },
+    { "speaker": "noam", "text": "Je tiens mes serments, {nom}. C’est tout ce que je sais faire. Alors je fais très attention à ce que je jure." },
+    { "speaker": "noam", "text": "Et là, maintenant, j’ai très envie de jurer quelque chose que je ne pourrai pas défaire.", "set": [{ "id": "noam", "expression": "flustered" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch4_n_c_oui", "text": "« Alors dis-le. Je le tiendrai avec toi. »",
+     "tone": "sincere", "irreversible": true,
+     "confirmText": "Choisir Noam ferme la route romantique de Kaël. Continuer ?",
+     "effects": { "routes": { "open": ["noam"], "lock": ["kael"] }, "rel": { "noam": { "attraction": 32, "affinity": 24, "trust": 20, "narrative": "amants", "memory": "mem_noam_anneaux" }, "kael": { "routeStatus": "locked" } }, "cg": "cg_noam_aveu_pluie", "promises": { "prom_noam_ensemble": "made" }, "sfx": "sfx_promise", "rewardId": "ch4_n" },
+     "next": "ch4_05_celia"
+    },
+    {
+     "id": "ch4_n_c_attendre", "text": "« Remets les anneaux. On reparlera de ça dans dix jours. »",
+     "tone": "prudent",
+     "effects": { "rel": { "noam": { "respect": 14, "tension": 14, "attraction": 10 } }, "stats": { "sangfroid": 1 }, "flags": { "noam_ajourne": true }, "rewardId": "ch4_n" },
+     "next": "ch4_05_celia"
+    },
+    {
+     "id": "ch4_n_c_non", "text": "« Ne jure rien. Surtout pas à moi. »",
+     "tone": "distant",
+     "effects": { "rel": { "noam": { "affinity": -12, "vulnerability": 14, "boundary": "bnd_noam_refus", "narrative": "alliés distants" } }, "routes": { "close": ["noam"] }, "stats": { "integrite": 1 }, "rewardId": "ch4_n" },
+     "next": "ch4_05_celia"
+    }
+   ]
+  },
+
+  "ch4_y_reseau": {
+   "id": "ch4_y_reseau", "chapter": 4, "route": "coop",
+   "title": "Deux cents portes",
+   "background": "bg_clinique_ysee", "music": "music_emotion", "ambiance": null,
+   "toneTarget": "ysee",
+   "characters": [{ "id": "ysee", "pose": "dynamic", "expression": "determined", "position": "center" }],
+   "speaker": "ysee",
+   "lines": [
+    { "speaker": "ysee", "text": "Deux cents noms. Deux cents adresses. Neuf jours." },
+    { "speaker": "ysee", "text": "On ne peut pas les sauver tous. On peut faire en sorte qu’aucun ne soit dans le Grand hall le jour de la cérémonie." },
+    { "speaker": "ysee", "text": "Ce n’est pas héroïque. C’est de la logistique. C’est ce qui sauve les gens, en vrai.", "set": [{ "id": "ysee", "expression": "smile_soft" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch4_y_c_organiser", "text": "Passer les neuf jours à organiser l’évacuation.",
+     "tone": "methodique",
+     "effects": { "routes": { "open": ["coop"] }, "factions": { "rompus": 20 }, "rel": { "ysee": { "trust": 20, "respect": 20, "memory": "mem_ysee_evacuation" } }, "stats": { "empathie": 1, "influence": 1 }, "flags": { "evacuation_preparee": true }, "rewardId": "ch4_y" },
+     "next": "ch4_05_celia"
+    },
+    {
+     "id": "ch4_y_c_ciblee", "text": "Concentrer les moyens sur les vingt cas les plus avancés.",
+     "tone": "institutionnel",
+     "effects": { "routes": { "open": ["coop"] }, "factions": { "rompus": 8 }, "rel": { "ysee": { "tension": 12, "respect": 12 } }, "stats": { "sangfroid": 1 }, "flags": { "triage_ch4": true }, "rewardId": "ch4_y" },
+     "next": "ch4_05_celia"
+    }
+   ]
+  },
+
+  "ch4_solo": {
+   "id": "ch4_solo", "chapter": 4, "route": "truth",
+   "title": "Personne à appeler",
+   "background": "bg_appartement_ilan", "music": "music_calm", "ambiance": "amb_pluie",
+   "characters": [],
+   "lines": [
+    { "text": "Tu prends le téléphone trois fois. Tu le reposes trois fois." },
+    { "text": "Théo t’a demandé de parler à quelqu’un. Il ne t’a pas dit quoi faire quand il n’y a plus personne à qui parler.", "thought": true },
+    { "text": "Alors tu travailles. Neuf jours, seul, sur des tableaux de correspondance et des relevés de sceaux. C’est ce que tu sais faire de mieux, et c’est peut-être le problème.", "effects": { "stats": { "perspicacite": 1 }, "rewardId": "ch4_solo" } }
+   ],
+   "next": "ch4_05_celia"
+  },
+
+  "ch4_05_celia": {
+   "id": "ch4_05_celia", "chapter": 4, "route": "commune",
+   "title": "Celle qui n’a plus de nom",
+   "background": "bg_clinique_ysee", "music": "music_emotion", "ambiance": null,
+   "characters": [{ "id": "ysee", "pose": "defensive", "expression": "sad", "position": "left" }],
+   "lines": [
+    { "text": "Chambre isolée, au fond. Une jeune femme de vingt-trois ans, assise très droite, qui recopie le même mot sur une feuille depuis trois heures." },
+    { "text": "Le mot est « Célia ». Elle le recopie pour ne pas le perdre. Elle ne sait déjà plus que c’est le sien.", "condition": { "clue": "clue_fille_damien" } },
+    { "speaker": "ysee", "text": "Vaugrise-Loret vient tous les mardis. Il reste quarante minutes. Il ne dit rien. Il repart." },
+    { "speaker": "ysee", "text": "Vous voulez savoir ce que je pense de son Grand Serment ? Je pense qu’un homme qui vient s’asseoir quarante minutes chaque mardi ne va pas tuer sa fille pour une équation.", "set": [{ "id": "ysee", "expression": "worried" }], "effects": { "clues": ["clue_damien_mardis"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch4_05_c_ded", "text": "Comprendre ce que Damien prépare vraiment.",
+     "tone": "methodique",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_fille_damien" }, { "clue": "clue_damien_mardis" }, { "any": [{ "clue": "clue_alliance_noire" }, { "clue": "clue_chaine_damien" }, { "deduction": "ded_damien_commanditaire" }] }] },
+      "successEffects": { "deductions": ["ded_damien_ancre"], "clues": ["clue_damien_volontaire"], "stats": { "perspicacite": 2 }, "rel": { "damien": { "respect": 16 } } },
+      "failEffects": { "falseLead": "fl_damien_monstre", "stats": { "sangfroid": 1 } },
+      "successScene": "ch4_06_theo", "failScene": "ch4_06_theo"
+     }
+    },
+    {
+     "id": "ch4_05_c_parler", "text": "S’asseoir et recopier le mot avec elle.",
+     "tone": "chaleureux",
+     "effects": { "stats": { "empathie": 2 }, "rel": { "ysee": { "affinity": 14, "trust": 10 } }, "flags": { "celia_rencontree": true }, "clues": ["clue_celia_lucide"], "rewardId": "ch4_05" },
+     "next": "ch4_06_theo"
+    }
+   ]
+  },
+
+  "ch4_06_theo": {
+   "id": "ch4_06_theo", "chapter": 4, "route": "commune",
+   "title": "Ce que la lumière a pris",
+   "background": "bg_coeur_faille", "music": "music_revelation", "ambiance": "amb_faille",
+   "weather": "particles", "toneTarget": "theo",
+   "characters": [{ "id": "theo", "pose": "defensive", "expression": "exhausted", "state": "aura", "position": "center" }],
+   "speaker": "theo",
+   "lines": [
+    { "speaker": "theo", "text": "Tu es revenu. Bien. Je commence à oublier des choses, et j’aimerais autant les dire avant." },
+    { "speaker": "theo", "text": "J’ai oublié le prénom de notre mère mardi. Je l’ai retrouvé hier. Ça revient encore. Ça ne reviendra pas toujours.", "set": [{ "id": "theo", "expression": "vulnerable" }] },
+    { "text": "Il a le regard de quelqu’un qui range un appartement avant de partir.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch4_06_c_quatrieme", "text": "« Parle-moi de la quatrième voie. Maintenant. »",
+     "tone": "obstine",
+     "requires": { "flag": "quatrieme_voie" },
+     "secret": true, "revealIf": { "flag": "quatrieme_voie" },
+     "effects": { "clues": ["clue_dissolution_reciproque"], "deductions": ["ded_dissolution"], "routes": { "open": ["secret"] }, "rel": { "theo": { "trust": 20, "tension": 14 } }, "stats": { "perspicacite": 1 }, "rewardId": "ch4_06" },
+     "next": "ch4_07_deduction"
+    },
+    {
+     "id": "ch4_06_c_memoire", "text": "Lui raconter tout ce dont tu te souviens de votre enfance.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "theo": { "affinity": 26, "vulnerability": 24, "trust": 18, "memory": "mem_theo_enfance" } }, "stats": { "empathie": 2 }, "flags": { "theo_memoire_nourrie": true }, "rewardId": "ch4_06" },
+     "next": "ch4_07_deduction"
+    },
+    {
+     "id": "ch4_06_c_remplacer", "text": "« Et si c’était moi, la prochaine ancre ? »",
+     "tone": "sincere",
+     "effects": { "rel": { "theo": { "tension": 30, "affinity": 14, "vulnerability": 20 } }, "flags": { "envisage_sacrifice": true }, "routes": { "open": ["truth"] }, "stats": { "courage": 2 }, "rewardId": "ch4_06" },
+     "next": "ch4_07_deduction"
+    }
+   ]
+  },
+
+  "ch4_07_deduction": {
+   "id": "ch4_07_deduction", "chapter": 4, "route": "commune",
+   "title": "Le Premier Serment, mot à mot",
+   "background": "bg_archives_bureau_dark", "music": "music_tension", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "Tu as fini par le reconstituer. Pas dans les archives : sur les tables du marché noir, dans les formules d’occasion que personne n’a jamais pris la peine de relire.", "condition": { "clue": "clue_formule_ancre" } },
+    { "text": "Le Premier Serment n’est pas une chaîne. C’est un contrat à deux voix : la Faille promet de rester, l’ancre promet de tenir. Un contrat se rompt à deux." }
+   ],
+   "choices": [
+    {
+     "id": "ch4_07_c_ded", "text": "Il existe une manière de dissoudre le Premier Serment sans le remplacer.",
+     "tone": "obstine",
+     "deduction": {
+      "requires": { "all": [{ "any": [{ "clue": "clue_dissolution_reciproque" }, { "clue": "clue_quatrieme_voie" }] }, { "stat": "perspicacite", "op": ">=", "value": 7 }, { "any": [{ "clue": "clue_formule_ancre" }, { "clue": "clue_premier_serment" }] }] },
+      "successEffects": { "deductions": ["ded_dissolution"], "routes": { "open": ["secret"] }, "clues": ["clue_formule_dissolution"], "stats": { "perspicacite": 1 }, "achievement": "ach_quatrieme_voie" },
+      "failEffects": { "falseLead": "fl_dissolution_impossible", "stats": { "sangfroid": 1 } },
+      "successScene": "ch4_08_arrestation", "failScene": "ch4_08_arrestation"
+     }
+    },
+    {
+     "id": "ch4_07_c_abandon", "text": "Fermer les carnets. Tu n’as plus le temps de chercher.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 1 }, "rewardId": "ch4_07" },
+     "next": "ch4_08_arrestation"
+    }
+   ]
+  },
+
+  "ch4_08_arrestation": {
+   "id": "ch4_08_arrestation", "chapter": 4, "route": "commune",
+   "title": "Ils ont pris quelqu’un",
+   "background": "bg_ruelle_pluie", "music": "music_danger", "ambiance": "amb_pluie",
+   "weather": "rain",
+   "characters": [],
+   "lines": [
+    { "text": "À trois jours de la cérémonie, la Garde procède à quatorze arrestations préventives. Contrebande de serments, association de Rompus, entrave à consolidation.", "fx": "shake" },
+    { "text": "Parmi les quatorze, il y a quelqu’un que tu connais.", "sfx": "sfx_locked" }
+   ],
+   "nextIf": [
+    { "when": { "route": "kael" }, "scene": "ch4_09_choix" },
+    { "when": { "route": "coop" }, "scene": "ch4_09_choix" }
+   ],
+   "next": "ch4_09_choix"
+  },
+
+  "ch4_09_choix": {
+   "id": "ch4_09_choix", "chapter": 4, "route": "commune",
+   "title": "Point de non-retour",
+   "background": "bg_hall_vide", "music": "music_danger", "ambiance": null,
+   "autosave": true,
+   "characters": [{ "id": "damien", "pose": "neutral", "expression": "calm", "position": "center" }],
+   "speaker": "damien",
+   "lines": [
+    { "speaker": "damien", "text": "Quatorze personnes. Je peux en relâcher treize ce soir." },
+    { "speaker": "damien", "text": "En échange, vous montez sur l’estrade avec moi dans trois jours, et vous lisez le Premier Serment devant quatre cent mille personnes. Votre voix, pas la mienne. Un lecteur, pas un chancelier." },
+    { "speaker": "damien", "text": "Refusez, et je les garde tous les quatorze jusqu’à la cérémonie. Où ils seront, forcément, dans le Grand hall.", "set": [{ "id": "damien", "expression": "determined" }] },
+    { "text": "Ce n’est pas du chantage. C’est pire : c’est une offre honnête.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch4_09_c_accepter", "text": "Accepter. Monter sur l’estrade.",
+     "tone": "institutionnel", "irreversible": true,
+     "confirmText": "Tu deviens la voix du Grand Serment. Les routes de rupture se ferment. Continuer ?",
+     "effects": { "routes": { "open": ["opposition"], "lock": ["coop"] }, "rel": { "damien": { "trust": 24, "affinity": 16 }, "kael": { "distrust": 20, "tension": 20 }, "ysee": { "distrust": 24 } }, "factions": { "bureau": 26, "rompus": -26 }, "flags": { "estrade_acceptee": true }, "stats": { "influence": 2 }, "rewardId": "ch4_09" },
+     "next": "ch4_10_consequence"
+    },
+    {
+     "id": "ch4_09_c_refuser", "text": "Refuser. Et le lui dire en le regardant.",
+     "tone": "direct", "irreversible": true,
+     "confirmText": "Quatorze personnes resteront détenues jusqu’à la cérémonie. Continuer ?",
+     "effects": { "routes": { "close": ["opposition"] }, "rel": { "damien": { "tension": 26, "respect": 20, "affinity": -12 } }, "factions": { "bureau": -20, "rompus": 14 }, "flags": { "estrade_refusee": true }, "stats": { "integrite": 2, "courage": 1 }, "rewardId": "ch4_09" },
+     "next": "ch4_10_consequence"
+    },
+    {
+     "id": "ch4_09_c_double", "text": "Accepter — et prévoir de dire autre chose sur l’estrade.",
+     "tone": "negociateur", "irreversible": true,
+     "requires": { "all": [{ "stat": "ingeniosite", "op": ">=", "value": 6 }, { "stat": "sangfroid", "op": ">=", "value": 5 }] },
+     "lockedHint": "Tu n’as pas les nerfs pour tenir un mensonge de trois jours devant cet homme.",
+     "confirmText": "Si tu échoues, tu perds tout le monde en même temps. Continuer ?",
+     "effects": { "routes": { "open": ["truth"] }, "rel": { "damien": { "trust": 18 } }, "flags": { "estrade_piegee": true }, "stats": { "ingeniosite": 1 }, "deferred": [{ "id": "def_estrade_piegee", "chapter": 5, "when": { "flag": "estrade_piegee" }, "effects": { "stats": { "sangfroid": 1 } }, "note": "Trois jours de mensonge t’ont appris à tenir ton visage." }], "rewardId": "ch4_09" },
+     "next": "ch4_10_consequence"
+    },
+    {
+     "id": "ch4_09_c_secret", "text": "« Il existe une quatrième voie, chancelier. Et vous le savez depuis le début. »",
+     "tone": "provocateur", "secret": true,
+     "revealIf": { "deduction": "ded_dissolution" },
+     "requires": { "all": [{ "deduction": "ded_dissolution" }, { "route": "secret" }] },
+     "effects": { "routes": { "open": ["secret"] }, "rel": { "damien": { "tension": 30, "respect": 26, "vulnerability": 16 } }, "flags": { "secret_revele_damien": true }, "clues": ["clue_damien_savait"], "achievement": "ach_face_a_face", "rewardId": "ch4_09" },
+     "next": "ch4_10_consequence"
+    }
+   ]
+  },
+
+  "ch4_10_consequence": {
+   "id": "ch4_10_consequence", "chapter": 4, "route": "commune",
+   "title": "Ce que ça coûte",
+   "background": "bg_quai_rompus_night", "music": "music_emotion", "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    { "text": "Treize personnes sortent du dépôt à minuit. Elles ne savent pas ce que tu as échangé contre elles, et tu ne le leur diras jamais.", "condition": { "any": [{ "flag": "estrade_acceptee" }, { "flag": "estrade_piegee" }] } },
+    { "text": "Quatorze cellules restent fermées. Tu passes devant le dépôt trois fois cette nuit-là sans t’arrêter.", "condition": { "flag": "estrade_refusee" } },
+    { "text": "La ville continue de repeindre le Grand hall.", "thought": true }
+   ],
+   "next": "ch4_11_veille"
+  },
+
+  "ch4_11_veille": {
+   "id": "ch4_11_veille", "chapter": 4, "route": "commune",
+   "title": "La veille",
+   "background": "bg_pont_confluence_night", "music": "music_romance", "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    { "text": "La veille de la cérémonie, le pont de la Confluence est désert. C’est là que tout a commencé, il y a cinq semaines, avec un homme assis contre un garde-corps." },
+    { "text": "Tu ne sais pas encore ce que tu vas faire demain. Tu sais avec qui tu voudrais être ce soir.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch4_11_c_kael", "text": "Kaël.",
+     "tone": "chaleureux",
+     "requires": { "rel": "kael", "field": "affinity", "op": ">=", "value": 30 },
+     "lockedHint": "Il ne viendrait pas.",
+     "effects": { "rel": { "kael": { "affinity": 16, "attraction": 16, "vulnerability": 14, "memory": "mem_kael_veille" } }, "routes": { "open": ["kael"] }, "promises": { "prom_kael_revenir": "made" }, "sfx": "sfx_promise", "rewardId": "ch4_11" },
+     "next": "ch4_12_fin"
+    },
+    {
+     "id": "ch4_11_c_noam", "text": "Noam.",
+     "tone": "sincere",
+     "requires": { "rel": "noam", "field": "affinity", "op": ">=", "value": 30 },
+     "lockedHint": "Il est de service. Ou il ne veut plus te voir.",
+     "effects": { "rel": { "noam": { "affinity": 16, "attraction": 16, "vulnerability": 14, "memory": "mem_noam_veille" } }, "routes": { "open": ["noam"] }, "rewardId": "ch4_11" },
+     "next": "ch4_12_fin"
+    },
+    {
+     "id": "ch4_11_c_ysee", "text": "Ysée, à la clinique, jusqu’au matin.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "ysee": { "affinity": 14, "trust": 14 } }, "routes": { "open": ["coop"] }, "stats": { "empathie": 1 }, "rewardId": "ch4_11" },
+     "next": "ch4_12_fin"
+    },
+    {
+     "id": "ch4_11_c_seul", "text": "Seul, sur le pont, jusqu’au jour.",
+     "tone": "distant",
+     "effects": { "stats": { "sangfroid": 2 }, "flags": { "veille_seul": true }, "rewardId": "ch4_11" },
+     "next": "ch4_12_fin"
+    }
+   ]
+  },
+
+  "ch4_12_fin": {
+   "id": "ch4_12_fin", "chapter": 4, "route": "commune",
+   "title": "Fin du chapitre IV",
+   "background": "bg_hall_vide", "music": "music_danger", "ambiance": null,
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    { "text": "Six heures du matin. Les portes du Grand hall s’ouvrent. Les gradins se remplissent par quartiers, dans l’ordre alphabétique des rues." },
+    { "text": "Sur l’estrade, sept anneaux de bronze ont été descendus au niveau des mains.", "fx": "impact" },
+    { "text": "Tout ce que tu as promis, refusé, brisé ou tu depuis cinq semaines va se présenter en même temps, dans la même salle.", "thought": true, "sfx": "sfx_chapter" }
+   ],
+   "next": "ch5_01_hall"
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "dimensions": {
+  "affinity": { "label": "Affinité", "min": -100, "max": 100, "note": "Sympathie générale. Peut devenir négative." },
+  "trust": { "label": "Confiance", "min": 0, "max": 100, "note": "Ce que le personnage est prêt à te confier." },
+  "distrust": { "label": "Méfiance", "min": 0, "max": 100, "note": "Indépendante de la confiance : on peut apprécier quelqu’un et s’en méfier." },
+  "respect": { "label": "Respect", "min": 0, "max": 100, "note": "Estime professionnelle et morale." },
+  "tension": { "label": "Tension", "min": 0, "max": 100, "note": "Conflit latent. Alimente aussi bien la rupture que l’attirance." },
+  "vulnerability": { "label": "Vulnérabilité partagée", "min": 0, "max": 100, "note": "Ce que vous avez laissé voir l’un à l’autre." },
+  "attraction": { "label": "Attraction", "min": 0, "max": 100, "note": "Uniquement pour les personnages romançables." }
+ },
+ "arcs": {
+  "kael": {
+   "romanceable": true,
+   "gates": [
+    { "chapter": 2, "requires": { "rel": "kael", "field": "affinity", "op": ">=", "value": 30 } },
+    { "chapter": 4, "requires": { "all": [{ "rel": "kael", "field": "affinity", "op": ">=", "value": 45 }, { "rel": "kael", "field": "attraction", "op": ">=", "value": 25 }] } }
+   ],
+   "note": "Kaël réagit à la loyauté concrète, pas aux déclarations. La tension élevée ne le fait pas fuir ; le mépris institutionnel, si."
+  },
+  "noam": {
+   "romanceable": true,
+   "gates": [
+    { "chapter": 2, "requires": { "rel": "noam", "field": "trust", "op": ">=", "value": 30 } },
+    { "chapter": 4, "requires": { "all": [{ "rel": "noam", "field": "affinity", "op": ">=", "value": 45 }, { "rel": "noam", "field": "attraction", "op": ">=", "value": 25 }] } }
+   ],
+   "note": "Noam s’ouvre par la vérité, pas par la douceur. Un mensonge découvert coûte durablement."
+  },
+  "ysee": { "romanceable": false, "note": "Alliance. Se gagne par des actes envers ses patients, jamais par des promesses verbales." },
+  "damien": { "romanceable": false, "note": "Antagoniste. Le respect monte quand on le contredit avec des faits ; la confiance monte quand on accepte son arithmétique." },
+  "theo": { "romanceable": false, "note": "Lien fraternel. La mémoire partagée le maintient lucide plus longtemps." }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "endings": {
+  "e1_deux_ombres": {
+   "code": "Fin I — route Kaël",
+   "title": "Deux ombres sur le pont",
+   "cg": "cg_kael_serment_partage",
+   "text": "Vous n’avez rien juré. Vous vous le redites chaque matin, et c’est exactement pour ça que ça tient.",
+   "summary": "Route romantique de Kaël Ravier. Ilan choisit un lien qui se renouvelle au lieu d’un lien qui contraint.",
+   "hint": "Une affection réciproque, choisie explicitement, et une promesse qu’aucune Faille n’a entendue."
+  },
+  "e2_loi_et_homme": {
+   "code": "Fin II — route Noam",
+   "title": "La loi et l’homme",
+   "cg": "cg_noam_aveu_pluie",
+   "text": "Il a rendu ses sept anneaux et gardé la seule promesse qui lui coûtait : celle de tout te dire.",
+   "summary": "Route romantique de Noam Sardou. L’institution est réformée de l’intérieur par celui qui l’avait servie aveuglément.",
+   "hint": "Une confiance construite sur des vérités désagréables, et un pacte tenu jusqu’au bout."
+  },
+  "e3_main_creuse": {
+   "code": "Fin III — coopération",
+   "title": "La Main Creuse",
+   "cg": "cg_aube_sans_serment",
+   "text": "La Faille est toujours là. Personne n’y monte seul, et personne n’en redescend sans que quelqu’un l’attende.",
+   "summary": "Route de coopération avec Ysée et le réseau des Rompus. Aucune solution définitive, mais une communauté qui tient.",
+   "hint": "Faire passer les patients d’Ysée avant l’enquête, puis avant soi-même."
+  },
+  "e4_grand_serment": {
+   "code": "Fin IV — opposition",
+   "title": "Le Grand Serment",
+   "cg": "cg_grand_serment",
+   "text": "Quatre cent mille sauvés. Deux cents morts. Une plaque sur le quai bas, et personne pour discuter le calcul.",
+   "summary": "Route d’opposition. Ilan prête sa voix au projet du chancelier et assume l’arithmétique jusqu’au bout.",
+   "hint": "Accepter l’estrade, et lire la formule devant trois mille personnes."
+  },
+  "e5_ce_qui_reste": {
+   "code": "Fin V — vérité",
+   "title": "Ce qui reste de Théo",
+   "cg": "cg_theo_revelation_ancre",
+   "text": "La ville sait. Ce n’est pas une victoire : c’est la première fois qu’elle peut refuser en connaissance de cause.",
+   "summary": "Route de la vérité. Le mensonge fondateur est rendu public ; quelqu’un monte dans la lumière, volontairement.",
+   "hint": "Interrompre la cérémonie avec des preuves, et trouver qui prendra la place."
+  },
+  "e6_aube_sans_serment": {
+   "code": "Fin VI — route secrète",
+   "title": "L’Aube sans serment",
+   "cg": "cg_aube_sans_serment",
+   "text": "Le Premier Serment a été rendu, à deux voix. Vaurance a tout perdu de ce qui la tenait, et a dû réapprendre.",
+   "summary": "Route secrète. La dissolution réciproque libère la ville de tous ses serments — y compris des bons.",
+   "hint": "Déduire la quatrième voie, avec une perspicacité élevée et une intégrité intacte."
+  },
+  "bad_nom_efface": {
+   "code": "Fin sombre",
+   "title": "Le nom effacé",
+   "cg": "cg_ilan_rompu",
+   "text": "Tu avais juré à voix haute d’aller jusqu’au bout. La Faille écoutait.",
+   "summary": "Ilan brise le serment qu’il s’était fait à lui-même et devient Rompu.",
+   "hint": "Prononcer une promesse à soi-même dans le prologue, puis ne rien faire au moment décisif."
+  },
+  "bad_faille_ne_pardonne": {
+   "code": "Fin sombre",
+   "title": "La Faille ne pardonne pas",
+   "text": "Tu as tout compris et tu es resté assis.",
+   "summary": "Ilan assiste sans agir au Grand Serment. Deux cents personnes meurent, dont Célia.",
+   "hint": "Refuser d’intervenir au chapitre V."
+  }
+ }
+}

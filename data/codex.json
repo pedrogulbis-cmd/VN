@@ -1,0 +1,16 @@
+{
+ "entries": [
+  { "id": "cod_faille", "always": true, "title": "La Faille", "text": "Ouverte il y a dix-neuf ans au-dessus du confluent, elle ne rejette rien et n’absorbe rien de matériel. Elle entend les serments prononcés à moins de deux kilomètres, et les rend contraignants." },
+  { "id": "cod_serment", "always": true, "title": "Serment contraignant", "text": "Une parole donnée près de la Faille pèse physiquement. La rompre coûte : d’abord des extrémités, puis des souvenirs, puis le nom. On appelle Rompus ceux qui survivent à cette perte." },
+  { "id": "cod_bureau", "title": "Le Bureau des Serments", "text": "Administration créée trois mois après l’ouverture. Enregistre, arbitre, scelle. Sept niveaux officiels, un huitième bouton dans l’ascenseur." },
+  { "id": "cod_marche", "title": "Le marché des serments", "text": "Sous les arches du quai bas. On y échange des engagements privés, des formules d’occasion et des ruptures négociées. Toléré, jamais légalisé." },
+  { "id": "cod_main_creuse", "title": "La Main Creuse", "text": "Réseau informel de Rompus et de soignants. Pas de chef, pas de doctrine, une règle : personne ne meurt seul." },
+  { "id": "cod_premier_serment", "title": "Le Premier Serment", "text": "Prononcé il y a dix-neuf ans par sept personnes. Contrat à deux voix : la Faille promet de rester en surface, une ancre promet de la tenir." },
+  { "id": "cod_ancre", "title": "L’Ancre", "text": "Personne vivante à qui la Faille s’attache. Tient trois à quatre ans avant de se dissoudre. Quand elle faiblit, la Faille se sert ailleurs : ce sont les ruptures spontanées." },
+  { "id": "cod_niveau_zero", "title": "Le niveau zéro", "text": "Salle circulaire sous le Bureau, ouverte sur la Faille. Sept stèles, sept noms, six ratures." },
+  { "id": "cod_lignee_ancres", "title": "La lignée des ancres", "text": "Six ancres en dix-neuf ans. Aucune n’a dépassé quatre ans. Aucune n’a eu de funérailles publiques." },
+  { "id": "cod_grand_serment", "title": "Le Grand Serment", "text": "Projet du chancelier Vaugrise-Loret : répartir la charge de la Faille sur toute la population. Supprime le besoin d’ancre. Lie définitivement quatre cent mille personnes et tue les Rompus déjà détachés." },
+  { "id": "cod_trois_options", "title": "Les trois issues connues", "text": "Remplacer l’ancre, prononcer le Grand Serment, ou laisser la Faille descendre. Aucune n’est acceptable ; toutes sont possibles." },
+  { "id": "cod_celia", "title": "Célia Vaugrise-Loret", "text": "Vingt-trois ans, Rompue depuis huit mois, hospitalisée chez Ysée Marchand. A perdu son nom en février. Son père vient tous les mardis, quarante minutes." }
+ ]
+}

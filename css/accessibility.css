@@ -1,0 +1,45 @@
+/* Réglages d'accessibilité appliqués sur <html>. */
+.reduce-motion *, .no-transitions * {
+  animation-duration: .001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .001ms !important;
+  scroll-behavior: auto !important;
+}
+.no-transitions .bg { transition: none !important; }
+.reduce-motion .fx-layer { display: none; }
+.reduce-motion .dialogue__next { animation: none; opacity: .8; }
+
+.high-contrast {
+  --paper: #ffffff;
+  --paper-dim: #dfe4ee;
+  --line: rgba(255, 214, 120, .7);
+  --night: #000208;
+}
+.high-contrast .dialogue {
+  background: #000208;
+  border-top: 2px solid var(--gold);
+}
+.high-contrast .choice { background: #000208; border-color: #ffd678; }
+.high-contrast .sprite.inactive { filter: brightness(.5); }
+.high-contrast .bg { filter: contrast(.75) brightness(.6); }
+
+.font-dyslexic, .font-dyslexic body {
+  --font-body: "Atkinson Hyperlegible", "Verdana", "Tahoma", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Atkinson Hyperlegible", "Verdana", "Tahoma", ui-sans-serif, system-ui, sans-serif;
+}
+.font-dyslexic .dialogue__text,
+.font-dyslexic .choice { letter-spacing: .035em; word-spacing: .13em; line-height: 1.78; }
+.font-dyslexic .dialogue.narration .dialogue__text { font-style: normal; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* Cibles tactiles garanties */
+button, .btn, .tab, .choice, .icon-btn, .pc-btn { touch-action: manipulation; }
+@media (pointer: coarse) {
+  .choice { min-height: 56px; }
+}

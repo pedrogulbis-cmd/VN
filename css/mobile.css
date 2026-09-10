@@ -1,0 +1,20 @@
+/* Disposition téléphone : lecture au pouce, cibles ≥48px, une colonne. */
+.dialogue { min-height: 36vh; padding-bottom: calc(1.4rem + var(--safe-b)); }
+.dialogue__text { max-width: none; min-height: 5.2em; }
+.sprite { height: 74%; }
+.characters { bottom: 0; }
+.title__name { font-size: calc(2.1rem * var(--text-scale)); }
+.title__menu { grid-template-columns: 1fr 1fr; }
+.title__menu .btn--major { grid-column: 1 / -1; }
+.choices { max-height: 68vh; }
+.panel { padding: 0; }
+.panel__box { border-radius: 0; border: 0; height: 100%; }
+.stat-row { grid-template-columns: 6.8rem 1fr; }
+.rel-row { grid-template-columns: 7.4rem 1fr 3ch; }
+.pc-row { grid-template-columns: 6.4rem 40px 3ch 40px; }
+.pc-row__hint { grid-column: 1 / -1; }
+.set-row { grid-template-columns: 1fr auto; }
+.set-row input[type="range"] { grid-column: 1 / -1; width: 100%; max-width: none; }
+.gallery { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+.hud__right { gap: .25rem; }
+.icon-btn { width: 44px; height: 44px; }

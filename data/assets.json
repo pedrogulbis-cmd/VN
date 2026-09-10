@@ -1,0 +1,210 @@
+{
+ "backgrounds": {
+  "bg_pont_confluence_night": {
+   "path": "assets/backgrounds/bg_pont_confluence_night.webp",
+   "label": "Pont de la Confluence, nuit"
+  },
+  "bg_pont_confluence_dawn": {
+   "path": "assets/backgrounds/bg_pont_confluence_dawn.webp",
+   "label": "Pont de la Confluence, aube"
+  },
+  "bg_archives_bureau": {
+   "path": "assets/backgrounds/bg_archives_bureau.webp",
+   "label": "Salle des archives du Bureau"
+  },
+  "bg_archives_bureau_dark": {
+   "path": "assets/backgrounds/bg_archives_bureau_dark.webp",
+   "label": "Archives du Bureau, coupure de courant"
+  },
+  "bg_grand_hall_bureau": {
+   "path": "assets/backgrounds/bg_grand_hall_bureau.webp",
+   "label": "Grand hall du Bureau des Serments"
+  },
+  "bg_quai_rompus_night": {
+   "path": "assets/backgrounds/bg_quai_rompus_night.webp",
+   "label": "Quai des Rompus, nuit"
+  },
+  "bg_quai_rompus_dawn": {
+   "path": "assets/backgrounds/bg_quai_rompus_dawn.webp",
+   "label": "Quai des Rompus, aube"
+  },
+  "bg_clinique_ysee": {
+   "path": "assets/backgrounds/bg_clinique_ysee.webp",
+   "label": "Clinique d'Ysée, sous-sol"
+  },
+  "bg_appartement_ilan": {
+   "path": "assets/backgrounds/bg_appartement_ilan.webp",
+   "label": "Appartement d'Ilan"
+  },
+  "bg_ruelle_pluie": {
+   "path": "assets/backgrounds/bg_ruelle_pluie.webp",
+   "label": "Ruelle de la Basse-Ville sous la pluie"
+  },
+  "bg_toit_orage": {
+   "path": "assets/backgrounds/bg_toit_orage.webp",
+   "label": "Toit du Bureau, orage"
+  },
+  "bg_marche_serments": {
+   "path": "assets/backgrounds/bg_marche_serments.webp",
+   "label": "Marché noir des serments"
+  },
+  "bg_coeur_faille": {
+   "path": "assets/backgrounds/bg_coeur_faille.webp",
+   "label": "Cœur de la Faille"
+  },
+  "bg_chambre_ancre": {
+   "path": "assets/backgrounds/bg_chambre_ancre.webp",
+   "label": "Chambre de l'Ancre"
+  },
+  "bg_faille_embrasee": {
+   "path": "assets/backgrounds/bg_faille_embrasee.webp",
+   "label": "Cœur de la Faille embrasé"
+  },
+  "bg_hall_vide": {
+   "path": "assets/backgrounds/bg_hall_vide.webp",
+   "label": "Grand hall évacué"
+  },
+  "bg_noir": {
+   "path": "assets/backgrounds/bg_noir.webp",
+   "label": "Écran noir narratif"
+  }
+ },
+ "cg": {
+  "cg_kael_serment_partage": {
+   "path": "assets/cg/cg_kael_serment_partage.webp",
+   "title": "Kaël et Ilan scellent un serment partagé sur le pont",
+   "alt": "Kaël tient le poignet d'Ilan au-dessus du garde-corps ; un fil de lumière cyan relie leurs avant-bras, la pluie s'immobilise autour d'eux.",
+   "character": "kael"
+  },
+  "cg_noam_aveu_pluie": {
+   "path": "assets/cg/cg_noam_aveu_pluie.webp",
+   "title": "Noam avoue à Ilan sous la pluie, uniforme ouvert",
+   "alt": "Noam, tête nue, uniforme dégrafé, tend son insigne à Ilan sous une averse dorée par les lampadaires.",
+   "character": "noam"
+  },
+  "cg_theo_revelation_ancre": {
+   "path": "assets/cg/cg_theo_revelation_ancre.webp",
+   "title": "Révélation : Théo suspendu au cœur de la Faille",
+   "alt": "Théo flotte au centre d'un anneau de lumière, les veines cyan courant sur tout son corps, Ilan à genoux sous lui.",
+   "character": "theo"
+  },
+  "cg_grand_serment": {
+   "path": "assets/cg/cg_grand_serment.webp",
+   "title": "Le Grand Serment embrase le Grand hall",
+   "alt": "Damien lève les bras au centre du hall, sept cents fils dorés convergent vers lui, la foule agenouillée.",
+   "character": "damien"
+  },
+  "cg_ilan_rompu": {
+   "path": "assets/cg/cg_ilan_rompu.webp",
+   "title": "Ilan Rompu, son nom s'efface",
+   "alt": "Ilan vu de dos face à un miroir brisé où son reflet perd ses traits, lettres de son nom se détachant en cendres.",
+   "character": null
+  },
+  "cg_aube_sans_serment": {
+   "path": "assets/cg/cg_aube_sans_serment.webp",
+   "title": "L'aube sans serment sur la ville libérée",
+   "alt": "La Faille refermée en cicatrice lumineuse au-dessus de la ville à l'aube, silhouettes sur le pont, aucun fil de lumière.",
+   "character": null
+  }
+ },
+ "audio": {
+  "music": {
+   "music_menu": {
+    "path": "assets/audio/music_menu.ogg",
+    "label": "Thème du menu : nappe froide, arpège cyan, lent",
+    "duration": 52
+   },
+   "music_calm": {
+    "path": "assets/audio/music_calm.ogg",
+    "label": "Thème calme : piano feutré, tenue grave",
+    "duration": 48
+   },
+   "music_romance": {
+    "path": "assets/audio/music_romance.ogg",
+    "label": "Thème romantique : cordes chaudes, motif ascendant",
+    "duration": 50
+   },
+   "music_tension": {
+    "path": "assets/audio/music_tension.ogg",
+    "label": "Thème de tension : ostinato bas, pulsation irrégulière",
+    "duration": 44
+   },
+   "music_danger": {
+    "path": "assets/audio/music_danger.ogg",
+    "label": "Thème de danger : cluster grave, percussion sèche",
+    "duration": 40
+   },
+   "music_emotion": {
+    "path": "assets/audio/music_emotion.ogg",
+    "label": "Thème émotionnel : nappe majeure suspendue",
+    "duration": 50
+   },
+   "music_revelation": {
+    "path": "assets/audio/music_revelation.ogg",
+    "label": "Thème de révélation : montée harmonique, cloche",
+    "duration": 46
+   },
+   "music_ending": {
+    "path": "assets/audio/music_ending.ogg",
+    "label": "Thème de fin : résolution lente, aigus cristallins",
+    "duration": 56
+   }
+  },
+  "ambiance": {
+   "amb_pluie": {
+    "path": "assets/audio/amb_pluie.ogg",
+    "label": "Pluie continue sur pierre",
+    "duration": 30
+   },
+   "amb_faille": {
+    "path": "assets/audio/amb_faille.ogg",
+    "label": "Bourdon de la Faille, souffle harmonique",
+    "duration": 30
+   },
+   "amb_ville_nuit": {
+    "path": "assets/audio/amb_ville_nuit.ogg",
+    "label": "Ville nocturne lointaine, eau du fleuve",
+    "duration": 30
+   }
+  },
+  "sfx": {
+   "sfx_confirm": {
+    "path": "assets/audio/sfx_confirm.ogg",
+    "label": "Validation : clic cristallin court",
+    "duration": 0.35
+   },
+   "sfx_locked": {
+    "path": "assets/audio/sfx_locked.ogg",
+    "label": "Choix verrouillé : sourd, mat",
+    "duration": 0.3
+   },
+   "sfx_discovery": {
+    "path": "assets/audio/sfx_discovery.ogg",
+    "label": "Découverte d'indice : arpège ascendant",
+    "duration": 0.9
+   },
+   "sfx_menu": {
+    "path": "assets/audio/sfx_menu.ogg",
+    "label": "Ouverture de menu : souffle bref",
+    "duration": 0.4
+   },
+   "sfx_chapter": {
+    "path": "assets/audio/sfx_chapter.ogg",
+    "label": "Changement de chapitre : cloche grave",
+    "duration": 1.8
+   },
+   "sfx_promise": {
+    "path": "assets/audio/sfx_promise.ogg",
+    "label": "Serment scellé : résonance métallique",
+    "duration": 1.4
+   }
+  }
+ },
+ "ui": {
+  "dialogue-frame": "assets/ui/dialogue-frame.webp",
+  "favicon": "assets/ui/favicon.svg",
+  "icon": "assets/ui/icon.webp",
+  "share": "assets/ui/share.webp",
+  "title-bg": "assets/ui/title-bg.webp"
+ }
+}

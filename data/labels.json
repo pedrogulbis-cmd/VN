@@ -1,0 +1,268 @@
+{
+ "panels": {
+  "menu": "Menu", "stats": "Statistiques", "relations": "Relations", "clues": "Indices",
+  "deductions": "Déductions", "promises": "Promesses", "journal": "Journal des décisions",
+  "history": "Historique des scènes", "codex": "Codex", "gallery": "Galerie",
+  "endings": "Fins", "achievements": "Succès", "saves": "Sauvegardes",
+  "settings": "Paramètres", "credits": "Crédits"
+ },
+
+ "tones": {
+  "methodique": "méthodique", "ironique": "ironique", "obstine": "obstiné",
+  "respectueux": "respectueux", "provocateur": "provocateur", "distant": "distant",
+  "chaleureux": "chaleureux", "sincere": "sincère", "direct": "direct",
+  "institutionnel": "institutionnel", "negociateur": "négociateur",
+  "prudent": "prudent", "complice": "complice"
+ },
+
+ "stats": {
+  "courage": "Courage", "empathie": "Empathie", "perspicacite": "Perspicacité",
+  "influence": "Influence", "sangfroid": "Sang-froid", "ingeniosite": "Ingéniosité",
+  "integrite": "Intégrité"
+ },
+
+ "rel": {
+  "affinity": "Affinité", "trust": "Confiance", "distrust": "Méfiance",
+  "respect": "Respect", "tension": "Tension", "vulnerability": "Vulnérabilité partagée",
+  "attraction": "Attraction"
+ },
+
+ "chars": {
+  "kael": "Kaël Ravier", "noam": "Noam Sardou", "ysee": "Ysée Marchand",
+  "damien": "Damien Vaugrise-Loret", "theo": "Théo Vasseur"
+ },
+
+ "statHints": {
+  "courage": "Affronter, s’interposer, rester.",
+  "empathie": "Lire les gens, être supporté par eux.",
+  "perspicacite": "Relier les indices, ouvrir les déductions difficiles.",
+  "influence": "Obtenir des choses de l’institution et de la foule.",
+  "sangfroid": "Tenir un mensonge, résister à un choix chronométré.",
+  "ingeniosite": "Forcer, contourner, improviser.",
+  "integrite": "Ce que tu tiens. Ouvre la voie la plus étroite."
+ },
+
+ "statDrawbacks": {
+  "courage": "Courage élevé : tu t’interposes avant d’avoir compris, et certains alliés ne te préviennent plus.",
+  "empathie": "Empathie élevée : tu portes des douleurs qui ne sont pas les tiennes et tu décides plus lentement.",
+  "perspicacite": "Perspicacité élevée : tu conclus avant que les gens aient fini de parler, ce qui blesse Théo et braque Noam.",
+  "influence": "Influence élevée : le Bureau te croit des siens, et les Rompus aussi finissent par le croire.",
+  "sangfroid": "Sang-froid élevé : ton calme passe pour de l’indifférence au pire moment.",
+  "ingeniosite": "Ingéniosité élevée : tu forces des portes qui gardaient quelque chose pour une raison.",
+  "integrite": "Intégrité élevée : tu refuses les compromis qui auraient sauvé quelqu’un."
+ },
+
+ "clues": {
+  "clue_dernier_mot": "Les derniers mots d’Ourdan",
+  "clue_rupture_forcee": "Traces de rupture forcée",
+  "clue_fiole_verte": "La fiole verte",
+  "clue_nom_efface": "Un nom effacé du registre",
+  "clue_sceau_sept": "Le sceau à sept anneaux",
+  "clue_serie_rompus": "Onze Rompus en dix-huit mois",
+  "clue_suspension": "Suspension de sève de Faille",
+  "clue_chaine_damien": "La chaîne d’office du chancelier",
+  "clue_trois_lecteurs": "Trois lecteurs avant toi",
+  "clue_lecteur_disparu": "Le lecteur jamais retrouvé",
+  "clue_acheteur_masque": "L’acheteur masqué du marché",
+  "clue_formule_ancre": "Une formule d’ancrage d’occasion",
+  "clue_surveillance": "Quelqu’un te surveille au marché",
+  "clue_labo_fantome": "Un laboratoire qui n’existe pas",
+  "clue_cicatrice_kael": "La cicatrice de Kaël",
+  "clue_bottes_garde": "Bottes réglementaires de la Garde",
+  "clue_ordre_verbal": "Un ordre donné sans écrit",
+  "clue_perte_nom": "La perte du nom chez Line",
+  "clue_ordre_six_ans": "Une signature d’il y a six ans",
+  "clue_grand_serment": "Le projet de Grand Serment",
+  "clue_liste_deux_cents": "Les deux cents Rompus vivants",
+  "clue_reaction_theo": "La réaction du chancelier au nom de Théo",
+  "clue_pouls_manteau": "Un pouls dans le manteau de Théo",
+  "clue_premier_serment": "Le Premier Serment",
+  "clue_frere_lumiere": "La lumière l’appelle « frère »",
+  "clue_temoignage_line": "Le témoignage de Line",
+  "clue_ancre_humaine": "Il y a un homme dedans",
+  "clue_niveau_zero": "Le huitième bouton",
+  "clue_kael_connait_bureau": "Kaël connaît le Bureau de l’intérieur",
+  "clue_ordre_signe_noam": "L’ordre de scellement signé Sardou",
+  "clue_acces_niveau_zero": "Un accès au niveau zéro",
+  "clue_kael_dernier_temoin": "Kaël est le dernier à avoir vu Théo",
+  "clue_interieur_faille": "Ce qu’on entend dans la Faille",
+  "clue_voix_theo": "Une voix qui connaît ton prénom",
+  "clue_fiole_reagit": "La fiole réagit à la Faille",
+  "clue_pourquoi_ilan": "Pourquoi toi",
+  "clue_sept_steles": "Sept stèles, six ratures",
+  "clue_six_ancres": "Les six ancres précédentes",
+  "clue_nom_theo_stele": "Le septième nom",
+  "clue_theo_ancre": "Théo est l’Ancre",
+  "clue_temps_theo": "Le temps qu’il reste à Théo",
+  "clue_fuites_ancre": "Les Rompus sont des fuites",
+  "clue_trois_options": "Les trois issues",
+  "clue_quatrieme_voie": "Il existe une quatrième voie",
+  "clue_fille_damien": "Célia Vaugrise-Loret",
+  "clue_alliance_noire": "L’alliance noire du chancelier",
+  "clue_damien_mardis": "Le chancelier vient tous les mardis",
+  "clue_celia_lucide": "Célia recopie son prénom",
+  "clue_damien_volontaire": "Le chancelier s’est réservé une place",
+  "clue_dissolution_reciproque": "Un contrat se rompt à deux",
+  "clue_formule_dissolution": "La formule de dissolution",
+  "clue_damien_savait": "Le chancelier savait",
+  "clue_ville_sait": "La ville sait",
+  "clue_ville_deliee": "Une ville entièrement déliée"
+ },
+
+ "clueDetails": {
+  "clue_dernier_mot": { "title": "Les derniers mots d’Ourdan", "text": "« Ils ont pris le nom. » Prononcé alors que sa main gauche était déjà translucide.", "source": "Pont de la Confluence" },
+  "clue_rupture_forcee": { "title": "Traces de rupture forcée", "text": "Les résidus de serment sur ses poignets sont déchirés, pas dénoués. Une rupture volontaire laisse une coupe nette.", "source": "Lecture du corps" },
+  "clue_fiole_verte": { "title": "La fiole verte", "text": "Contenant de laboratoire sans étiquette, verre épais, bouchon scellé à la cire. Le liquide est trouble et lourd.", "source": "Kaël Ravier" },
+  "clue_nom_efface": { "title": "Un nom effacé du registre", "text": "Ourdan est enregistré comme Rompu, sans aucun serment enregistré. On ne rompt pas ce qu’on n’a jamais prêté.", "source": "Registre central" },
+  "clue_sceau_sept": { "title": "Le sceau à sept anneaux", "text": "Onze dossiers clos en dix-huit mois portent le même sceau : sept anneaux imbriqués, réservé au cabinet du chancelier.", "source": "Registre central" },
+  "clue_serie_rompus": { "title": "Onze Rompus en dix-huit mois", "text": "Aucun lien apparent entre eux : âges, quartiers, métiers différents. Un seul point commun, la date d’inscription au Bureau.", "source": "Liste annuelle" },
+  "clue_suspension": { "title": "Suspension de sève de Faille", "text": "Produit stable, dosé, injectable. Il faut un laboratoire, une chaîne du froid et une autorisation d’accès à la Faille.", "source": "Ysée Marchand" },
+  "clue_chaine_damien": { "title": "La chaîne d’office du chancelier", "text": "Sept maillons. Le troisième porte une gravure identique au sceau des dossiers clos.", "source": "Grand hall" },
+  "clue_trois_lecteurs": { "title": "Trois lecteurs avant toi", "text": "Un démissionnaire, une mutation à Sablières, une disparition.", "source": "Noam Sardou" },
+  "clue_lecteur_disparu": { "title": "Le lecteur jamais retrouvé", "text": "Elle s’appelait Maryse Hénon. Son dossier est clos au sceau à sept anneaux.", "source": "Noam Sardou" },
+  "clue_acheteur_masque": { "title": "L’acheteur masqué du marché", "text": "Un homme paye en jetons du Bureau, achète toujours les mêmes formules d’ancrage, et vient le mardi.", "source": "Indicateur du quai bas" },
+  "clue_formule_ancre": { "title": "Une formule d’ancrage d’occasion", "text": "Formule à deux voix : l’une donne, l’autre reçoit, et chacune peut reprendre. Vendue comme un contrat de mariage bon marché.", "source": "Marché des serments" },
+  "clue_surveillance": { "title": "Quelqu’un te surveille au marché", "text": "Deux hommes qui ne négocient rien et qui se relaient toutes les vingt minutes.", "source": "Observation" },
+  "clue_labo_fantome": { "title": "Un laboratoire qui n’existe pas", "text": "Adresse au cadastre : entrepôt désaffecté. Consommation électrique : celle d’un hôpital.", "source": "Kaël Ravier" },
+  "clue_cicatrice_kael": { "title": "La cicatrice de Kaël", "text": "Rupture ancienne, cautérisée, sur tout l’avant-bras gauche. Il a survécu à ce qui tue les autres en quarante minutes.", "source": "Observation" },
+  "clue_bottes_garde": { "title": "Bottes réglementaires de la Garde", "text": "Semelle à sept crans, modèle non commercialisé. Les trois hommes de la ruelle en portaient.", "source": "Ruelle de la Basse-Ville" },
+  "clue_ordre_verbal": { "title": "Un ordre donné sans écrit", "text": "Ils connaissaient ton matricule et ils n’avaient aucun mandat à présenter.", "source": "Ruelle de la Basse-Ville" },
+  "clue_perte_nom": { "title": "La perte du nom chez Line", "text": "Dernier stade avant dissolution. La personne répond encore à son nom sans savoir pourquoi.", "source": "Clinique d’Ysée" },
+  "clue_ordre_six_ans": { "title": "Une signature d’il y a six ans", "text": "Noam a signé des ordres de classement en mars, l’année de la disparition de Théo.", "source": "Noam Sardou" },
+  "clue_grand_serment": { "title": "Le projet de Grand Serment", "text": "Répartir la charge de la Faille sur toute la population. Sauve quatre cent mille personnes, en tue deux cents.", "source": "Damien Vaugrise-Loret" },
+  "clue_liste_deux_cents": { "title": "Les deux cents Rompus vivants", "text": "Liste hebdomadaire du service statistique. Deux cent trois noms, adresses comprises.", "source": "Bureau des Serments" },
+  "clue_reaction_theo": { "title": "La réaction du chancelier au nom de Théo", "text": "Il n’a pas demandé qui c’était. C’est la seule fois où il n’a pas posé de question.", "source": "Grand hall" },
+  "clue_pouls_manteau": { "title": "Un pouls dans le manteau de Théo", "text": "Un rythme très lent, régulier, dans un vêtement resté six ans sur une chaise.", "source": "Appartement d’Ilan" },
+  "clue_premier_serment": { "title": "Le Premier Serment", "text": "Sept personnes, dix-neuf ans, une promesse de tenir la Faille. Jamais publié, jamais relu.", "source": "Recoupement" },
+  "clue_frere_lumiere": { "title": "La lumière l’appelle « frère »", "text": "Line rapporte que ce qui parle dans la Faille l’a appelée ainsi. Elle n’a ni frère ni sœur.", "source": "Clinique d’Ysée" },
+  "clue_temoignage_line": { "title": "Le témoignage de Line", "text": "« Il y a un homme dedans. Il tient tout. Il est fatigué. » Répété mot pour mot pendant quatre heures.", "source": "Clinique d’Ysée" },
+  "clue_ancre_humaine": { "title": "Il y a un homme dedans", "text": "La Faille est stabilisée par quelqu’un, pas par quelque chose.", "source": "Recoupement" },
+  "clue_niveau_zero": { "title": "Le huitième bouton", "text": "Le Bureau a sept étages et huit boutons. Le dernier n’a pas de chiffre.", "source": "Ascenseur du Bureau" },
+  "clue_kael_connait_bureau": { "title": "Kaël connaît le Bureau de l’intérieur", "text": "Il sait où sont les relais de sécurité et à quelle heure ils basculent.", "source": "Observation" },
+  "clue_ordre_signe_noam": { "title": "L’ordre de scellement signé Sardou", "text": "Ordre 812, classement définitif de la disparition de Vasseur, Théo. Mention manuscrite : « Sans lecture préalable ».", "source": "Noam Sardou" },
+  "clue_acces_niveau_zero": { "title": "Un accès au niveau zéro", "text": "Autorisation nominative arrachée au capitaine de la Garde.", "source": "Noam Sardou" },
+  "clue_kael_dernier_temoin": { "title": "Kaël est le dernier à avoir vu Théo", "text": "Il l’a fait passer de l’autre côté de la Faille il y a six ans, contre paiement double et serment de silence.", "source": "Kaël Ravier" },
+  "clue_interieur_faille": { "title": "Ce qu’on entend dans la Faille", "text": "Des milliers de voix qui répètent ce qu’elles ont promis. Aucune ne raconte la suite.", "source": "Expérience directe" },
+  "clue_voix_theo": { "title": "Une voix qui connaît ton prénom", "text": "Elle t’a nommé. Rien dans la Faille ne devrait pouvoir nommer un vivant.", "source": "Cœur de la Faille" },
+  "clue_fiole_reagit": { "title": "La fiole réagit à la Faille", "text": "Le liquide se met à trembler quand la Faille change de rythme. C’est un échantillon, pas un poison.", "source": "Observation" },
+  "clue_pourquoi_ilan": { "title": "Pourquoi toi", "text": "« Parce que vous êtes le seul lecteur de cette ville qui n’a jamais rien juré. » Réponse du chancelier.", "source": "Damien Vaugrise-Loret" },
+  "clue_sept_steles": { "title": "Sept stèles, six ratures", "text": "Sept noms gravés au niveau zéro. Six rayés, avec une date. Jamais plus de quatre ans d’écart.", "source": "Niveau zéro" },
+  "clue_six_ancres": { "title": "Les six ancres précédentes", "text": "Hélier Vaubec, Sarah Doux, Ilaria Bost et trois autres. Aucune funérailles publiques, aucune notice.", "source": "Niveau zéro" },
+  "clue_nom_theo_stele": { "title": "Le septième nom", "text": "Vasseur, Théo. La pierre est encore claire autour des lettres.", "source": "Niveau zéro" },
+  "clue_theo_ancre": { "title": "Théo est l’Ancre", "text": "Ton frère tient la Faille depuis six ans. Il n’a pas été enlevé : il s’est proposé.", "source": "Déduction confirmée" },
+  "clue_temps_theo": { "title": "Le temps qu’il reste à Théo", "text": "Quelques jours. Peut-être moins. Il perd des souvenirs et les retrouve encore, mais pas toujours.", "source": "Théo Vasseur" },
+  "clue_fuites_ancre": { "title": "Les Rompus sont des fuites", "text": "Quand l’ancre faiblit, la Faille prélève ailleurs. Les ruptures spontanées mesurent sa fatigue.", "source": "Théo Vasseur" },
+  "clue_trois_options": { "title": "Les trois issues", "text": "Remplacer l’ancre. Prononcer le Grand Serment. Laisser la Faille descendre.", "source": "Théo Vasseur" },
+  "clue_quatrieme_voie": { "title": "Il existe une quatrième voie", "text": "Théo n’a pas nié. Il a seulement dit qu’il n’avait jamais réussi à la faire seul.", "source": "Théo Vasseur" },
+  "clue_fille_damien": { "title": "Célia Vaugrise-Loret", "text": "Vingt-trois ans, Rompue depuis huit mois, hospitalisée chez Ysée. Le Grand Serment la tuera.", "source": "Damien Vaugrise-Loret" },
+  "clue_alliance_noire": { "title": "L’alliance noire du chancelier", "text": "Anneau d’ancrage inversé, porté à la main droite. Un modèle qu’on ne fabrique que pour les stèles.", "source": "Observation" },
+  "clue_damien_mardis": { "title": "Le chancelier vient tous les mardis", "text": "Quarante minutes, sans un mot, depuis huit mois.", "source": "Ysée Marchand" },
+  "clue_celia_lucide": { "title": "Célia recopie son prénom", "text": "Elle recopie « Célia » pour ne pas le perdre, sans savoir déjà que c’est le sien.", "source": "Clinique d’Ysée" },
+  "clue_damien_volontaire": { "title": "Le chancelier s’est réservé une place", "text": "L’alliance noire, les mardis, l’insistance sur la voix d’un autre lecteur : il ne compte pas survivre à son propre projet.", "source": "Déduction confirmée" },
+  "clue_dissolution_reciproque": { "title": "Un contrat se rompt à deux", "text": "Le Premier Serment est un échange, pas une chaîne. Ce qui a été donné peut être rendu, si les deux voix le rendent ensemble.", "source": "Théo Vasseur" },
+  "clue_formule_dissolution": { "title": "La formule de dissolution", "text": "Reconstituée à partir des formules d’occasion du marché noir. Elle ne se lit pas : elle se rend.", "source": "Reconstitution" },
+  "clue_damien_savait": { "title": "Le chancelier savait", "text": "La quatrième voie était connue du cabinet. Elle a été écartée parce qu’elle délie tout le monde, y compris ceux qui tiennent la ville.", "source": "Damien Vaugrise-Loret" },
+  "clue_ville_sait": { "title": "La ville sait", "text": "Trois mille délégués ont entendu. On ne referme pas ça.", "source": "Grand hall" },
+  "clue_ville_deliee": { "title": "Une ville entièrement déliée", "text": "Quatre cent mille personnes libérées de tout ce qu’elles avaient promis, en une seconde.", "source": "Cœur de la Faille" }
+ },
+
+ "deductions": {
+  "ded_rompu_force": "Ourdan a été rompu de force",
+  "ded_serment_fondateur": "Les onze avaient prêté le même serment",
+  "ded_elimination": "On élimine les survivants d’un événement ancien",
+  "ded_damien_commanditaire": "L’ordre venait du cabinet du chancelier",
+  "ded_ancre_vivante": "La Faille est tenue par une ancre vivante",
+  "ded_theo_ancre": "L’ancre actuelle est Théo",
+  "ded_rompus_sont_fuites": "Les Rompus mesurent la fatigue de l’ancre",
+  "ded_damien_ancre": "Le chancelier veut se sacrifier",
+  "ded_dissolution": "Le Premier Serment peut être dissous à deux voix"
+ },
+
+ "deductionDetails": {
+  "ded_rompu_force": { "title": "Ourdan a été rompu de force", "text": "Un serment effacé du registre plus une rupture déchirée : quelqu’un a rompu Marcel Ourdan à sa place, puis a supprimé la trace du serment initial." },
+  "ded_serment_fondateur": { "title": "Les onze avaient prêté le même serment", "text": "Onze Rompus, tous inscrits au Bureau avant l’ouverture de la Faille, tous clos au même sceau. Ce n’est pas une série de crimes : c’est une liste." },
+  "ded_elimination": { "title": "On élimine les survivants d’un événement ancien", "text": "Trois lecteurs écartés, onze Rompus, un sceau unique. Quelqu’un referme méthodiquement un dossier vieux de dix-neuf ans." },
+  "ded_damien_commanditaire": { "title": "L’ordre venait du cabinet du chancelier", "text": "La mention « sans lecture préalable » et le sceau à sept anneaux ne coexistent que dans un seul bureau de cette ville." },
+  "ded_ancre_vivante": { "title": "La Faille est tenue par une ancre vivante", "text": "Sept stèles, six ratures espacées de trois à quatre ans, et un témoignage : il y a quelqu’un dedans, et il est fatigué." },
+  "ded_theo_ancre": { "title": "L’ancre actuelle est Théo", "text": "Le septième nom est frais. La voix connaît ton prénom. Le manteau bat." },
+  "ded_rompus_sont_fuites": { "title": "Les Rompus mesurent la fatigue de l’ancre", "text": "Chaque rupture spontanée correspond à un prélèvement compensatoire. Le nombre de Rompus est un compteur, pas un hasard." },
+  "ded_damien_ancre": { "title": "Le chancelier veut se sacrifier", "text": "L’alliance noire est un anneau de stèle. Il veut que le Grand Serment soit prononcé par une autre voix parce qu’il compte être ailleurs — dans la lumière." },
+  "ded_dissolution": { "title": "Le Premier Serment peut être dissous à deux voix", "text": "Ce n’est pas une chaîne mais un échange. Si la Faille et l’ancre rendent ensemble ce qu’elles ont reçu, le contrat s’ouvre. Le prix : tous les serments de la ville se dénouent en même temps." }
+ },
+
+ "promises": {
+  "prom_soi_jusquau_bout": "Aller jusqu’au bout (promesse faite à soi-même)",
+  "prom_ysee_dabord": "Prévenir Ysée avant le Bureau",
+  "prom_noam_verite": "Dire la vérité à Noam, même la pire",
+  "prom_theo_liberer": "Sortir Théo de la lumière",
+  "prom_kael_revenir": "Revenir sur le pont",
+  "prom_noam_ensemble": "Tenir ce serment ensemble",
+  "prom_premier_nouveau": "Le premier serment de la ville nouvelle"
+ },
+
+ "memories": {
+  "mem_ysee_perfusions": "Tu as retiré ton manteau et changé les perfusions avant de poser la moindre question.",
+  "mem_ysee_theo": "Tu lui as parlé de ton frère avant d’en parler à quiconque.",
+  "mem_ysee_line": "Tu es resté assis près de Line jusqu’à ce qu’elle s’endorme.",
+  "mem_ysee_evacuation": "Neuf jours à frapper à deux cents portes avec elle.",
+  "mem_kael_dos_a_dos": "Dos à dos dans une ruelle, contre trois hommes sans insigne.",
+  "mem_kael_recousu": "Tu es resté pendant qu’Ysée le recousait.",
+  "mem_kael_rompu_pour_toi": "Il a brisé un serment de six ans pour te dire un nom.",
+  "mem_kael_cicatrice_touchee": "Tu as suivi sa cicatrice du bout des doigts sans rien demander.",
+  "mem_kael_enveloppe": "Tu lui as donné les onze noms avant de les donner au Bureau.",
+  "mem_kael_fenetre": "La pluie, la fenêtre, et la première fois qu’il a eu envie de rester.",
+  "mem_kael_veille": "La veille de la cérémonie, sur le pont, sans rien se promettre.",
+  "mem_noam_avertissement": "Il t’a prévenu alors que ça pouvait lui coûter son poste.",
+  "mem_noam_manteau": "Tu lui as posé ton manteau sur les épaules sous l’orage.",
+  "mem_noam_verite_couloir": "Tu lui as tout dit dans un couloir où il aurait pu t’arrêter.",
+  "mem_noam_aveu": "Il t’a lu sa propre signature au bas de l’ordre de classement.",
+  "mem_noam_pacte": "Un serment prononcé hors de portée de la Faille.",
+  "mem_noam_enveloppe": "Tu lui as confié les onze noms plutôt qu’aux Rompus.",
+  "mem_noam_anneaux": "Sept anneaux retirés et posés dans un tiroir.",
+  "mem_noam_veille": "La veille de la cérémonie, ensemble, sans uniforme.",
+  "mem_theo_assieds": "« Tu as l’air fatigué. Assieds-toi. » — bêtement, comme avant.",
+  "mem_theo_enfance": "Tu lui as rendu des souvenirs qu’il était en train de perdre."
+ },
+
+ "boundaries": {
+  "bnd_kael_bureau": "Tu lui as proposé de collaborer avec le Bureau. Il ne l’oubliera pas.",
+  "bnd_kael_silence": "Tu lui as reproché son silence comme on reproche une trahison.",
+  "bnd_kael_refus": "Tu as refusé ce qu’il t’offrait, et il t’avait prévenu qu’il ne demanderait qu’une fois.",
+  "bnd_noam_accuse": "Tu l’as tenu pour responsable avant de savoir.",
+  "bnd_noam_mensonge": "Tu lui as menti dans un couloir, et il a fini par vérifier.",
+  "bnd_noam_abandonne": "Tu es parti pendant qu’il t’avouait la pire chose de sa vie.",
+  "bnd_noam_refus": "Tu lui as demandé de ne rien jurer, à lui qui ne sait faire que ça."
+ },
+
+ "falseLeads": {
+  "fl_suicide_collectif": "Piste écartée : une vague de ruptures volontaires.",
+  "fl_vengeance_privee": "Piste écartée : une vengeance privée entre familles du quai bas.",
+  "fl_epidemie": "Piste écartée : une contamination accidentelle de la nappe.",
+  "fl_noam_coupable": "Piste écartée : Noam Sardou commanditaire.",
+  "fl_hallucination_collective": "Piste écartée : une suggestion collective entre patients.",
+  "fl_memorial": "Piste écartée : les sept stèles comme simple mémorial.",
+  "fl_damien_monstre": "Piste écartée : un chancelier purement cynique.",
+  "fl_dissolution_impossible": "Piste écartée : la dissolution du Premier Serment est un mythe."
+ },
+
+ "items": {
+  "item_liste_rompus": "Liste hebdomadaire des Rompus vivants"
+ },
+
+ "flags": {
+  "solitaire": "tu as tout gardé pour toi",
+  "estrade_acceptee": "tu as accepté l’estrade",
+  "estrade_refusee": "tu as refusé l’estrade",
+  "quatrieme_voie": "tu soupçonnes une quatrième voie"
+ },
+
+ "credits": [
+  ["Conception, écriture, code", "Production autonome réalisée pour ce projet"],
+  ["Moteur", "JavaScript modules ES, aucune dépendance externe"],
+  ["Illustrations", "Placeholders procéduraux générés par tools/gen_art.py (Pillow)"],
+  ["Musiques et ambiances", "Synthèse procédurale, tools/gen_audio.py (numpy + ffmpeg)"],
+  ["Prompts de remplacement", "docs/asset.md — un prompt AAA par fichier livré"],
+  ["Personnages", "Tous les personnages représentés sont des adultes fictifs"],
+  ["Licence", "Voir LICENSE à la racine du dépôt"]
+ ]
+}

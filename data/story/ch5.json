@@ -1,0 +1,722 @@
+{
+ "scenes": {
+  "ch5_01_hall": {
+   "id": "ch5_01_hall",
+   "chapter": 5,
+   "route": "commune",
+   "title": "Le Grand Serment",
+   "background": "bg_grand_hall_bureau",
+   "music": "music_danger",
+   "ambiance": null,
+   "autosave": true,
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "neutral",
+     "expression": "calm",
+     "position": "far-right"
+    }
+   ],
+   "lines": [
+    {
+     "text": "Quatre cent mille personnes ne tiennent pas dans un hall. On a donc rempli le hall de trois mille délégués de quartier, et relié la ville entière par les anneaux : chaque bouche de rue en porte un depuis hier."
+    },
+    {
+     "text": "Le principe est simple et monstrueux : il suffit que trois mille voix prononcent la formule pour que quatre cent mille bouches soient liées."
+    },
+    {
+     "text": "Ysée est quelque part dans le quartier nord, en train de vider des immeubles.",
+     "condition": {
+      "flag": "evacuation_preparee"
+     }
+    },
+    {
+     "text": "Personne n’a évacué personne. Les deux cents sont dans la ville, chez eux, en train d’écouter la retransmission.",
+     "condition": {
+      "not": {
+       "flag": "evacuation_preparee"
+      }
+     }
+    }
+   ],
+   "next": "ch5_02_estrade"
+  },
+  "ch5_02_estrade": {
+   "id": "ch5_02_estrade",
+   "chapter": 5,
+   "route": "commune",
+   "title": "Sur l’estrade",
+   "background": "bg_grand_hall_bureau",
+   "music": "music_tension",
+   "ambiance": null,
+   "toneTarget": "damien",
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "dynamic",
+     "expression": "determined",
+     "position": "right"
+    }
+   ],
+   "speaker": "damien",
+   "lines": [
+    {
+     "speaker": "damien",
+     "text": "Citoyens de Vaurance. Il y a dix-neuf ans, sept personnes ont porté cette ville sur leurs épaules. Aujourd’hui, nous allons enfin la porter ensemble."
+    },
+    {
+     "text": "Il ment par omission avec un talent qui force le respect. Pas un mot faux. Pas un mot vrai non plus.",
+     "thought": true
+    },
+    {
+     "speaker": "damien",
+     "text": "Le lecteur Vasseur va maintenant prononcer le Premier Serment.",
+     "condition": {
+      "any": [
+       {
+        "flag": "estrade_acceptee"
+       },
+       {
+        "flag": "estrade_piegee"
+       }
+      ]
+     }
+    },
+    {
+     "text": "Tu es dans les gradins, huitième rang, entre un boulanger et une institutrice. Personne ne sait qui tu es. C’est ta seule arme.",
+     "condition": {
+      "flag": "estrade_refusee"
+     },
+     "thought": true
+    }
+   ],
+   "next": "ch5_03_moment"
+  },
+  "ch5_03_moment": {
+   "id": "ch5_03_moment",
+   "chapter": 5,
+   "route": "commune",
+   "title": "Le moment",
+   "background": "bg_grand_hall_bureau",
+   "music": "music_revelation",
+   "ambiance": null,
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "dynamic",
+     "expression": "determined",
+     "state": "aura",
+     "position": "right"
+    }
+   ],
+   "lines": [
+    {
+     "text": "Trois mille visages. Sept anneaux à hauteur de main. Et dans ta poche, une feuille pliée en quatre."
+    },
+    {
+     "text": "Ce que tu vas dire dans les dix prochaines secondes décidera de ce que devient cette ville.",
+     "thought": true,
+     "fx": "zoom"
+    }
+   ],
+   "choices": [
+    {
+     "id": "ch5_03_c_lire",
+     "text": "Lire le Premier Serment. Sauver quatre cent mille personnes.",
+     "tone": "institutionnel",
+     "irreversible": true,
+     "requires": {
+      "any": [
+       {
+        "flag": "estrade_acceptee"
+       },
+       {
+        "flag": "estrade_piegee"
+       }
+      ]
+     },
+     "lockedHint": "Tu n’es pas sur l’estrade.",
+     "confirmText": "Les deux cents Rompus mourront dans l’heure. Continuer ?",
+     "effects": {
+      "routes": {
+       "open": [
+        "opposition"
+       ]
+      },
+      "flags": {
+       "a_lu": true
+      },
+      "cg": "cg_grand_serment"
+     },
+     "next": "ch5_op_serment"
+    },
+    {
+     "id": "ch5_03_c_interrompre",
+     "text": "Interrompre. Dire la vérité à trois mille personnes.",
+     "tone": "direct",
+     "irreversible": true,
+     "requires": {
+      "any": [
+       {
+        "clue": "clue_liste_deux_cents"
+       },
+       {
+        "deduction": "ded_theo_ancre"
+       }
+      ]
+     },
+     "lockedHint": "Tu n’as rien à leur montrer. On te sortira en quinze secondes.",
+     "effects": {
+      "routes": {
+       "open": [
+        "truth"
+       ]
+      },
+      "flags": {
+       "a_parle": true
+      }
+     },
+     "next": "ch5_tr_verite"
+    },
+    {
+     "id": "ch5_03_c_evacuer",
+     "text": "Sortir du hall et rejoindre la Main Creuse dans le quartier nord.",
+     "tone": "chaleureux",
+     "irreversible": true,
+     "requires": {
+      "route": "coop"
+     },
+     "lockedHint": "Il n’y a pas de réseau qui t’attende dehors.",
+     "effects": {
+      "routes": {
+       "open": [
+        "coop"
+       ]
+      },
+      "flags": {
+       "a_evacue": true
+      }
+     },
+     "next": "ch5_co_nord"
+    },
+    {
+     "id": "ch5_03_c_dissoudre",
+     "text": "Prononcer la formule de dissolution. À deux voix, avec Théo.",
+     "tone": "obstine",
+     "secret": true,
+     "irreversible": true,
+     "revealIf": {
+      "all": [
+       {
+        "deduction": "ded_dissolution"
+       },
+       {
+        "route": "secret"
+       }
+      ]
+     },
+     "requires": {
+      "all": [
+       {
+        "deduction": "ded_dissolution"
+       },
+       {
+        "route": "secret"
+       },
+       {
+        "stat": "integrite",
+        "op": ">=",
+        "value": 6
+       }
+      ]
+     },
+     "lockedHint": "Une voix ne suffit pas.",
+     "confirmText": "Personne n’a jamais tenté cela. Continuer ?",
+     "effects": {
+      "routes": {
+       "open": [
+        "secret"
+       ]
+      },
+      "flags": {
+       "a_dissous": true
+      },
+      "achievement": "ach_dissolution"
+     },
+     "next": "ch5_sec_formule"
+    },
+    {
+     "id": "ch5_03_c_rien",
+     "text": "Ne rien faire.",
+     "tone": "distant",
+     "irreversible": true,
+     "effects": {
+      "flags": {
+       "a_rien_fait": true
+      },
+      "stats": {
+       "integrite": -1
+      }
+     },
+     "next": "ch5_bad_rupture"
+    }
+   ]
+  },
+  "ch5_op_serment": {
+   "id": "ch5_op_serment",
+   "chapter": 5,
+   "route": "opposition",
+   "title": "Trois mille voix",
+   "background": "bg_faille_embrasee",
+   "music": "music_revelation",
+   "ambiance": "amb_faille",
+   "cg": "cg_grand_serment",
+   "characters": [],
+   "lines": [
+    {
+     "text": "Tu lis. Les mots ne sont pas difficiles : ce sont ceux d’une promesse ordinaire, écrite pour être tenue par n’importe qui."
+    },
+    {
+     "text": "À la troisième ligne, trois mille voix te suivent. À la sixième, la ville entière.",
+     "fx": "flash",
+     "sfx": "sfx_promise"
+    },
+    {
+     "text": "La Faille se referme du sud au nord, comme une paupière.",
+     "fx": "impact"
+    },
+    {
+     "text": "Et dans deux cents appartements, deux cents personnes s’arrêtent au milieu d’un geste.",
+     "fx": "darken"
+    }
+   ],
+   "next": "ch5_op_apres"
+  },
+  "ch5_op_apres": {
+   "id": "ch5_op_apres",
+   "chapter": 5,
+   "route": "opposition",
+   "title": "Ce qu’on a acheté",
+   "background": "bg_hall_vide",
+   "music": "music_emotion",
+   "ambiance": null,
+   "toneTarget": "damien",
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "defensive",
+     "expression": "breakup",
+     "position": "center"
+    }
+   ],
+   "speaker": "damien",
+   "lines": [
+    {
+     "speaker": "damien",
+     "text": "Elle est morte à onze heures quatorze. On m’a prévenu par note de service."
+    },
+    {
+     "text": "Il tient sa chaîne d’office à deux mains, comme quelqu’un qui ne sait pas où poser les siennes.",
+     "thought": true
+    },
+    {
+     "speaker": "damien",
+     "text": "Ne me consolez pas, Vasseur. J’ai eu dix-neuf jours pour choisir et j’ai choisi. Vous aussi."
+    },
+    {
+     "speaker": "damien",
+     "text": "Nous allons vivre très longtemps avec ça, tous les deux. C’est ce qu’on appelle une victoire."
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "flag": "estrade_piegee"
+     },
+     "scene": "ch5_tr_verite"
+    }
+   ],
+   "next": "ep_opposition"
+  },
+  "ch5_tr_verite": {
+   "id": "ch5_tr_verite",
+   "chapter": 5,
+   "route": "truth",
+   "title": "Ce que trois mille personnes entendent",
+   "background": "bg_grand_hall_bureau",
+   "music": "music_revelation",
+   "ambiance": null,
+   "characters": [
+    {
+     "id": "damien",
+     "pose": "dynamic",
+     "expression": "shocked",
+     "position": "right"
+    }
+   ],
+   "lines": [
+    {
+     "text": "Tu dis le nom de l’ancre. Tu dis les sept stèles. Tu dis les deux cents."
+    },
+    {
+     "text": "Tu dis le nom de Célia Vaugrise-Loret et le silence qui suit dure quatre secondes, ce qui, pour trois mille personnes, est une éternité.",
+     "condition": {
+      "clue": "clue_fille_damien"
+     },
+     "fx": "shake"
+    },
+    {
+     "text": "Personne ne t’interrompt. C’est ça qui te terrifie : ils écoutent.",
+     "thought": true,
+     "effects": {
+      "clues": [
+       "clue_ville_sait"
+      ],
+      "factions": {
+       "bureau": -30,
+       "rompus": 30
+      }
+     }
+    }
+   ],
+   "next": "ch5_tr_choix"
+  },
+  "ch5_tr_choix": {
+   "id": "ch5_tr_choix",
+   "chapter": 5,
+   "route": "truth",
+   "title": "Ce qu’on fait d’une vérité",
+   "background": "bg_coeur_faille",
+   "music": "music_emotion",
+   "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [
+    {
+     "id": "theo",
+     "pose": "neutral",
+     "expression": "vulnerable",
+     "state": "aura",
+     "position": "center"
+    }
+   ],
+   "speaker": "theo",
+   "lines": [
+    {
+     "speaker": "theo",
+     "text": "Ils savent. C’est bien. C’est même la seule chose qui compte, à la fin."
+    },
+    {
+     "speaker": "theo",
+     "text": "Mais je cède quand même, {nom}. Ce soir, demain matin au plus tard."
+    },
+    {
+     "speaker": "theo",
+     "text": "Alors il faut quelqu’un. Et je préfère autant que ce ne soit pas toi.",
+     "set": [
+      {
+       "id": "theo",
+       "expression": "fear_of_loss"
+      }
+     ]
+    }
+   ],
+   "choices": [
+    {
+     "id": "ch5_tr_c_moi",
+     "text": "Prendre sa place.",
+     "tone": "sincere",
+     "irreversible": true,
+     "confirmText": "Tu deviens l’ancre. C’est définitif. Continuer ?",
+     "effects": {
+      "flags": {
+       "sacrifice_ilan": true
+      },
+      "achievement": "ach_sacrifice"
+     },
+     "next": "ep_truth"
+    },
+    {
+     "id": "ch5_tr_c_volontaire",
+     "text": "Demander un volontaire à la ville qui vient d’entendre la vérité.",
+     "tone": "direct",
+     "requires": {
+      "stat": "influence",
+      "op": ">=",
+      "value": 6
+     },
+     "lockedHint": "Personne ne se lèverait pour toi.",
+     "effects": {
+      "flags": {
+       "volontaire_trouve": true
+      },
+      "factions": {
+       "rompus": 14
+      },
+      "stats": {
+       "influence": 1
+      }
+     },
+     "next": "ep_truth"
+    },
+    {
+     "id": "ch5_tr_c_damien",
+     "text": "« Le chancelier a une place réservée depuis le début. Demandez-lui. »",
+     "tone": "provocateur",
+     "requires": {
+      "deduction": "ded_damien_ancre"
+     },
+     "lockedHint": "Tu n’as pas compris ce que Damien préparait vraiment.",
+     "effects": {
+      "flags": {
+       "damien_ancre": true
+      },
+      "rel": {
+       "damien": {
+        "respect": 20
+       }
+      },
+      "achievement": "ach_chancelier"
+     },
+     "next": "ep_truth"
+    }
+   ]
+  },
+  "ch5_co_nord": {
+   "id": "ch5_co_nord",
+   "chapter": 5,
+   "route": "coop",
+   "title": "Quartier nord",
+   "background": "bg_quai_rompus_dawn",
+   "music": "music_tension",
+   "ambiance": "amb_ville_nuit",
+   "toneTarget": "ysee",
+   "characters": [
+    {
+     "id": "ysee",
+     "pose": "dynamic",
+     "expression": "determined",
+     "position": "center"
+    }
+   ],
+   "speaker": "ysee",
+   "lines": [
+    {
+     "speaker": "ysee",
+     "text": "Cent quatre-vingt-une portes ouvertes. Dix-neuf refus. Ils ont le droit de refuser."
+    },
+    {
+     "speaker": "ysee",
+     "text": "On les emmène sous le fleuve, dans les anciens réservoirs. La pierre coupe le lien. On l’a testé sur trois volontaires la semaine dernière."
+    },
+    {
+     "speaker": "ysee",
+     "text": "Si le Grand Serment est prononcé pendant qu’ils sont là-dessous, ils vivent. Tous.",
+     "set": [
+      {
+       "id": "ysee",
+       "expression": "worried"
+      }
+     ]
+    },
+    {
+     "text": "Ce n’est pas une victoire. C’est un abri. Mais un abri, ça se compte en gens.",
+     "thought": true
+    }
+   ],
+   "choices": [
+    {
+     "id": "ch5_co_c_porter",
+     "text": "Descendre porter les dix-neuf qui ont refusé.",
+     "tone": "chaleureux",
+     "effects": {
+      "stats": {
+       "empathie": 1,
+       "courage": 1
+      },
+      "flags": {
+       "dix_neuf_sauves": true
+      },
+      "rel": {
+       "ysee": {
+        "trust": 20,
+        "respect": 20
+       }
+      },
+      "achievement": "ach_dix_neuf"
+     },
+     "next": "ep_coop"
+    },
+    {
+     "id": "ch5_co_c_respecter",
+     "text": "Respecter leur refus et fermer les réservoirs à l’heure.",
+     "tone": "sincere",
+     "effects": {
+      "stats": {
+       "integrite": 2
+      },
+      "rel": {
+       "ysee": {
+        "respect": 16
+       }
+      },
+      "flags": {
+       "refus_respecte": true
+      }
+     },
+     "next": "ep_coop"
+    }
+   ]
+  },
+  "ch5_sec_formule": {
+   "id": "ch5_sec_formule",
+   "chapter": 5,
+   "route": "secret",
+   "title": "À deux voix",
+   "background": "bg_coeur_faille",
+   "music": "music_revelation",
+   "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [
+    {
+     "id": "theo",
+     "pose": "dynamic",
+     "expression": "shocked",
+     "state": "aura",
+     "position": "center"
+    }
+   ],
+   "speaker": "theo",
+   "lines": [
+    {
+     "text": "La formule de dissolution ne se lit pas : elle se rend. Chaque partie reprend ce qu’elle a donné."
+    },
+    {
+     "speaker": "theo",
+     "text": "Tu es sûr ? Si on se trompe, la Faille descend et il n’y a plus de deuxième essai."
+    },
+    {
+     "text": "Tu prononces la première moitié. Il prononce la seconde. Vos deux voix ne se rejoignent nulle part : elles se répondent.",
+     "sfx": "sfx_promise",
+     "fx": "flash"
+    },
+    {
+     "text": "Et le Premier Serment, qui n’avait jamais été relu par personne depuis dix-neuf ans, s’ouvre comme une main qu’on desserre.",
+     "fx": "impact"
+    }
+   ],
+   "next": "ch5_sec_prix"
+  },
+  "ch5_sec_prix": {
+   "id": "ch5_sec_prix",
+   "chapter": 5,
+   "route": "secret",
+   "title": "Le prix de la quatrième voie",
+   "background": "bg_faille_embrasee",
+   "music": "music_danger",
+   "ambiance": "amb_faille",
+   "characters": [
+    {
+     "id": "theo",
+     "pose": "defensive",
+     "expression": "exhausted",
+     "state": "injured",
+     "position": "center"
+    }
+   ],
+   "speaker": "theo",
+   "lines": [
+    {
+     "text": "Une dissolution n’est pas gratuite. Ce que la Faille rend, elle le rend en entier — y compris ce qu’elle a stocké pendant dix-neuf ans."
+    },
+    {
+     "speaker": "theo",
+     "text": "Tous les serments de la ville se dénouent en même temps. Tous. Les bons comme les autres."
+    },
+    {
+     "text": "Quatre cent mille personnes viennent d’être libérées de tout ce qu’elles avaient promis. Y compris de ce qui les tenait debout.",
+     "thought": true,
+     "effects": {
+      "clues": [
+       "clue_ville_deliee"
+      ]
+     }
+    }
+   ],
+   "choices": [
+    {
+     "id": "ch5_sec_c_assumer",
+     "text": "Assumer. Une ville libre est une ville qui doit réapprendre.",
+     "tone": "obstine",
+     "effects": {
+      "stats": {
+       "courage": 1,
+       "integrite": 1
+      },
+      "flags": {
+       "assume_dissolution": true
+      }
+     },
+     "next": "ep_secret"
+    },
+    {
+     "id": "ch5_sec_c_premier",
+     "text": "Prêter le premier serment de la ville nouvelle, à voix haute, devant tout le monde.",
+     "tone": "sincere",
+     "requires": {
+      "stat": "influence",
+      "op": ">=",
+      "value": 5
+     },
+     "lockedHint": "Ta voix ne porte pas jusque-là.",
+     "effects": {
+      "promises": {
+       "prom_premier_nouveau": "made"
+      },
+      "factions": {
+       "rompus": 20,
+       "bureau": 10
+      },
+      "stats": {
+       "influence": 1
+      },
+      "achievement": "ach_premier_nouveau",
+      "sfx": "sfx_promise"
+     },
+     "next": "ep_secret"
+    }
+   ]
+  },
+  "ch5_bad_rupture": {
+   "id": "ch5_bad_rupture",
+   "chapter": 5,
+   "route": "commune",
+   "title": "Ce qui arrive quand personne ne bouge",
+   "background": "bg_faille_embrasee",
+   "music": "music_danger",
+   "ambiance": "amb_faille",
+   "characters": [],
+   "lines": [
+    {
+     "text": "Le chancelier lit lui-même. Sa voix tremble à la quatrième ligne et il continue quand même.",
+     "fx": "shake"
+    },
+    {
+     "text": "La Faille se referme. Deux cents personnes meurent. Célia Vaugrise-Loret meurt à onze heures quatorze."
+    },
+    {
+     "text": "Et toi, tu es resté assis au huitième rang, entre un boulanger et une institutrice, et tu n’as rien dit.",
+     "fx": "darken"
+    }
+   ],
+   "nextIf": [
+    {
+     "when": {
+      "flag": "a_jure_seul"
+     },
+     "scene": "ep_bad_nom"
+    }
+   ],
+   "next": "ep_bad_faille"
+  }
+ }
+}

@@ -1,0 +1,391 @@
+{
+ "scenes": {
+  "ch2_01_reveil": {
+   "id": "ch2_01_reveil", "chapter": 2, "route": "commune",
+   "title": "Ceux qui rompent",
+   "background": "bg_clinique_ysee", "music": "music_danger", "ambiance": null,
+   "autosave": true, "toneTarget": "ysee",
+   "characters": [{ "id": "ysee", "pose": "dynamic", "expression": "shocked", "position": "center" }],
+   "speaker": "ysee",
+   "lines": [
+    { "text": "Onze Rompus se sont réveillés à trois heures douze. Y compris ceux dont les mains avaient déjà disparu." },
+    { "speaker": "ysee", "text": "Line a redit son nom. Elle l’a redit, Vasseur. Trois fois, comme si elle le vérifiait." },
+    { "speaker": "ysee", "text": "Et ensuite elle m’a demandé pourquoi la lumière l’appelait « frère ».", "set": [{ "id": "ysee", "expression": "worried" }] },
+    { "text": "Frère.", "thought": true, "fx": "impact" },
+    { "speaker": "ysee", "text": "Ne faites pas cette tête. Ou faites-la, mais dites-moi ce que vous savez.", "set": [{ "id": "ysee", "expression": "determined" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch2_01_c_dire", "text": "Lui parler de Théo. Tout, depuis le début.",
+     "tone": "sincere",
+     "effects": { "rel": { "ysee": { "trust": 20, "vulnerability": 20, "affinity": 12, "memory": "mem_ysee_theo" } }, "stats": { "empathie": 1 }, "flags": { "ysee_sait_theo": true }, "clues": ["clue_frere_lumiere"], "rewardId": "ch2_01" },
+     "next": "ch2_02_registre"
+    },
+    {
+     "id": "ch2_01_c_taire", "text": "« Rien qui vous serve. » — et changer de sujet.",
+     "tone": "distant",
+     "effects": { "rel": { "ysee": { "distrust": 16, "affinity": -8 } }, "stats": { "sangfroid": 1 }, "clues": ["clue_frere_lumiere"], "rewardId": "ch2_01" },
+     "next": "ch2_02_registre"
+    },
+    {
+     "id": "ch2_01_c_line", "text": "Demander à parler seul à Line.",
+     "tone": "methodique",
+     "effects": { "stats": { "perspicacite": 1, "empathie": 1 }, "clues": ["clue_frere_lumiere", "clue_temoignage_line"], "rel": { "ysee": { "respect": 10 } }, "rewardId": "ch2_01" },
+     "next": "ch2_02_registre"
+    }
+   ]
+  },
+
+  "ch2_02_registre": {
+   "id": "ch2_02_registre", "chapter": 2, "route": "commune",
+   "title": "L’étage qui n’existe pas",
+   "background": "bg_archives_bureau_dark", "music": "music_tension", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "Le plan d’évacuation du Bureau indique sept niveaux. L’ascenseur en compte huit boutons. Le huitième n’a pas de chiffre." },
+    { "text": "Personne n’a jamais trouvé ça étrange, parce qu’à Vaurance on apprend très tôt à ne pas trouver les choses étranges.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch2_02_c_forcer", "text": "Forcer le mécanisme avec ce que tu as sous la main.",
+     "tone": "obstine",
+     "requires": { "stat": "ingeniosite", "op": ">=", "value": 5 },
+     "lockedHint": "Le mécanisme est plus malin que toi ce soir.",
+     "effects": { "stats": { "ingeniosite": 1 }, "clues": ["clue_niveau_zero"], "flags": { "niveau_zero_vu": true }, "rewardId": "ch2_02" },
+     "next": "ch2_03_confrontation"
+    },
+    {
+     "id": "ch2_02_c_badge", "text": "Emprunter le badge d’un archiviste de nuit.",
+     "tone": "prudent",
+     "effects": { "stats": { "influence": 1 }, "clues": ["clue_niveau_zero"], "rel": { "noam": { "distrust": 6 } }, "rewardId": "ch2_02" },
+     "next": "ch2_03_confrontation"
+    },
+    {
+     "id": "ch2_02_c_kael", "text": "Appeler Kaël. Les Marcheurs savent entrer partout.",
+     "tone": "complice",
+     "requires": { "rel": "kael", "field": "trust", "op": ">=", "value": 25 },
+     "lockedHint": "Il ne décrocherait pas.",
+     "effects": { "stats": { "ingeniosite": 1 }, "clues": ["clue_niveau_zero", "clue_kael_connait_bureau"], "rel": { "kael": { "affinity": 10, "trust": 8 } }, "rewardId": "ch2_02" },
+     "next": "ch2_03_confrontation"
+    }
+   ]
+  },
+
+  "ch2_03_confrontation": {
+   "id": "ch2_03_confrontation", "chapter": 2, "route": "commune",
+   "title": "Le capitaine dans le couloir",
+   "background": "bg_archives_bureau_dark", "music": "music_danger", "ambiance": null,
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "pose": "dynamic", "expression": "angry", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "text": "La lumière du couloir s’allume d’un coup. Il est adossé au mur, bras croisés, et il attendait depuis longtemps.", "fx": "flash" },
+    { "speaker": "noam", "text": "Deux heures du matin. Un lecteur d’archives devant un ascenseur qui ne dessert rien." },
+    { "speaker": "noam", "text": "Vous savez ce qui m’use, Vasseur ? Ce n’est pas que vous mentiez. C’est que vous le fassiez si mal.", "set": [{ "id": "noam", "expression": "exhausted" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch2_03_c_verite", "text": "Tout lui dire. Le niveau zéro, Théo, la lumière qui dit « frère ».",
+     "tone": "sincere",
+     "effects": { "rel": { "noam": { "trust": 24, "vulnerability": 18, "affinity": 14, "memory": "mem_noam_verite_couloir" } }, "promises": { "prom_noam_verite": "made" }, "stats": { "integrite": 1 }, "routes": { "open": ["noam"] }, "flags": { "noam_sait_theo": true }, "rewardId": "ch2_03" },
+     "next": "ch2_04_divergence"
+    },
+    {
+     "id": "ch2_03_c_mentir", "text": "Inventer une vérification d’inventaire.",
+     "tone": "distant",
+     "effects": { "rel": { "noam": { "distrust": 20, "affinity": -10, "boundary": "bnd_noam_mensonge" } }, "stats": { "ingeniosite": 1 }, "flags": { "mensonge_noam": true }, "deferred": [{ "id": "def_mensonge_noam", "chapter": 4, "when": { "flag": "mensonge_noam" }, "effects": { "rel": { "noam": { "trust": -18, "tension": 16 } } }, "note": "Noam a fini par vérifier l’inventaire du chapitre II." }], "rewardId": "ch2_03" },
+     "next": "ch2_04_divergence"
+    },
+    {
+     "id": "ch2_03_c_retourner", "text": "« Descendez avec moi. Ou arrêtez-moi. Choisissez maintenant. »",
+     "tone": "provocateur",
+     "effects": { "rel": { "noam": { "tension": 20, "respect": 18, "affinity": 8 } }, "stats": { "courage": 2 }, "flags": { "noam_somme": true }, "rewardId": "ch2_03" },
+     "next": "ch2_04_divergence"
+    }
+   ]
+  },
+
+  "ch2_04_divergence": {
+   "id": "ch2_04_divergence", "chapter": 2, "route": "commune",
+   "title": "Trois portes",
+   "background": "bg_quai_rompus_night", "music": "music_calm", "ambiance": "amb_ville_nuit",
+   "characters": [],
+   "lines": [
+    { "text": "Trois messages t’attendent au petit matin. Trois écritures, trois manières d’avoir peur." },
+    { "text": "Kaël : « Le vieux quai, ce soir. Viens seul ou ne viens pas. »" },
+    { "text": "Noam : « J’ai retrouvé ma signature. Je ne veux pas être seul quand je la relirai. »" },
+    { "text": "Ysée : « Line parle. Elle ne parlera pas longtemps. »" },
+    { "text": "Tu ne peux pas être à trois endroits.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch2_04_c_kael", "text": "Le vieux quai. Kaël.",
+     "tone": "complice",
+     "effects": { "routes": { "open": ["kael"] }, "rel": { "kael": { "affinity": 14, "trust": 10 }, "noam": { "affinity": -6 }, "ysee": { "affinity": -4 } } },
+     "next": "ch2_k1_quai"
+    },
+    {
+     "id": "ch2_04_c_noam", "text": "Le bureau de la Garde. Noam.",
+     "tone": "sincere",
+     "effects": { "routes": { "open": ["noam"] }, "rel": { "noam": { "affinity": 14, "trust": 10 }, "kael": { "affinity": -6 }, "ysee": { "affinity": -4 } } },
+     "next": "ch2_n1_signature"
+    },
+    {
+     "id": "ch2_04_c_ysee", "text": "La clinique. Line.",
+     "tone": "chaleureux",
+     "effects": { "routes": { "open": ["coop"] }, "rel": { "ysee": { "affinity": 16, "trust": 12 }, "kael": { "affinity": -4 }, "noam": { "affinity": -4 } } },
+     "next": "ch2_y1_line"
+    }
+   ]
+  },
+
+  "ch2_k1_quai": {
+   "id": "ch2_k1_quai", "chapter": 2, "route": "kael",
+   "title": "Ce qu’il n’a jamais dit",
+   "background": "bg_quai_rompus_night", "music": "music_romance", "ambiance": "amb_ville_nuit",
+   "toneTarget": "kael",
+   "characters": [{ "id": "kael", "pose": "neutral", "expression": "avert", "position": "center" }],
+   "speaker": "kael",
+   "lines": [
+    { "speaker": "kael", "text": "Assieds-toi. Non — plus près. Je ne vais pas répéter." },
+    { "speaker": "kael", "text": "Il y a six ans, j’ai fait passer quelqu’un de l’autre côté de la Faille. Un archiviste. Vingt-quatre ans, un manteau trop grand, et l’air de savoir exactement ce qu’il faisait.", "set": [{ "id": "kael", "expression": "vulnerable" }], "fx": "impact" },
+    { "text": "Le monde se met à sonner faux, comme une cloche fêlée.", "thought": true },
+    { "speaker": "kael", "text": "Il m’a payé le double et il m’a fait jurer de ne jamais dire son nom. J’ai juré. J’ai tenu six ans." },
+    { "speaker": "kael", "text": "Regarde mon bras. Voilà ce que ça coûte de rompre ce genre de serment. Et je suis quand même là.", "set": [{ "id": "kael", "expression": "determined" }], "effects": { "clues": ["clue_kael_dernier_temoin"], "rel": { "kael": { "secret": "sec_kael_theo" } } } }
+   ],
+   "choices": [
+    {
+     "id": "ch2_k1_c_colere", "text": "« Six ans. Tu m’as regardé chercher pendant six ans. »",
+     "tone": "provocateur",
+     "effects": { "rel": { "kael": { "tension": 26, "affinity": -8, "vulnerability": 14, "boundary": "bnd_kael_silence" } }, "stats": { "integrite": 1 }, "flags": { "kael_reproche": true }, "rewardId": "ch2_k1" },
+     "next": "ch2_k2_choix"
+    },
+    {
+     "id": "ch2_k1_c_merci", "text": "« Tu viens de te rompre pour moi. Je ne l’oublierai pas. »",
+     "tone": "sincere",
+     "effects": { "rel": { "kael": { "affinity": 22, "trust": 20, "attraction": 18, "vulnerability": 20, "memory": "mem_kael_rompu_pour_toi" } }, "stats": { "empathie": 1 }, "rewardId": "ch2_k1" },
+     "next": "ch2_k2_choix"
+    },
+    {
+     "id": "ch2_k1_c_bras", "text": "Prendre son avant-bras gauche et suivre la cicatrice du bout des doigts.",
+     "tone": "chaleureux",
+     "requires": { "rel": "kael", "field": "affinity", "op": ">=", "value": 30 },
+     "lockedHint": "Il retirerait son bras.",
+     "effects": { "rel": { "kael": { "attraction": 26, "vulnerability": 24, "affinity": 16, "memory": "mem_kael_cicatrice_touchee" } }, "cg": "cg_kael_serment_partage", "stats": { "empathie": 1 }, "rewardId": "ch2_k1" },
+     "next": "ch2_k2_choix"
+    }
+   ]
+  },
+
+  "ch2_k2_choix": {
+   "id": "ch2_k2_choix", "chapter": 2, "route": "kael",
+   "title": "Une porte dans la lumière",
+   "background": "bg_coeur_faille", "music": "music_danger", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [{ "id": "kael", "pose": "dynamic", "expression": "determined", "position": "right" }],
+   "speaker": "kael",
+   "lines": [
+    { "speaker": "kael", "text": "Je peux te faire passer. Comme lui. Mais je ne peux pas te faire revenir : c’est toi qui décides, de l’autre côté." },
+    { "speaker": "kael", "text": "Et il faut que tu saches une chose : là-dedans, ce que tu as promis pèse. Si tu as menti à quelqu’un, la Faille le sait." }
+   ],
+   "choices": [
+    {
+     "id": "ch2_k2_c_entrer", "text": "Entrer avec lui.",
+     "tone": "direct", "irreversible": true,
+     "confirmText": "Franchir la Faille avec Kaël verrouille certaines relations. Continuer ?",
+     "effects": { "routes": { "open": ["kael"], "close": ["opposition"] }, "rel": { "kael": { "trust": 24, "affinity": 18 } }, "clues": ["clue_interieur_faille"], "stats": { "courage": 2 }, "flags": { "entre_faille_ch2": true }, "rewardId": "ch2_k2" },
+     "next": "ch2_k3_dedans"
+    },
+    {
+     "id": "ch2_k2_c_attendre", "text": "« Pas encore. J’ai besoin de savoir ce que je vais y trouver. »",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 1, "perspicacite": 1 }, "rel": { "kael": { "respect": 10, "tension": 6 } }, "rewardId": "ch2_k2" },
+     "next": "ch2_k3_dedans"
+    }
+   ]
+  },
+
+  "ch2_k3_dedans": {
+   "id": "ch2_k3_dedans", "chapter": 2, "route": "kael",
+   "title": "La voix qui connaît ton prénom",
+   "background": "bg_coeur_faille", "music": "music_revelation", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [{ "id": "kael", "pose": "defensive", "expression": "worried", "state": "wet", "position": "left" }],
+   "lines": [
+    { "text": "À l’intérieur, il n’y a pas de haut ni de bas. Il y a des voix, et toutes disent la même chose : ce qu’elles ont promis." },
+    { "text": "Et puis une, plus proche, plus lente, qui dit ton prénom.", "fx": "flash", "sfx": "sfx_discovery" },
+    { "speaker": null, "text": "« {nom}. Tu as grandi. »", "effects": { "clues": ["clue_voix_theo"], "codex": ["cod_ancre"] } },
+    { "speaker": "kael", "text": "On sort. Maintenant. Elle ne devrait pas pouvoir te nommer.", "set": [{ "id": "kael", "expression": "fear_of_loss" }] }
+   ],
+   "next": "ch2_convergence"
+  },
+
+  "ch2_n1_signature": {
+   "id": "ch2_n1_signature", "chapter": 2, "route": "noam",
+   "title": "Sa propre main",
+   "background": "bg_grand_hall_bureau", "music": "music_emotion", "ambiance": null,
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "outfit": "civil", "pose": "defensive", "expression": "vulnerable", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "text": "Il t’attend sans uniforme. Chemise sombre, col ouvert, aucun anneau à l’épaule. Il a l’air d’avoir dix ans de plus et dix ans de moins en même temps." },
+    { "speaker": "noam", "text": "Ordre de scellement numéro huit cent douze. Objet : classement définitif d’une disparition." },
+    { "speaker": "noam", "text": "Nom du disparu : Vasseur, Théo. Signature : la mienne.", "fx": "impact", "set": [{ "id": "noam", "expression": "breakup" }], "effects": { "clues": ["clue_ordre_signe_noam"] } },
+    { "text": "Il a signé la mort administrative de ton frère. Il avait vingt-six ans. On lui a dit que c’était une procédure de classement.", "thought": true },
+    { "speaker": "noam", "text": "Je ne vous demande pas de me pardonner. Je vous demande de ne pas partir avant que j’aie fini." }
+   ],
+   "choices": [
+    {
+     "id": "ch2_n1_c_rester", "text": "Rester. Écouter jusqu’au bout.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "noam": { "trust": 24, "vulnerability": 26, "attraction": 16, "affinity": 18, "memory": "mem_noam_aveu" } }, "cg": "cg_noam_aveu_pluie", "stats": { "empathie": 2 }, "rewardId": "ch2_n1" },
+     "next": "ch2_n2_ordre"
+    },
+    {
+     "id": "ch2_n1_c_partir", "text": "Prendre l’ordre et sortir sans un mot.",
+     "tone": "distant",
+     "effects": { "rel": { "noam": { "affinity": -20, "tension": 24, "boundary": "bnd_noam_abandonne" } }, "stats": { "sangfroid": 1 }, "flags": { "noam_abandonne": true }, "rewardId": "ch2_n1" },
+     "next": "ch2_n2_ordre"
+    },
+    {
+     "id": "ch2_n1_c_utiliser", "text": "« Alors vous allez m’ouvrir le niveau zéro. »",
+     "tone": "negociateur",
+     "effects": { "rel": { "noam": { "respect": 14, "tension": 16, "trust": 8 } }, "clues": ["clue_acces_niveau_zero"], "stats": { "influence": 2 }, "rewardId": "ch2_n1" },
+     "next": "ch2_n2_ordre"
+    }
+   ]
+  },
+
+  "ch2_n2_ordre": {
+   "id": "ch2_n2_ordre", "chapter": 2, "route": "noam",
+   "title": "Qui a dicté l’ordre",
+   "background": "bg_archives_bureau", "music": "music_tension", "ambiance": null,
+   "characters": [{ "id": "noam", "outfit": "civil", "pose": "neutral", "expression": "determined", "position": "right" }],
+   "lines": [
+    { "text": "L’ordre porte deux mentions manuscrites. La signature de Noam, et au-dessus, une instruction en trois mots d’une écriture serrée : « Sans lecture préalable »." },
+    { "speaker": "noam", "text": "Cette écriture, je la vois tous les jours en bas des notes de service." }
+   ],
+   "choices": [
+    {
+     "id": "ch2_n2_c_ded", "text": "Reconstituer la chaîne de décision.",
+     "tone": "methodique",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_ordre_signe_noam" }, { "any": [{ "clue": "clue_sceau_sept" }, { "clue": "clue_chaine_damien" }] }] },
+      "successEffects": { "deductions": ["ded_damien_commanditaire"], "stats": { "perspicacite": 1 }, "rel": { "damien": { "distrust": 20 }, "noam": { "trust": 12 } } },
+      "failEffects": { "falseLead": "fl_noam_coupable", "rel": { "noam": { "distrust": 14 } } },
+      "successScene": "ch2_n3_pacte", "failScene": "ch2_n3_pacte"
+     }
+    },
+    {
+     "id": "ch2_n2_c_bruler", "text": "Brûler l’ordre. Le protéger.",
+     "tone": "complice", "irreversible": true,
+     "effects": { "rel": { "noam": { "affinity": 20, "trust": 18, "vulnerability": 16 } }, "stats": { "empathie": 1 }, "flags": { "ordre_brule": true }, "routes": { "close": ["truth"] }, "deferred": [{ "id": "def_preuve_perdue", "chapter": 5, "when": { "flag": "ordre_brule" }, "effects": { "stats": { "influence": -1 } }, "note": "Au chapitre V, il te manque la preuve écrite que tu as brûlée." }], "rewardId": "ch2_n2" },
+     "next": "ch2_n3_pacte"
+    }
+   ]
+  },
+
+  "ch2_n3_pacte": {
+   "id": "ch2_n3_pacte", "chapter": 2, "route": "noam",
+   "title": "Un serment entre nous",
+   "background": "bg_toit_orage", "music": "music_romance", "ambiance": "amb_pluie",
+   "weather": "rain",
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "outfit": "civil", "pose": "neutral", "expression": "closeness", "state": "wet", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "speaker": "noam", "text": "Je veux qu’on se promette quelque chose. Pas devant la Faille. Ici, entre nous, sans qu’elle entende." },
+    { "speaker": "noam", "text": "Que celui qui découvre la vérité le dise à l’autre. Même si c’est la pire chose à dire." }
+   ],
+   "choices": [
+    {
+     "id": "ch2_n3_c_jurer", "text": "« Je te le promets. »",
+     "tone": "sincere", "irreversible": true,
+     "effects": { "promises": { "prom_noam_verite": "made" }, "rel": { "noam": { "trust": 22, "attraction": 20, "affinity": 18, "memory": "mem_noam_pacte" } }, "routes": { "open": ["noam"] }, "stats": { "integrite": 1 }, "sfx": "sfx_promise", "rewardId": "ch2_n3" },
+     "next": "ch2_convergence"
+    },
+    {
+     "id": "ch2_n3_c_refuser", "text": "« Je ne promets rien à personne. Jamais. »",
+     "tone": "distant",
+     "effects": { "rel": { "noam": { "affinity": -12, "respect": 10, "tension": 14 } }, "stats": { "integrite": 1, "sangfroid": 1 }, "flags": { "refus_pacte_noam": true }, "rewardId": "ch2_n3" },
+     "next": "ch2_convergence"
+    }
+   ]
+  },
+
+  "ch2_y1_line": {
+   "id": "ch2_y1_line", "chapter": 2, "route": "coop",
+   "title": "Ce que Line a entendu",
+   "background": "bg_clinique_ysee", "music": "music_emotion", "ambiance": null,
+   "characters": [{ "id": "ysee", "pose": "neutral", "expression": "sad", "position": "left" }],
+   "lines": [
+    { "text": "Line a vingt-neuf ans. Elle a les deux mains transparentes jusqu’au coude, et elle sourit comme quelqu’un qui a été bien reçu quelque part." },
+    { "speaker": null, "text": "« Il y a un homme dedans. Il tient tout. Il est fatigué. »" },
+    { "speaker": null, "text": "« Il dit qu’il ne veut pas qu’on vienne. Il dit que si on vient, il devra choisir. »", "effects": { "clues": ["clue_temoignage_line", "clue_ancre_humaine"] } },
+    { "speaker": "ysee", "text": "Elle répète ça depuis quatre heures. Mot pour mot. Comme une transmission.", "set": [{ "id": "ysee", "expression": "worried" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch2_y1_c_ded", "text": "Nommer ce que tout le monde évite de nommer.",
+     "tone": "obstine",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_ancre_humaine" }, { "any": [{ "clue": "clue_premier_serment" }, { "clue": "clue_formule_ancre" }, { "clue": "clue_frere_lumiere" }] }] },
+      "successEffects": { "deductions": ["ded_ancre_vivante"], "codex": ["cod_ancre"], "stats": { "perspicacite": 2 }, "rel": { "ysee": { "respect": 16 } } },
+      "failEffects": { "falseLead": "fl_hallucination_collective", "stats": { "empathie": 1 } },
+      "successScene": "ch2_y2_pacte", "failScene": "ch2_y2_pacte"
+     }
+    },
+    {
+     "id": "ch2_y1_c_tenir", "text": "S’asseoir près d’elle et lui tenir ce qui reste de sa main.",
+     "tone": "chaleureux",
+     "effects": { "stats": { "empathie": 2 }, "rel": { "ysee": { "affinity": 18, "trust": 16, "memory": "mem_ysee_line" } }, "clues": ["clue_ancre_humaine"], "rewardId": "ch2_y1" },
+     "next": "ch2_y2_pacte"
+    }
+   ]
+  },
+
+  "ch2_y2_pacte": {
+   "id": "ch2_y2_pacte", "chapter": 2, "route": "coop",
+   "title": "La Main Creuse",
+   "background": "bg_quai_rompus_night", "music": "music_tension", "ambiance": "amb_ville_nuit",
+   "toneTarget": "ysee",
+   "characters": [{ "id": "ysee", "pose": "dynamic", "expression": "determined", "position": "center" }],
+   "speaker": "ysee",
+   "lines": [
+    { "speaker": "ysee", "text": "Il existe un réseau. On l’appelle la Main Creuse : ceux qui ont rompu et qui sont restés debout." },
+    { "speaker": "ysee", "text": "Ils n’ont pas de chef, pas de doctrine, et une seule règle : personne ne meurt seul.", "codex": ["cod_main_creuse"] },
+    { "speaker": "ysee", "text": "Ils vous prendront s’ils vous croient. Ils ne vous croiront pas si vous gardez votre matricule." }
+   ],
+   "choices": [
+    {
+     "id": "ch2_y2_c_rejoindre", "text": "Retirer ton insigne et le poser sur la table.",
+     "tone": "sincere", "irreversible": true,
+     "confirmText": "Renoncer publiquement à ton statut ferme des portes au Bureau. Continuer ?",
+     "effects": { "routes": { "open": ["coop"], "close": ["opposition"] }, "factions": { "rompus": 24, "bureau": -20 }, "rel": { "ysee": { "trust": 26, "respect": 20 } }, "stats": { "courage": 1, "integrite": 1 }, "flags": { "insigne_rendu": true }, "rewardId": "ch2_y2" },
+     "next": "ch2_convergence"
+    },
+    {
+     "id": "ch2_y2_c_double", "text": "Garder ton poste et les renseigner en secret.",
+     "tone": "negociateur",
+     "effects": { "routes": { "open": ["coop"] }, "factions": { "rompus": 10 }, "stats": { "ingeniosite": 2 }, "flags": { "agent_double": true }, "deferred": [{ "id": "def_double_jeu", "chapter": 4, "when": { "flag": "agent_double" }, "effects": { "rel": { "ysee": { "distrust": 16 } } }, "note": "Ton double jeu a fini par se voir." }], "rewardId": "ch2_y2" },
+     "next": "ch2_convergence"
+    }
+   ]
+  },
+
+  "ch2_convergence": {
+   "id": "ch2_convergence", "chapter": 2, "route": "commune",
+   "title": "Fin du chapitre II",
+   "background": "bg_faille_embrasee", "music": "music_danger", "ambiance": "amb_faille",
+   "weather": "particles", "autosave": true,
+   "characters": [],
+   "lines": [
+    { "text": "À quatre heures dix-sept, la Faille s’embrase du sud au nord et la ville entière lève la tête en même temps.", "fx": "flash" },
+    { "text": "Trente-deux personnes rompent leur serment dans la même minute. Aucune ne l’avait décidé.", "condition": { "not": { "flag": "insigne_rendu" } } },
+    { "text": "Le Bureau parle d’un incident thermique. Personne n’y croit, et c’est la première fois depuis dix-neuf ans que personne n’y croit.", "sfx": "sfx_chapter" },
+    { "text": "Dans ta poche, la fiole verte s’est mise à trembler.", "thought": true, "effects": { "clues": ["clue_fiole_reagit"] } }
+   ],
+   "next": "ch3_01_convocation"
+  }
+ }
+}

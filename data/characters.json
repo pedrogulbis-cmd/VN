@@ -1,0 +1,1747 @@
+{
+ "characters": {
+  "kael": {
+   "id": "kael",
+   "name": "Kaël Ravier",
+   "age": 29,
+   "role": "Marcheur de Faille, contrebandier de serments",
+   "palette": [
+    "#141C33",
+    "#22304F",
+    "#4FD8E8",
+    "#C98F63",
+    "#8FA3C8"
+   ],
+   "accent": "#4FD8E8",
+   "eyes": "#4FD8E8",
+   "hair": "#1A2340",
+   "romanceable": true,
+   "outfits": {
+    "default": "manteau long bleu nuit, col relevé, écharpe cyan usée",
+    "combat": "veste courte sanglée, avant-bras bandés, harnais de fioles"
+   },
+   "states": [
+    "normal",
+    "injured",
+    "wet"
+   ],
+   "expressions": [
+    "calm",
+    "smile_soft",
+    "happy",
+    "amused",
+    "tender",
+    "flustered",
+    "sad",
+    "worried",
+    "wary",
+    "angry",
+    "surprised",
+    "shocked",
+    "determined",
+    "vulnerable",
+    "avert",
+    "exhausted",
+    "affection",
+    "closeness",
+    "jealousy",
+    "fear_of_loss",
+    "relief",
+    "breakup",
+    "epilogue_good",
+    "epilogue_bad"
+   ],
+   "immutable": "Cicatrice de serment rompu barrant l'avant-bras gauche, mèche cyan à droite, boucle d'oreille anneau à gauche.",
+   "sprites": {
+    "default": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_kael_default_neutral_calm_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_calm_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_kael_default_neutral_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_kael_default_neutral_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_kael_default_neutral_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_kael_default_neutral_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_kael_default_neutral_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_kael_default_neutral_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_default_neutral_worried_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_worried_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_default_neutral_wary_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_wary_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_default_neutral_angry_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_angry_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_kael_default_neutral_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_default_neutral_shocked_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_shocked_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_default_neutral_determined_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_determined_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_default_neutral_vulnerable_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_vulnerable_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_kael_default_neutral_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_default_neutral_exhausted_normal.webp",
+       "injured": "assets/characters/character_kael_default_neutral_exhausted_injured.webp",
+       "wet": "assets/characters/character_kael_default_neutral_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_kael_default_neutral_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_kael_default_neutral_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_kael_default_neutral_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_kael_default_neutral_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_kael_default_neutral_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_kael_default_neutral_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_kael_default_neutral_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_kael_default_neutral_epilogue_bad_normal.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_kael_default_defensive_calm_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_calm_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_kael_default_defensive_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_kael_default_defensive_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_kael_default_defensive_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_kael_default_defensive_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_kael_default_defensive_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_kael_default_defensive_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_default_defensive_worried_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_worried_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_default_defensive_wary_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_wary_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_default_defensive_angry_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_angry_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_kael_default_defensive_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_default_defensive_shocked_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_shocked_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_default_defensive_determined_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_determined_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_default_defensive_vulnerable_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_vulnerable_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_kael_default_defensive_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_default_defensive_exhausted_normal.webp",
+       "injured": "assets/characters/character_kael_default_defensive_exhausted_injured.webp",
+       "wet": "assets/characters/character_kael_default_defensive_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_kael_default_defensive_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_kael_default_defensive_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_kael_default_defensive_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_kael_default_defensive_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_kael_default_defensive_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_kael_default_defensive_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_kael_default_defensive_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_kael_default_defensive_epilogue_bad_normal.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_kael_default_dynamic_calm_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_calm_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_kael_default_dynamic_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_kael_default_dynamic_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_kael_default_dynamic_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_kael_default_dynamic_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_kael_default_dynamic_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_kael_default_dynamic_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_default_dynamic_worried_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_worried_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_default_dynamic_wary_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_wary_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_default_dynamic_angry_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_angry_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_kael_default_dynamic_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_default_dynamic_shocked_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_shocked_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_default_dynamic_determined_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_determined_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_default_dynamic_vulnerable_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_vulnerable_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_kael_default_dynamic_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_default_dynamic_exhausted_normal.webp",
+       "injured": "assets/characters/character_kael_default_dynamic_exhausted_injured.webp",
+       "wet": "assets/characters/character_kael_default_dynamic_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_kael_default_dynamic_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_kael_default_dynamic_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_kael_default_dynamic_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_kael_default_dynamic_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_kael_default_dynamic_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_kael_default_dynamic_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_kael_default_dynamic_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_kael_default_dynamic_epilogue_bad_normal.webp"
+      }
+     }
+    },
+    "combat": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_kael_combat_neutral_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_combat_neutral_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_combat_neutral_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_combat_neutral_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_combat_neutral_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_combat_neutral_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_combat_neutral_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_combat_neutral_exhausted_normal.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_kael_combat_defensive_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_combat_defensive_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_combat_defensive_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_combat_defensive_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_combat_defensive_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_combat_defensive_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_combat_defensive_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_combat_defensive_exhausted_normal.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_kael_combat_dynamic_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_kael_combat_dynamic_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_kael_combat_dynamic_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_kael_combat_dynamic_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_kael_combat_dynamic_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_kael_combat_dynamic_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_kael_combat_dynamic_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_kael_combat_dynamic_exhausted_normal.webp"
+      }
+     }
+    }
+   },
+   "fallback": {
+    "outfit": "default",
+    "pose": "neutral",
+    "expression": "calm",
+    "state": "normal"
+   },
+   "expressionFallback": {
+    "affection": "smile_soft",
+    "closeness": "tender",
+    "jealousy": "wary",
+    "fear_of_loss": "worried",
+    "relief": "smile_soft",
+    "breakup": "sad",
+    "epilogue_good": "happy",
+    "epilogue_bad": "sad",
+    "tender": "smile_soft",
+    "amused": "smile_soft",
+    "flustered": "avert",
+    "shocked": "surprised",
+    "exhausted": "sad",
+    "vulnerable": "sad",
+    "avert": "calm",
+    "wary": "worried",
+    "determined": "calm",
+    "surprised": "calm",
+    "angry": "wary",
+    "sad": "worried",
+    "worried": "calm",
+    "happy": "smile_soft",
+    "smile_soft": "calm",
+    "calm": "calm"
+   }
+  },
+  "noam": {
+   "id": "noam",
+   "name": "Noam Sardou",
+   "age": 32,
+   "role": "Capitaine de la Garde des Serments",
+   "palette": [
+    "#3A0E16",
+    "#5E1A24",
+    "#D9A441",
+    "#E8C3A0",
+    "#E0C98A"
+   ],
+   "accent": "#D9A441",
+   "eyes": "#D9A441",
+   "hair": "#5A1E22",
+   "romanceable": true,
+   "outfits": {
+    "default": "uniforme de la Garde, épaulières dorées, gorgerin gravé",
+    "civil": "chemise sombre ouverte, bretelles, sans insigne"
+   },
+   "states": [
+    "normal",
+    "injured",
+    "wet"
+   ],
+   "expressions": [
+    "calm",
+    "smile_soft",
+    "happy",
+    "amused",
+    "tender",
+    "flustered",
+    "sad",
+    "worried",
+    "wary",
+    "angry",
+    "surprised",
+    "shocked",
+    "determined",
+    "vulnerable",
+    "avert",
+    "exhausted",
+    "affection",
+    "closeness",
+    "jealousy",
+    "fear_of_loss",
+    "relief",
+    "breakup",
+    "epilogue_good",
+    "epilogue_bad"
+   ],
+   "immutable": "Insigne à sept anneaux sur l'épaule droite, entaille verticale sur le sourcil gauche.",
+   "sprites": {
+    "default": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_noam_default_neutral_calm_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_calm_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_noam_default_neutral_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_noam_default_neutral_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_noam_default_neutral_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_noam_default_neutral_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_noam_default_neutral_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_noam_default_neutral_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_default_neutral_worried_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_worried_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_default_neutral_wary_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_wary_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_default_neutral_angry_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_angry_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_noam_default_neutral_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_default_neutral_shocked_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_shocked_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_default_neutral_determined_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_determined_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_default_neutral_vulnerable_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_vulnerable_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_noam_default_neutral_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_default_neutral_exhausted_normal.webp",
+       "injured": "assets/characters/character_noam_default_neutral_exhausted_injured.webp",
+       "wet": "assets/characters/character_noam_default_neutral_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_noam_default_neutral_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_noam_default_neutral_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_noam_default_neutral_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_noam_default_neutral_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_noam_default_neutral_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_noam_default_neutral_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_noam_default_neutral_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_noam_default_neutral_epilogue_bad_normal.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_noam_default_defensive_calm_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_calm_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_noam_default_defensive_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_noam_default_defensive_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_noam_default_defensive_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_noam_default_defensive_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_noam_default_defensive_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_noam_default_defensive_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_default_defensive_worried_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_worried_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_default_defensive_wary_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_wary_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_default_defensive_angry_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_angry_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_noam_default_defensive_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_default_defensive_shocked_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_shocked_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_default_defensive_determined_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_determined_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_default_defensive_vulnerable_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_vulnerable_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_noam_default_defensive_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_default_defensive_exhausted_normal.webp",
+       "injured": "assets/characters/character_noam_default_defensive_exhausted_injured.webp",
+       "wet": "assets/characters/character_noam_default_defensive_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_noam_default_defensive_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_noam_default_defensive_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_noam_default_defensive_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_noam_default_defensive_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_noam_default_defensive_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_noam_default_defensive_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_noam_default_defensive_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_noam_default_defensive_epilogue_bad_normal.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_noam_default_dynamic_calm_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_calm_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_noam_default_dynamic_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_noam_default_dynamic_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_noam_default_dynamic_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_noam_default_dynamic_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_noam_default_dynamic_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_noam_default_dynamic_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_default_dynamic_worried_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_worried_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_default_dynamic_wary_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_wary_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_default_dynamic_angry_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_angry_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_noam_default_dynamic_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_default_dynamic_shocked_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_shocked_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_default_dynamic_determined_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_determined_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_default_dynamic_vulnerable_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_vulnerable_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_noam_default_dynamic_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_default_dynamic_exhausted_normal.webp",
+       "injured": "assets/characters/character_noam_default_dynamic_exhausted_injured.webp",
+       "wet": "assets/characters/character_noam_default_dynamic_exhausted_wet.webp"
+      },
+      "affection": {
+       "normal": "assets/characters/character_noam_default_dynamic_affection_normal.webp"
+      },
+      "closeness": {
+       "normal": "assets/characters/character_noam_default_dynamic_closeness_normal.webp"
+      },
+      "jealousy": {
+       "normal": "assets/characters/character_noam_default_dynamic_jealousy_normal.webp"
+      },
+      "fear_of_loss": {
+       "normal": "assets/characters/character_noam_default_dynamic_fear_of_loss_normal.webp"
+      },
+      "relief": {
+       "normal": "assets/characters/character_noam_default_dynamic_relief_normal.webp"
+      },
+      "breakup": {
+       "normal": "assets/characters/character_noam_default_dynamic_breakup_normal.webp"
+      },
+      "epilogue_good": {
+       "normal": "assets/characters/character_noam_default_dynamic_epilogue_good_normal.webp"
+      },
+      "epilogue_bad": {
+       "normal": "assets/characters/character_noam_default_dynamic_epilogue_bad_normal.webp"
+      }
+     }
+    },
+    "civil": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_noam_civil_neutral_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_civil_neutral_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_civil_neutral_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_civil_neutral_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_civil_neutral_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_civil_neutral_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_civil_neutral_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_civil_neutral_exhausted_normal.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_noam_civil_defensive_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_civil_defensive_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_civil_defensive_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_civil_defensive_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_civil_defensive_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_civil_defensive_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_civil_defensive_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_civil_defensive_exhausted_normal.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_noam_civil_dynamic_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_noam_civil_dynamic_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_noam_civil_dynamic_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_noam_civil_dynamic_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_noam_civil_dynamic_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_noam_civil_dynamic_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_noam_civil_dynamic_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_noam_civil_dynamic_exhausted_normal.webp"
+      }
+     }
+    }
+   },
+   "fallback": {
+    "outfit": "default",
+    "pose": "neutral",
+    "expression": "calm",
+    "state": "normal"
+   },
+   "expressionFallback": {
+    "affection": "smile_soft",
+    "closeness": "tender",
+    "jealousy": "wary",
+    "fear_of_loss": "worried",
+    "relief": "smile_soft",
+    "breakup": "sad",
+    "epilogue_good": "happy",
+    "epilogue_bad": "sad",
+    "tender": "smile_soft",
+    "amused": "smile_soft",
+    "flustered": "avert",
+    "shocked": "surprised",
+    "exhausted": "sad",
+    "vulnerable": "sad",
+    "avert": "calm",
+    "wary": "worried",
+    "determined": "calm",
+    "surprised": "calm",
+    "angry": "wary",
+    "sad": "worried",
+    "worried": "calm",
+    "happy": "smile_soft",
+    "smile_soft": "calm",
+    "calm": "calm"
+   }
+  },
+  "ysee": {
+   "id": "ysee",
+   "name": "Ysée Marchand",
+   "age": 34,
+   "role": "Médecin des Rompus",
+   "palette": [
+    "#38214C",
+    "#523070",
+    "#7BE0A8",
+    "#8A5A3C",
+    "#C7B0DC"
+   ],
+   "accent": "#7BE0A8",
+   "eyes": "#7BE0A8",
+   "hair": "#2A1436",
+   "romanceable": false,
+   "outfits": {
+    "default": "blouse violette sanglée, gants courts, sacoche de fioles"
+   },
+   "states": [
+    "normal",
+    "wet"
+   ],
+   "expressions": [
+    "calm",
+    "smile_soft",
+    "happy",
+    "amused",
+    "tender",
+    "flustered",
+    "sad",
+    "worried",
+    "wary",
+    "angry",
+    "surprised",
+    "shocked",
+    "determined",
+    "vulnerable",
+    "avert",
+    "exhausted"
+   ],
+   "immutable": "Trois anneaux de fil vert au poignet gauche (un par patient perdu), tresse basse à droite.",
+   "sprites": {
+    "default": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_ysee_default_neutral_calm_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_ysee_default_neutral_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_ysee_default_neutral_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_ysee_default_neutral_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_ysee_default_neutral_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_ysee_default_neutral_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_ysee_default_neutral_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_ysee_default_neutral_worried_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_ysee_default_neutral_wary_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_ysee_default_neutral_angry_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_ysee_default_neutral_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_ysee_default_neutral_shocked_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_ysee_default_neutral_determined_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_ysee_default_neutral_vulnerable_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_ysee_default_neutral_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_ysee_default_neutral_exhausted_normal.webp",
+       "wet": "assets/characters/character_ysee_default_neutral_exhausted_wet.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_ysee_default_defensive_calm_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_ysee_default_defensive_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_ysee_default_defensive_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_ysee_default_defensive_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_ysee_default_defensive_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_ysee_default_defensive_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_ysee_default_defensive_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_ysee_default_defensive_worried_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_ysee_default_defensive_wary_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_ysee_default_defensive_angry_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_ysee_default_defensive_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_ysee_default_defensive_shocked_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_ysee_default_defensive_determined_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_ysee_default_defensive_vulnerable_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_ysee_default_defensive_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_ysee_default_defensive_exhausted_normal.webp",
+       "wet": "assets/characters/character_ysee_default_defensive_exhausted_wet.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_ysee_default_dynamic_calm_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_calm_wet.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_ysee_default_dynamic_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_ysee_default_dynamic_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_ysee_default_dynamic_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_ysee_default_dynamic_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_ysee_default_dynamic_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_ysee_default_dynamic_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_ysee_default_dynamic_worried_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_worried_wet.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_ysee_default_dynamic_wary_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_wary_wet.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_ysee_default_dynamic_angry_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_angry_wet.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_ysee_default_dynamic_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_ysee_default_dynamic_shocked_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_shocked_wet.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_ysee_default_dynamic_determined_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_determined_wet.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_ysee_default_dynamic_vulnerable_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_vulnerable_wet.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_ysee_default_dynamic_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_ysee_default_dynamic_exhausted_normal.webp",
+       "wet": "assets/characters/character_ysee_default_dynamic_exhausted_wet.webp"
+      }
+     }
+    }
+   },
+   "fallback": {
+    "outfit": "default",
+    "pose": "neutral",
+    "expression": "calm",
+    "state": "normal"
+   },
+   "expressionFallback": {
+    "affection": "smile_soft",
+    "closeness": "tender",
+    "jealousy": "wary",
+    "fear_of_loss": "worried",
+    "relief": "smile_soft",
+    "breakup": "sad",
+    "epilogue_good": "happy",
+    "epilogue_bad": "sad",
+    "tender": "smile_soft",
+    "amused": "smile_soft",
+    "flustered": "avert",
+    "shocked": "surprised",
+    "exhausted": "sad",
+    "vulnerable": "sad",
+    "avert": "calm",
+    "wary": "worried",
+    "determined": "calm",
+    "surprised": "calm",
+    "angry": "wary",
+    "sad": "worried",
+    "worried": "calm",
+    "happy": "smile_soft",
+    "smile_soft": "calm",
+    "calm": "calm"
+   }
+  },
+  "damien": {
+   "id": "damien",
+   "name": "Damien Vaugrise-Loret",
+   "age": 41,
+   "role": "Chancelier du Bureau des Serments",
+   "palette": [
+    "#F2EEE4",
+    "#D9A441",
+    "#8C7A4A",
+    "#EBD3BC",
+    "#2A2418"
+   ],
+   "accent": "#D9A441",
+   "eyes": "#C9B06A",
+   "hair": "#D8D2C4",
+   "romanceable": false,
+   "outfits": {
+    "default": "manteau de chancelier ivoire, chaîne d'office, gants blancs"
+   },
+   "states": [
+    "normal",
+    "aura"
+   ],
+   "expressions": [
+    "calm",
+    "smile_soft",
+    "happy",
+    "amused",
+    "tender",
+    "flustered",
+    "sad",
+    "worried",
+    "wary",
+    "angry",
+    "surprised",
+    "shocked",
+    "determined",
+    "vulnerable",
+    "avert",
+    "exhausted"
+   ],
+   "immutable": "Chaîne d'office à sept maillons, alliance noire à la main droite, jamais de col ouvert.",
+   "sprites": {
+    "default": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_damien_default_neutral_calm_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_calm_aura.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_damien_default_neutral_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_damien_default_neutral_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_damien_default_neutral_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_damien_default_neutral_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_damien_default_neutral_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_damien_default_neutral_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_damien_default_neutral_worried_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_worried_aura.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_damien_default_neutral_wary_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_wary_aura.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_damien_default_neutral_angry_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_angry_aura.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_damien_default_neutral_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_damien_default_neutral_shocked_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_shocked_aura.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_damien_default_neutral_determined_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_determined_aura.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_damien_default_neutral_vulnerable_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_vulnerable_aura.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_damien_default_neutral_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_damien_default_neutral_exhausted_normal.webp",
+       "aura": "assets/characters/character_damien_default_neutral_exhausted_aura.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_damien_default_defensive_calm_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_calm_aura.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_damien_default_defensive_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_damien_default_defensive_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_damien_default_defensive_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_damien_default_defensive_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_damien_default_defensive_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_damien_default_defensive_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_damien_default_defensive_worried_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_worried_aura.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_damien_default_defensive_wary_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_wary_aura.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_damien_default_defensive_angry_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_angry_aura.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_damien_default_defensive_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_damien_default_defensive_shocked_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_shocked_aura.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_damien_default_defensive_determined_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_determined_aura.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_damien_default_defensive_vulnerable_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_vulnerable_aura.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_damien_default_defensive_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_damien_default_defensive_exhausted_normal.webp",
+       "aura": "assets/characters/character_damien_default_defensive_exhausted_aura.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_damien_default_dynamic_calm_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_calm_aura.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_damien_default_dynamic_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_damien_default_dynamic_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_damien_default_dynamic_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_damien_default_dynamic_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_damien_default_dynamic_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_damien_default_dynamic_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_damien_default_dynamic_worried_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_worried_aura.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_damien_default_dynamic_wary_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_wary_aura.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_damien_default_dynamic_angry_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_angry_aura.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_damien_default_dynamic_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_damien_default_dynamic_shocked_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_shocked_aura.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_damien_default_dynamic_determined_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_determined_aura.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_damien_default_dynamic_vulnerable_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_vulnerable_aura.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_damien_default_dynamic_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_damien_default_dynamic_exhausted_normal.webp",
+       "aura": "assets/characters/character_damien_default_dynamic_exhausted_aura.webp"
+      }
+     }
+    }
+   },
+   "fallback": {
+    "outfit": "default",
+    "pose": "neutral",
+    "expression": "calm",
+    "state": "normal"
+   },
+   "expressionFallback": {
+    "affection": "smile_soft",
+    "closeness": "tender",
+    "jealousy": "wary",
+    "fear_of_loss": "worried",
+    "relief": "smile_soft",
+    "breakup": "sad",
+    "epilogue_good": "happy",
+    "epilogue_bad": "sad",
+    "tender": "smile_soft",
+    "amused": "smile_soft",
+    "flustered": "avert",
+    "shocked": "surprised",
+    "exhausted": "sad",
+    "vulnerable": "sad",
+    "avert": "calm",
+    "wary": "worried",
+    "determined": "calm",
+    "surprised": "calm",
+    "angry": "wary",
+    "sad": "worried",
+    "worried": "calm",
+    "happy": "smile_soft",
+    "smile_soft": "calm",
+    "calm": "calm"
+   }
+  },
+  "theo": {
+   "id": "theo",
+   "name": "Théo Vasseur",
+   "age": 30,
+   "role": "l'Ancre de la Faille",
+   "palette": [
+    "#20323F",
+    "#8FE7FF",
+    "#DCEAF2",
+    "#DCC9C4",
+    "#31505F"
+   ],
+   "accent": "#8FE7FF",
+   "eyes": "#B9F2FF",
+   "hair": "#DCEAF2",
+   "romanceable": false,
+   "outfits": {
+    "default": "robe d'ancre grise, coutures lumineuses, pieds nus",
+    "civil": "pull élimé et veste d'archiviste, tenue d'avant la Faille"
+   },
+   "states": [
+    "normal",
+    "aura",
+    "injured"
+   ],
+   "expressions": [
+    "calm",
+    "smile_soft",
+    "happy",
+    "amused",
+    "tender",
+    "flustered",
+    "sad",
+    "worried",
+    "wary",
+    "angry",
+    "surprised",
+    "shocked",
+    "determined",
+    "vulnerable",
+    "avert",
+    "exhausted"
+   ],
+   "immutable": "Veines lumineuses cyan remontant du poignet gauche à la tempe, cheveux décolorés par la Faille.",
+   "sprites": {
+    "default": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_theo_default_neutral_calm_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_calm_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_calm_injured.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_theo_default_neutral_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_theo_default_neutral_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_theo_default_neutral_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_theo_default_neutral_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_theo_default_neutral_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_theo_default_neutral_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_default_neutral_worried_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_worried_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_worried_injured.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_default_neutral_wary_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_wary_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_wary_injured.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_default_neutral_angry_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_angry_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_angry_injured.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_theo_default_neutral_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_default_neutral_shocked_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_shocked_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_shocked_injured.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_default_neutral_determined_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_determined_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_determined_injured.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_default_neutral_vulnerable_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_vulnerable_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_vulnerable_injured.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_theo_default_neutral_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_default_neutral_exhausted_normal.webp",
+       "aura": "assets/characters/character_theo_default_neutral_exhausted_aura.webp",
+       "injured": "assets/characters/character_theo_default_neutral_exhausted_injured.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_theo_default_defensive_calm_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_calm_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_calm_injured.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_theo_default_defensive_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_theo_default_defensive_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_theo_default_defensive_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_theo_default_defensive_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_theo_default_defensive_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_theo_default_defensive_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_default_defensive_worried_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_worried_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_worried_injured.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_default_defensive_wary_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_wary_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_wary_injured.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_default_defensive_angry_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_angry_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_angry_injured.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_theo_default_defensive_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_default_defensive_shocked_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_shocked_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_shocked_injured.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_default_defensive_determined_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_determined_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_determined_injured.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_default_defensive_vulnerable_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_vulnerable_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_vulnerable_injured.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_theo_default_defensive_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_default_defensive_exhausted_normal.webp",
+       "aura": "assets/characters/character_theo_default_defensive_exhausted_aura.webp",
+       "injured": "assets/characters/character_theo_default_defensive_exhausted_injured.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_theo_default_dynamic_calm_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_calm_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_calm_injured.webp"
+      },
+      "smile_soft": {
+       "normal": "assets/characters/character_theo_default_dynamic_smile_soft_normal.webp"
+      },
+      "happy": {
+       "normal": "assets/characters/character_theo_default_dynamic_happy_normal.webp"
+      },
+      "amused": {
+       "normal": "assets/characters/character_theo_default_dynamic_amused_normal.webp"
+      },
+      "tender": {
+       "normal": "assets/characters/character_theo_default_dynamic_tender_normal.webp"
+      },
+      "flustered": {
+       "normal": "assets/characters/character_theo_default_dynamic_flustered_normal.webp"
+      },
+      "sad": {
+       "normal": "assets/characters/character_theo_default_dynamic_sad_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_default_dynamic_worried_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_worried_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_worried_injured.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_default_dynamic_wary_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_wary_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_wary_injured.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_default_dynamic_angry_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_angry_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_angry_injured.webp"
+      },
+      "surprised": {
+       "normal": "assets/characters/character_theo_default_dynamic_surprised_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_default_dynamic_shocked_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_shocked_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_shocked_injured.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_default_dynamic_determined_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_determined_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_determined_injured.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_default_dynamic_vulnerable_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_vulnerable_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_vulnerable_injured.webp"
+      },
+      "avert": {
+       "normal": "assets/characters/character_theo_default_dynamic_avert_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_default_dynamic_exhausted_normal.webp",
+       "aura": "assets/characters/character_theo_default_dynamic_exhausted_aura.webp",
+       "injured": "assets/characters/character_theo_default_dynamic_exhausted_injured.webp"
+      }
+     }
+    },
+    "civil": {
+     "neutral": {
+      "calm": {
+       "normal": "assets/characters/character_theo_civil_neutral_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_civil_neutral_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_civil_neutral_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_civil_neutral_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_civil_neutral_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_civil_neutral_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_civil_neutral_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_civil_neutral_exhausted_normal.webp"
+      }
+     },
+     "defensive": {
+      "calm": {
+       "normal": "assets/characters/character_theo_civil_defensive_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_civil_defensive_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_civil_defensive_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_civil_defensive_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_civil_defensive_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_civil_defensive_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_civil_defensive_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_civil_defensive_exhausted_normal.webp"
+      }
+     },
+     "dynamic": {
+      "calm": {
+       "normal": "assets/characters/character_theo_civil_dynamic_calm_normal.webp"
+      },
+      "worried": {
+       "normal": "assets/characters/character_theo_civil_dynamic_worried_normal.webp"
+      },
+      "wary": {
+       "normal": "assets/characters/character_theo_civil_dynamic_wary_normal.webp"
+      },
+      "angry": {
+       "normal": "assets/characters/character_theo_civil_dynamic_angry_normal.webp"
+      },
+      "shocked": {
+       "normal": "assets/characters/character_theo_civil_dynamic_shocked_normal.webp"
+      },
+      "determined": {
+       "normal": "assets/characters/character_theo_civil_dynamic_determined_normal.webp"
+      },
+      "vulnerable": {
+       "normal": "assets/characters/character_theo_civil_dynamic_vulnerable_normal.webp"
+      },
+      "exhausted": {
+       "normal": "assets/characters/character_theo_civil_dynamic_exhausted_normal.webp"
+      }
+     }
+    }
+   },
+   "fallback": {
+    "outfit": "default",
+    "pose": "neutral",
+    "expression": "calm",
+    "state": "normal"
+   },
+   "expressionFallback": {
+    "affection": "smile_soft",
+    "closeness": "tender",
+    "jealousy": "wary",
+    "fear_of_loss": "worried",
+    "relief": "smile_soft",
+    "breakup": "sad",
+    "epilogue_good": "happy",
+    "epilogue_bad": "sad",
+    "tender": "smile_soft",
+    "amused": "smile_soft",
+    "flustered": "avert",
+    "shocked": "surprised",
+    "exhausted": "sad",
+    "vulnerable": "sad",
+    "avert": "calm",
+    "wary": "worried",
+    "determined": "calm",
+    "surprised": "calm",
+    "angry": "wary",
+    "sad": "worried",
+    "worried": "calm",
+    "happy": "smile_soft",
+    "smile_soft": "calm",
+    "calm": "calm"
+   }
+  }
+ }
+}

@@ -1,0 +1,409 @@
+{
+ "scenes": {
+  "ch1_01_convocation": {
+   "id": "ch1_01_convocation", "chapter": 1, "route": "commune",
+   "title": "Le Grand hall",
+   "background": "bg_grand_hall_bureau", "music": "music_tension", "ambiance": null,
+   "autosave": true, "toneTarget": "damien",
+   "characters": [
+    { "id": "damien", "pose": "neutral", "expression": "calm", "position": "center" },
+    { "id": "noam", "pose": "defensive", "expression": "wary", "position": "right" }
+   ],
+   "speaker": "damien",
+   "lines": [
+    { "text": "Le Grand hall du Bureau tient d’une cathédrale à qui on aurait retiré le dieu. Sept anneaux de bronze pendent au-dessus de la nef : les sept serments fondateurs de Vaurance.", "codex": ["cod_bureau"] },
+    { "speaker": "damien", "text": "Monsieur Vasseur. On m’a dit que vous aviez consulté le registre central à quatre heures douze cette nuit." },
+    { "text": "Damien Vaugrise-Loret. Chancelier. Il parle comme on referme une porte : sans élever la voix, et sans laisser d’espace.", "thought": true, "set": [{ "id": "damien", "expression": "smile_soft" }] },
+    { "speaker": "damien", "text": "Ne vous excusez pas. La curiosité est la seule qualité que je n’ai jamais eu à enseigner à personne." },
+    { "speaker": "damien", "text": "Je vous confie l’affaire Ourdan. Officiellement. Avec accès aux scellés." },
+    { "speaker": "noam", "text": "Chancelier —", "set": [{ "id": "noam", "expression": "shocked" }] },
+    { "speaker": "damien", "text": "Le capitaine Sardou vous accompagnera. Il a une opinion sur cette décision. Il aura la délicatesse de la garder pour lui.", "set": [{ "id": "damien", "expression": "determined" }, { "id": "noam", "expression": "angry" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch1_01_c_accept", "text": "« J’accepte. Et je veux les onze autres dossiers. »",
+     "tone": "direct",
+     "effects": { "stats": { "courage": 1 }, "rel": { "damien": { "respect": 10, "tension": 6 }, "noam": { "tension": 8 } }, "flags": { "demande_onze": true }, "rewardId": "ch1_01" },
+     "next": "ch1_02_dossier"
+    },
+    {
+     "id": "ch1_01_c_prudent", "text": "« J’accepte, chancelier. » — et rien d’autre.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 1 }, "rel": { "damien": { "trust": 8 }, "noam": { "respect": 4 } }, "rewardId": "ch1_01" },
+     "next": "ch1_02_dossier"
+    },
+    {
+     "id": "ch1_01_c_lire", "text": "Chercher le sceau à sept anneaux sur sa chaîne d’office.",
+     "tone": "methodique",
+     "requires": { "clue": "clue_sceau_sept" },
+     "lockedHint": "Il faudrait savoir quel sceau chercher.",
+     "effects": { "stats": { "perspicacite": 1 }, "clues": ["clue_chaine_damien"], "rel": { "damien": { "distrust": 6 } }, "rewardId": "ch1_01" },
+     "next": "ch1_02_dossier"
+    }
+   ]
+  },
+
+  "ch1_02_dossier": {
+   "id": "ch1_02_dossier", "chapter": 1, "route": "commune",
+   "title": "Ce que Noam ne dit pas",
+   "background": "bg_archives_bureau", "music": "music_calm", "ambiance": null,
+   "toneTarget": "noam",
+   "characters": [{ "id": "noam", "pose": "defensive", "expression": "worried", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "speaker": "noam", "text": "Vous ne devriez pas avoir cette affaire." },
+    { "speaker": "noam", "text": "Ce n’est pas une question de compétence. C’est une question de ce qui arrive aux gens qui l’ont eue avant vous." },
+    { "text": "Il pose une chemise cartonnée sur la table. Ses doigts restent dessus une seconde de trop.", "set": [{ "id": "noam", "expression": "avert" }] },
+    { "speaker": "noam", "text": "Trois lecteurs en dix-huit mois. Un a démissionné, un a demandé sa mutation à Sablières, et le troisième…" },
+    { "speaker": "noam", "text": "Le troisième n’a jamais été retrouvé.", "set": [{ "id": "noam", "expression": "vulnerable" }], "effects": { "clues": ["clue_trois_lecteurs"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch1_02_c_nom", "text": "« Comment s’appelait le troisième ? »",
+     "tone": "direct",
+     "effects": { "stats": { "perspicacite": 1 }, "clues": ["clue_lecteur_disparu"], "rel": { "noam": { "tension": 6, "trust": 6 } }, "rewardId": "ch1_02" },
+     "next": "ch1_03_marche"
+    },
+    {
+     "id": "ch1_02_c_confiance", "text": "« Vous me prévenez. Pourquoi vous, et pourquoi maintenant ? »",
+     "tone": "sincere",
+     "effects": { "rel": { "noam": { "trust": 14, "vulnerability": 10, "affinity": 8, "memory": "mem_noam_avertissement" } }, "stats": { "empathie": 1 }, "rewardId": "ch1_02" },
+     "next": "ch1_03_marche"
+    },
+    {
+     "id": "ch1_02_c_froid", "text": "« Je note. Le dossier, capitaine. »",
+     "tone": "distant",
+     "effects": { "rel": { "noam": { "distrust": 10, "affinity": -6 } }, "stats": { "sangfroid": 1 }, "rewardId": "ch1_02" },
+     "next": "ch1_03_marche"
+    }
+   ]
+  },
+
+  "ch1_03_marche": {
+   "id": "ch1_03_marche", "chapter": 1, "route": "commune",
+   "title": "Le marché des serments",
+   "background": "bg_marche_serments", "music": "music_tension", "ambiance": "amb_ville_nuit",
+   "weather": "mist",
+   "characters": [],
+   "lines": [
+    { "text": "Sous les arches du quai bas, on vend ce que la loi appelle des « engagements privés » et ce que tout le monde appelle des serments d’occasion.", "codex": ["cod_marche"] },
+    { "text": "Une femme échange trois mois de mémoire contre la garantie qu’un homme reviendra. Deux frères se lient devant un notaire clandestin pour un prêt qu’aucune banque ne couvre." },
+    { "text": "Ce n’est pas de la superstition. Ici, une parole donnée pèse un organe.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch1_03_c_acheter", "text": "Payer un indicateur pour retrouver l’acheteur de la suspension.",
+     "tone": "methodique",
+     "requires": { "stat": "influence", "op": ">=", "value": 3 },
+     "lockedHint": "Personne ne te doit encore assez pour parler.",
+     "effects": { "clues": ["clue_acheteur_masque"], "stats": { "influence": 1 }, "rewardId": "ch1_03" },
+     "next": "ch1_04_kael_marche"
+    },
+    {
+     "id": "ch1_03_c_lire", "text": "Lire les résidus de serments sur les tables de négoce.",
+     "tone": "obstine",
+     "effects": { "stats": { "perspicacite": 2 }, "clues": ["clue_formule_ancre"], "rewardId": "ch1_03" },
+     "next": "ch1_04_kael_marche"
+    },
+    {
+     "id": "ch1_03_c_observer", "text": "Ne rien acheter, ne rien toucher. Regarder qui regarde.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 1, "perspicacite": 1 }, "clues": ["clue_surveillance"], "rewardId": "ch1_03" },
+     "next": "ch1_04_kael_marche"
+    }
+   ]
+  },
+
+  "ch1_04_kael_marche": {
+   "id": "ch1_04_kael_marche", "chapter": 1, "route": "commune",
+   "title": "Marcheur de Faille",
+   "background": "bg_marche_serments", "music": "music_romance", "ambiance": "amb_ville_nuit",
+   "toneTarget": "kael",
+   "characters": [{ "id": "kael", "pose": "neutral", "expression": "amused", "position": "center" }],
+   "speaker": "kael",
+   "lines": [
+    { "speaker": "kael", "text": "Tu as une manière de marcher qui hurle « je viens du troisième sous-sol ». Il faudra qu’on travaille ça." },
+    { "speaker": "kael", "text": "Kaël Ravier. Marcheur. Je traverse la Faille pour des gens qui n’ont pas envie qu’on sache ce qu’ils y envoient.", "set": [{ "id": "kael", "expression": "smile_soft" }] },
+    { "text": "Il tend la fiole verte. Pas un geste de générosité : un test.", "thought": true },
+    { "speaker": "kael", "text": "Ta suspension. Elle vient d’un laboratoire qui n’existe pas, financé par une ligne budgétaire qui n’existe pas non plus. Devine à quel étage." },
+    { "speaker": "kael", "text": "Je peux te montrer. Mais tu ne repars pas d’ici sans avoir décidé de quel côté de la barrière tu marches.", "set": [{ "id": "kael", "expression": "determined" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch1_04_c_suivre", "text": "« Montre-moi. »",
+     "tone": "direct",
+     "effects": { "rel": { "kael": { "affinity": 12, "trust": 10, "respect": 6 } }, "clues": ["clue_labo_fantome"], "stats": { "courage": 1 }, "rewardId": "ch1_04" },
+     "next": "ch1_05_ruelle"
+    },
+    {
+     "id": "ch1_04_c_rendre", "text": "« Rends la fiole au Bureau et je t’obtiens l’immunité. »",
+     "tone": "institutionnel",
+     "effects": { "rel": { "kael": { "distrust": 18, "affinity": -10, "tension": 14, "boundary": "bnd_kael_bureau" } }, "factions": { "bureau": 8, "rompus": -10 }, "stats": { "influence": 1 }, "flags": { "kael_offense": true }, "rewardId": "ch1_04" },
+     "next": "ch1_05_ruelle"
+    },
+    {
+     "id": "ch1_04_c_cicatrice", "text": "« Ton bras gauche. Qui as-tu trahi ? »",
+     "tone": "provocateur",
+     "effects": { "rel": { "kael": { "tension": 20, "vulnerability": 12, "affinity": 6, "secret": "sec_kael_cicatrice" } }, "clues": ["clue_cicatrice_kael"], "stats": { "perspicacite": 1 }, "rewardId": "ch1_04" },
+     "next": "ch1_05_ruelle"
+    }
+   ]
+  },
+
+  "ch1_05_ruelle": {
+   "id": "ch1_05_ruelle", "chapter": 1, "route": "commune",
+   "title": "Trois hommes sans visage",
+   "background": "bg_ruelle_pluie", "music": "music_danger", "ambiance": "amb_pluie",
+   "weather": "rain",
+   "characters": [{ "id": "kael", "pose": "dynamic", "expression": "angry", "state": "wet", "position": "right" }],
+   "lines": [
+    { "text": "Ils sortent des deux extrémités de la ruelle en même temps. Pas des voyous : des gens qui ont appris à encadrer un corps.", "fx": "shake", "sfx": "sfx_locked" },
+    { "text": "Aucun insigne. Mais des bottes réglementaires, et cette manière de ne jamais se mettre à trois de front.", "thought": true },
+    { "speaker": "kael", "text": "Derrière moi. Tout de suite." }
+   ],
+   "choices": [
+    {
+     "id": "ch1_05_c_battre", "text": "Se placer dos à dos avec Kaël.",
+     "tone": "direct", "timed": 9, "timeoutChoice": "ch1_05_c_fuir",
+     "requires": { "stat": "courage", "op": ">=", "value": 4 },
+     "lockedHint": "Tes jambes ont déjà décidé sans toi.",
+     "effects": { "stats": { "courage": 1 }, "rel": { "kael": { "affinity": 16, "trust": 14, "respect": 14, "memory": "mem_kael_dos_a_dos" } }, "flags": { "blesse_ch1": true }, "rewardId": "ch1_05" },
+     "next": "ch1_06_clinique"
+    },
+    {
+     "id": "ch1_05_c_fuir", "text": "Fuir par les toits en entraînant Kaël.",
+     "tone": "prudent", "timed": 9, "timeoutChoice": "ch1_05_c_fuir",
+     "effects": { "stats": { "ingeniosite": 2 }, "rel": { "kael": { "affinity": 6, "respect": 8 } }, "clues": ["clue_bottes_garde"], "rewardId": "ch1_05" },
+     "next": "ch1_06_clinique"
+    },
+    {
+     "id": "ch1_05_c_parler", "text": "Lever les mains et annoncer ton matricule.",
+     "tone": "institutionnel", "timed": 9, "timeoutChoice": "ch1_05_c_fuir",
+     "effects": { "stats": { "sangfroid": 2 }, "clues": ["clue_bottes_garde", "clue_ordre_verbal"], "rel": { "kael": { "distrust": 14, "tension": 10 } }, "factions": { "bureau": 6 }, "rewardId": "ch1_05" },
+     "next": "ch1_06_clinique"
+    }
+   ]
+  },
+
+  "ch1_06_clinique": {
+   "id": "ch1_06_clinique", "chapter": 1, "route": "commune",
+   "title": "Ce que soigne Ysée",
+   "background": "bg_clinique_ysee", "music": "music_emotion", "ambiance": null,
+   "toneTarget": "ysee",
+   "characters": [
+    { "id": "ysee", "pose": "neutral", "expression": "determined", "position": "left" },
+    { "id": "kael", "pose": "defensive", "expression": "exhausted", "state": "injured", "position": "right" }
+   ],
+   "speaker": "ysee",
+   "lines": [
+    { "speaker": "ysee", "text": "Deux en une nuit. Vous vous êtes donné le mot ?" },
+    { "text": "Elle travaille vite, sans commentaire, et elle ne demande jamais ce qui s’est passé. C’est ça qui fait revenir les gens.", "thought": true },
+    { "speaker": "ysee", "text": "Vasseur. Vous avez vu le lit trois ?" },
+    { "text": "Le lit trois : une femme d’une trentaine d’années, les deux mains déjà transparentes jusqu’aux poignets. Elle sourit à quelqu’un qui n’est pas là.", "set": [{ "id": "ysee", "expression": "sad" }] },
+    { "speaker": "ysee", "text": "Elle s’appelle Line. Enfin — elle s’appelait. Son nom est parti avant-hier. Elle répond encore quand on l’appelle, mais elle ne sait plus pourquoi.", "effects": { "clues": ["clue_perte_nom"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch1_06_c_promesse", "text": "« Je trouverai qui leur fait ça. Et je vous le dirai avant de le dire au Bureau. »",
+     "tone": "sincere", "irreversible": true,
+     "confirmText": "Cette promesse te lie face à une médecin qui compte ses morts au poignet. Continuer ?",
+     "effects": { "promises": { "prom_ysee_dabord": "made" }, "rel": { "ysee": { "trust": 22, "respect": 16, "affinity": 14 } }, "routes": { "open": ["coop"] }, "factions": { "rompus": 12 }, "stats": { "integrite": 1 }, "sfx": "sfx_promise", "rewardId": "ch1_06" },
+     "next": "ch1_07_noam_toit"
+    },
+    {
+     "id": "ch1_06_c_honnete", "text": "« Je ne vous promets rien. Je vais chercher, c’est tout. »",
+     "tone": "sincere",
+     "effects": { "rel": { "ysee": { "respect": 14, "trust": 8 } }, "stats": { "integrite": 1, "sangfroid": 1 }, "flags": { "refuse_promesse_ysee": true }, "rewardId": "ch1_06" },
+     "next": "ch1_07_noam_toit"
+    },
+    {
+     "id": "ch1_06_c_kael", "text": "Rester près de Kaël pendant qu’elle recoud.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "kael": { "affinity": 14, "vulnerability": 16, "attraction": 10, "memory": "mem_kael_recousu" }, "ysee": { "affinity": 6 } }, "stats": { "empathie": 1 }, "rewardId": "ch1_06" },
+     "next": "ch1_07_noam_toit"
+    }
+   ]
+  },
+
+  "ch1_07_noam_toit": {
+   "id": "ch1_07_noam_toit", "chapter": 1, "route": "commune",
+   "title": "Sur le toit, sous l’orage",
+   "background": "bg_toit_orage", "music": "music_emotion", "ambiance": "amb_pluie",
+   "weather": "rain", "toneTarget": "noam",
+   "characters": [{ "id": "noam", "pose": "neutral", "expression": "worried", "state": "wet", "position": "center" }],
+   "speaker": "noam",
+   "lines": [
+    { "text": "Il t’attend sur le toit du Bureau, sans capuche, comme s’il n’avait pas remarqué qu’il pleuvait depuis douze jours." },
+    { "speaker": "noam", "text": "Trois hommes dans une ruelle du quai bas. Bottes réglementaires. Aucun ordre écrit." },
+    { "speaker": "noam", "text": "Je n’ai pas donné cet ordre, Vasseur. Et c’est exactement ce qui me terrifie.", "set": [{ "id": "noam", "expression": "vulnerable" }] },
+    { "text": "Il a sept anneaux à l’épaule. Sept serments publics. À Vaurance, on n’en tient pas sept sans en avoir brisé au moins un en silence.", "thought": true },
+    { "speaker": "noam", "text": "J’ai signé des choses que je ne comprenais pas. Il y a six ans. On m’a dit que c’était une procédure de classement." }
+   ],
+   "choices": [
+    {
+     "id": "ch1_07_c_pousser", "text": "« Six ans. Quel mois ? »",
+     "tone": "direct",
+     "effects": { "clues": ["clue_ordre_six_ans"], "rel": { "noam": { "tension": 14, "trust": 8 } }, "stats": { "perspicacite": 1 }, "flags": { "noam_date": true }, "rewardId": "ch1_07" },
+     "next": "ch1_08_deduction"
+    },
+    {
+     "id": "ch1_07_c_soutenir", "text": "Retirer ton manteau et le lui poser sur les épaules.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "noam": { "affinity": 18, "vulnerability": 18, "attraction": 12, "memory": "mem_noam_manteau" } }, "stats": { "empathie": 1 }, "rewardId": "ch1_07" },
+     "next": "ch1_08_deduction"
+    },
+    {
+     "id": "ch1_07_c_accuser", "text": "« Vous avez signé. Ça fait de vous une partie du problème. »",
+     "tone": "provocateur",
+     "effects": { "rel": { "noam": { "tension": 22, "distrust": 10, "respect": 8, "boundary": "bnd_noam_accuse" } }, "stats": { "integrite": 1 }, "flags": { "noam_accuse": true }, "rewardId": "ch1_07" },
+     "next": "ch1_08_deduction"
+    }
+   ]
+  },
+
+  "ch1_08_deduction": {
+   "id": "ch1_08_deduction", "chapter": 1, "route": "commune",
+   "title": "Onze noms, un motif",
+   "background": "bg_appartement_ilan", "music": "music_revelation", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "Tu punaises les onze fiches au mur. Onze Rompus sans serment enregistré. Onze clôtures scellées aux sept anneaux." },
+    { "text": "Et une colonne que tu n’avais pas regardée : la date de première inscription au Bureau. Toutes antérieures à dix-neuf ans.", "sfx": "sfx_discovery" }
+   ],
+   "choices": [
+    {
+     "id": "ch1_08_c_ded1", "text": "Ils ont tous prêté le même serment il y a dix-neuf ans.",
+     "tone": "methodique",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_nom_efface" }, { "clue": "clue_sceau_sept" }, { "any": [{ "clue": "clue_formule_ancre" }, { "clue": "clue_labo_fantome" }, { "clue": "clue_perte_nom" }] }] },
+      "successEffects": { "deductions": ["ded_serment_fondateur"], "stats": { "perspicacite": 1 }, "clues": ["clue_premier_serment"], "codex": ["cod_premier_serment"] },
+      "failEffects": { "falseLead": "fl_vengeance_privee", "stats": { "sangfroid": 1 } },
+      "successScene": "ch1_09_damien", "failScene": "ch1_09_damien"
+     }
+    },
+    {
+     "id": "ch1_08_c_ded2", "text": "Quelqu’un élimine méthodiquement les survivants d’un événement ancien.",
+     "tone": "obstine",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_nom_efface" }, { "any": [{ "clue": "clue_trois_lecteurs" }, { "clue": "clue_serie_rompus" }] }] },
+      "successEffects": { "deductions": ["ded_elimination"], "stats": { "perspicacite": 1 } },
+      "failEffects": { "falseLead": "fl_epidemie", "stats": { "empathie": 1 } },
+      "successScene": "ch1_09_damien", "failScene": "ch1_09_damien"
+     }
+    },
+    {
+     "id": "ch1_08_c_pause", "text": "Arrêter. Dormir. Reprendre demain avec les idées claires.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 2 }, "flags": { "a_dormi_ch1": true }, "rewardId": "ch1_08" },
+     "next": "ch1_09_damien"
+    }
+   ]
+  },
+
+  "ch1_09_damien": {
+   "id": "ch1_09_damien", "chapter": 1, "route": "commune",
+   "title": "L’offre du chancelier",
+   "background": "bg_grand_hall_bureau", "music": "music_tension", "ambiance": null,
+   "toneTarget": "damien",
+   "characters": [{ "id": "damien", "pose": "neutral", "expression": "smile_soft", "position": "center" }],
+   "speaker": "damien",
+   "lines": [
+    { "speaker": "damien", "text": "Vous avancez vite. C’est agréable à regarder." },
+    { "speaker": "damien", "text": "Je vais donc vous épargner une semaine : oui, onze personnes sont mortes. Oui, je le savais. Non, je ne l’ai pas ordonné." },
+    { "text": "Il s’assoit. C’est la première fois que tu le vois s’asseoir.", "thought": true, "set": [{ "id": "damien", "expression": "exhausted" }] },
+    { "speaker": "damien", "text": "Vaurance repose sur un serment que personne n’a le droit de lire. Il arrive à échéance. Quand il tombera, la Faille ne se refermera pas — elle descendra." },
+    { "speaker": "damien", "text": "Je travaille à une solution. Elle s’appelle le Grand Serment. Elle sauvera quatre cent mille personnes.", "set": [{ "id": "damien", "expression": "determined" }] },
+    { "speaker": "damien", "text": "Elle n’en sauvera pas deux cents. Je vis avec cette arithmétique tous les matins. Vous, vous n’avez pas encore eu à choisir.", "effects": { "clues": ["clue_grand_serment"], "codex": ["cod_grand_serment"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch1_09_c_deux_cents", "text": "« Les deux cents ont des noms. Donnez-les-moi. »",
+     "tone": "sincere",
+     "effects": { "stats": { "integrite": 1, "empathie": 1 }, "rel": { "damien": { "respect": 12, "tension": 10 } }, "clues": ["clue_liste_deux_cents"], "rewardId": "ch1_09" },
+     "next": "ch1_10_allegeance"
+    },
+    {
+     "id": "ch1_09_c_arithmetique", "text": "« Quatre cent mille contre deux cents. Je comprends le calcul. »",
+     "tone": "institutionnel",
+     "effects": { "stats": { "sangfroid": 1, "influence": 1 }, "rel": { "damien": { "trust": 16, "affinity": 10 } }, "factions": { "bureau": 14, "rompus": -8 }, "flags": { "sympathie_damien": true }, "rewardId": "ch1_09" },
+     "next": "ch1_10_allegeance"
+    },
+    {
+     "id": "ch1_09_c_theo", "text": "« Mon frère a disparu il y a six ans. Est-ce qu’il est dans votre arithmétique ? »",
+     "tone": "direct",
+     "effects": { "rel": { "damien": { "tension": 20, "distrust": 8 } }, "clues": ["clue_reaction_theo"], "stats": { "courage": 1 }, "flags": { "theo_evoque_damien": true }, "rewardId": "ch1_09" },
+     "next": "ch1_10_allegeance"
+    }
+   ]
+  },
+
+  "ch1_10_allegeance": {
+   "id": "ch1_10_allegeance", "chapter": 1, "route": "commune",
+   "title": "À qui tu donnes ce que tu sais",
+   "background": "bg_quai_rompus_night", "music": "music_tension", "ambiance": "amb_ville_nuit",
+   "weather": "mist",
+   "characters": [],
+   "lines": [
+    { "text": "Tu as trois enveloppes identiques sur la table de ta cuisine. Le même contenu dans chacune : onze noms, un sceau, un laboratoire qui n’existe pas." },
+    { "text": "Ce que tu vas faire de ces enveloppes dans les prochaines heures décidera de qui, dans cette ville, te croira encore dans un mois.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch1_10_c_kael", "text": "La donner à Kaël. Les Rompus doivent savoir avant tout le monde.",
+     "tone": "complice", "irreversible": true,
+     "confirmText": "Le Bureau considérera cela comme une fuite. Continuer ?",
+     "effects": { "routes": { "open": ["kael", "coop"] }, "rel": { "kael": { "trust": 24, "affinity": 18, "respect": 14, "memory": "mem_kael_enveloppe" }, "noam": { "distrust": 12 } }, "factions": { "rompus": 18, "bureau": -14 }, "stats": { "courage": 1 }, "flags": { "fuite_rompus": true }, "rewardId": "ch1_10" },
+     "next": "ch1_11_nuit"
+    },
+    {
+     "id": "ch1_10_c_noam", "text": "La donner à Noam. Réformer l’institution de l’intérieur.",
+     "tone": "institutionnel", "irreversible": true,
+     "confirmText": "Kaël l’apprendra. Continuer ?",
+     "effects": { "routes": { "open": ["noam"] }, "rel": { "noam": { "trust": 26, "affinity": 16, "respect": 18, "memory": "mem_noam_enveloppe" }, "kael": { "distrust": 14, "affinity": -8 } }, "factions": { "bureau": 12 }, "stats": { "influence": 1 }, "flags": { "alliance_noam": true }, "rewardId": "ch1_10" },
+     "next": "ch1_11_nuit"
+    },
+    {
+     "id": "ch1_10_c_ysee", "text": "La donner à Ysée. Ses patients d’abord.",
+     "tone": "chaleureux", "irreversible": true,
+     "effects": { "routes": { "open": ["coop"] }, "rel": { "ysee": { "trust": 24, "respect": 18, "affinity": 16 } }, "promises": { "prom_ysee_dabord": "kept" }, "factions": { "rompus": 14 }, "stats": { "empathie": 1, "integrite": 1 }, "rewardId": "ch1_10" },
+     "next": "ch1_11_nuit"
+    },
+    {
+     "id": "ch1_10_c_garder", "text": "Les brûler toutes les trois. Personne ne saura avant que tu saches tout.",
+     "tone": "obstine", "irreversible": true,
+     "confirmText": "Personne ne te couvrira. Continuer ?",
+     "effects": { "routes": { "open": ["truth"] }, "stats": { "perspicacite": 1, "sangfroid": 1 }, "rel": { "kael": { "distrust": 8 }, "noam": { "distrust": 8 }, "ysee": { "distrust": 8 } }, "flags": { "solitaire": true }, "deferred": [{ "id": "def_solitude", "chapter": 3, "when": { "flag": "solitaire" }, "effects": { "rel": { "kael": { "tension": 10 }, "noam": { "tension": 10 } } }, "note": "Ton silence du chapitre 1 commence à coûter cher." }], "rewardId": "ch1_10" },
+     "next": "ch1_11_nuit"
+    }
+   ]
+  },
+
+  "ch1_11_nuit": {
+   "id": "ch1_11_nuit", "chapter": 1, "route": "commune",
+   "title": "Le manteau sur la chaise",
+   "background": "bg_appartement_ilan", "music": "music_emotion", "ambiance": "amb_pluie",
+   "characters": [],
+   "lines": [
+    { "text": "Le manteau de Théo est toujours sur le dossier de la chaise. Tu ne l’as jamais rangé. Tu ne l’as jamais lavé non plus." },
+    { "text": "Tu poses la paume dessus, comme sur une vitre.", "thought": true },
+    { "text": "Rien. Il n’a jamais prêté serment devant ce manteau. Six ans que tu recommences ce geste, et six ans que tu obtiens le même silence." },
+    { "text": "Sauf que ce soir, dans le silence, il y a un rythme. Très lent. Comme un pouls.", "fx": "impact", "sfx": "sfx_discovery", "effects": { "clues": ["clue_pouls_manteau"] } }
+   ],
+   "next": "ch1_12_fin"
+  },
+
+  "ch1_12_fin": {
+   "id": "ch1_12_fin", "chapter": 1, "route": "commune",
+   "title": "Fin du chapitre I",
+   "background": "bg_coeur_faille", "music": "music_revelation", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [],
+   "lines": [
+    { "text": "Au-dessus de Vaurance, la Faille change de rythme pour la première fois depuis dix-neuf ans." },
+    { "text": "En bas, dans onze services d’urgence, onze personnes qui n’avaient rien en commun ouvrent les yeux en même temps." },
+    { "text": "Et quelque part au cœur de la lumière, quelqu’un que tu as cessé de chercher tourne la tête vers le sud.", "fx": "flash" }
+   ],
+   "next": "ch2_01_reveil"
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "achievements": {
+  "ach_quatrieme_voie": { "title": "La quatrième voie", "text": "Formuler la déduction que dix-neuf ans de Bureau n’avaient pas osé écrire.", "hint": "Une déduction très tardive, très exigeante." },
+  "ach_dissolution": { "title": "À deux voix", "text": "Prononcer la formule de dissolution du Premier Serment.", "hint": "Il faut être deux." },
+  "ach_sacrifice": { "title": "Prendre sa place", "text": "Monter dans la lumière pour libérer Théo.", "hint": "Il existe un échange." },
+  "ach_chancelier": { "title": "L’alliance noire", "text": "Comprendre ce que Damien Vaugrise-Loret préparait vraiment pour lui-même.", "hint": "Regarde ses mains." },
+  "ach_dix_neuf": { "title": "Les dix-neuf", "text": "Porter jusqu’aux réservoirs ceux qui avaient refusé de descendre.", "hint": "Ils ont le droit de refuser. Tu as le droit d’insister." },
+  "ach_premier_nouveau": { "title": "Le premier serment de la ville nouvelle", "text": "Rendre volontairement sa parole à une ville qui n’y était plus obligée.", "hint": "Après la dissolution." },
+  "ach_face_a_face": { "title": "Face au chancelier", "text": "Lui dire en face qu’il connaissait la quatrième voie.", "hint": "Il faut la connaître aussi." },
+  "ach_toutes_promesses": {
+   "title": "Homme de parole",
+   "text": "Tenir toutes les promesses faites au cours d’une partie.",
+   "hint": "N’en briser aucune.",
+   "condition": { "all": [{ "promise": "prom_ysee_dabord", "status": "kept" }, { "promise": "prom_noam_verite", "status": "kept" }] }
+  },
+  "ach_enqueteur": {
+   "title": "Lecteur méticuleux",
+   "text": "Réunir au moins quinze indices dans une seule partie.",
+   "hint": "Fouiller partout, tout le temps.",
+   "condition": { "stat": "perspicacite", "op": ">=", "value": 8 }
+  },
+  "ach_sans_serment": {
+   "title": "Ne jamais jurer",
+   "text": "Atteindre le chapitre V sans avoir prononcé la moindre promesse.",
+   "hint": "Refuser systématiquement.",
+   "condition": { "all": [{ "chapter": 5, "op": ">=", "value": 5 }, { "flag": "refuse_de_jurer" }, { "flag": "refus_pacte_noam" }] }
+  }
+ }
+}

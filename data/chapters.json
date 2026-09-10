@@ -1,0 +1,22 @@
+{
+ "start": "p01_archives",
+ "fallbackScene": "p01_archives",
+ "files": [
+  "data/story/prologue.json",
+  "data/story/ch1.json",
+  "data/story/ch2.json",
+  "data/story/ch3.json",
+  "data/story/ch4.json",
+  "data/story/ch5.json",
+  "data/story/epilogue.json"
+ ],
+ "list": [
+  { "number": 0, "title": "Prologue — Ce que la vitre a retenu", "short": "Prologue", "entry": "p01_archives" },
+  { "number": 1, "title": "Chapitre I — Le nom sur la vitre", "short": "Chapitre I", "entry": "ch1_01_convocation" },
+  { "number": 2, "title": "Chapitre II — Ceux qui rompent", "short": "Chapitre II", "entry": "ch2_01_reveil" },
+  { "number": 3, "title": "Chapitre III — L’Ancre", "short": "Chapitre III", "entry": "ch3_01_convocation" },
+  { "number": 4, "title": "Chapitre IV — Le prix du silence", "short": "Chapitre IV", "entry": "ch4_01_neuf_jours" },
+  { "number": 5, "title": "Chapitre V — Le Grand Serment", "short": "Chapitre V", "entry": "ch5_01_hall" },
+  { "number": 6, "title": "Épilogue", "short": "Épilogue", "entry": "ep_lien" }
+ ]
+}

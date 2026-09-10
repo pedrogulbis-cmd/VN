@@ -1,0 +1,387 @@
+{
+ "scenes": {
+  "ch3_01_convocation": {
+   "id": "ch3_01_convocation", "chapter": 3, "route": "commune",
+   "title": "L’Ancre",
+   "background": "bg_grand_hall_bureau", "music": "music_tension", "ambiance": null,
+   "autosave": true, "toneTarget": "damien",
+   "characters": [{ "id": "damien", "pose": "neutral", "expression": "worried", "position": "center" }],
+   "speaker": "damien",
+   "lines": [
+    { "text": "Le Grand hall a été vidé. Les sept anneaux de bronze oscillent doucement au-dessus de la nef, alors qu’il n’y a pas un souffle d’air." },
+    { "speaker": "damien", "text": "Vous avez vu ce qui s’est passé cette nuit. Trente-deux ruptures spontanées. Demain, ce sera cent." },
+    { "speaker": "damien", "text": "L’édifice qui tient cette ville a tenu dix-neuf ans. Il ne tiendra pas dix-neuf jours de plus.", "set": [{ "id": "damien", "expression": "exhausted" }] },
+    { "speaker": "damien", "text": "Alors je vais faire ce qu’aucun chancelier n’a fait avant moi : je vais vous montrer le niveau zéro. Et ensuite vous choisirez, comme j’ai choisi." }
+   ],
+   "choices": [
+    {
+     "id": "ch3_01_c_pourquoi", "text": "« Pourquoi moi ? »",
+     "tone": "direct",
+     "effects": { "clues": ["clue_pourquoi_ilan"], "rel": { "damien": { "trust": 8 } }, "stats": { "perspicacite": 1 }, "rewardId": "ch3_01" },
+     "next": "ch3_02_descente"
+    },
+    {
+     "id": "ch3_01_c_conditions", "text": "« J’y descends avec quelqu’un de mon choix. »",
+     "tone": "negociateur",
+     "requires": { "stat": "influence", "op": ">=", "value": 5 },
+     "lockedHint": "Tu n’as pas le poids nécessaire pour poser des conditions.",
+     "effects": { "flags": { "compagnon_autorise": true }, "rel": { "damien": { "respect": 14, "tension": 8 } }, "stats": { "influence": 1 }, "rewardId": "ch3_01" },
+     "next": "ch3_02_descente"
+    },
+    {
+     "id": "ch3_01_c_refuser", "text": "« Non. Je descendrai quand j’aurai compris, pas quand vous l’aurez décidé. »",
+     "tone": "obstine",
+     "effects": { "rel": { "damien": { "tension": 18, "respect": 16 } }, "stats": { "integrite": 1, "courage": 1 }, "flags": { "refus_damien_ch3": true }, "rewardId": "ch3_01" },
+     "next": "ch3_02_descente"
+    }
+   ]
+  },
+
+  "ch3_02_descente": {
+   "id": "ch3_02_descente", "chapter": 3, "route": "commune",
+   "title": "Le huitième bouton",
+   "background": "bg_archives_bureau_dark", "music": "music_danger", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "L’ascenseur descend pendant quarante secondes. Le Bureau n’a que sept étages. Le calcul est simple et il est désagréable." },
+    { "text": "Le bourdon commence vers la trentième seconde : une note tenue, très basse, qu’on ne perçoit pas par l’oreille mais par les dents.", "sfx": "sfx_locked" },
+    { "text": "C’est le même rythme que le manteau, l’autre soir. Un pouls.", "thought": true, "condition": { "clue": "clue_pouls_manteau" } }
+   ],
+   "choices": [
+    {
+     "id": "ch3_02_c_seul", "text": "Descendre seul.",
+     "tone": "prudent",
+     "effects": { "stats": { "sangfroid": 1 }, "flags": { "descente_seul": true }, "rewardId": "ch3_02" },
+     "next": "ch3_03_niveau_zero"
+    },
+    {
+     "id": "ch3_02_c_kael", "text": "Envoyer un mot à Kaël avant de descendre.",
+     "tone": "complice",
+     "requires": { "all": [{ "flag": "compagnon_autorise" }, { "rel": "kael", "field": "trust", "op": ">=", "value": 30 }] },
+     "lockedHint": "Soit tu n’as pas obtenu ce droit, soit il ne viendrait pas.",
+     "effects": { "flags": { "compagnon": "kael" }, "rel": { "kael": { "trust": 12, "affinity": 10 } }, "rewardId": "ch3_02" },
+     "next": "ch3_03_niveau_zero"
+    },
+    {
+     "id": "ch3_02_c_noam", "text": "Demander au capitaine Sardou de descendre avec toi.",
+     "tone": "sincere",
+     "requires": { "all": [{ "flag": "compagnon_autorise" }, { "rel": "noam", "field": "trust", "op": ">=", "value": 30 }] },
+     "lockedHint": "Soit tu n’as pas obtenu ce droit, soit il ne te suivrait pas là-dessous.",
+     "effects": { "flags": { "compagnon": "noam" }, "rel": { "noam": { "trust": 12, "vulnerability": 10 } }, "rewardId": "ch3_02" },
+     "next": "ch3_03_niveau_zero"
+    }
+   ]
+  },
+
+  "ch3_03_niveau_zero": {
+   "id": "ch3_03_niveau_zero", "chapter": 3, "route": "commune",
+   "title": "Niveau zéro",
+   "background": "bg_chambre_ancre", "music": "music_revelation", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [],
+   "lines": [
+    { "text": "Ce n’est pas un étage. C’est une salle circulaire de quarante mètres, taillée dans la roche, et dont le plafond est ouvert sur quelque chose qui n’est pas le ciel.", "codex": ["cod_niveau_zero"] },
+    { "text": "Sept stèles. Sept noms gravés. Six sont rayés." },
+    { "text": "Le septième est frais. La pierre est encore claire autour des lettres.", "fx": "impact", "sfx": "sfx_discovery", "effects": { "clues": ["clue_sept_steles"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch3_03_c_lire", "text": "Lire le septième nom.",
+     "tone": "direct",
+     "effects": { "clues": ["clue_nom_theo_stele"], "stats": { "courage": 1 }, "rewardId": "ch3_03" },
+     "next": "ch3_04_deduction"
+    },
+    {
+     "id": "ch3_03_c_rayes", "text": "Lire d’abord les six noms rayés.",
+     "tone": "methodique",
+     "effects": { "clues": ["clue_six_ancres", "clue_nom_theo_stele"], "stats": { "perspicacite": 2 }, "codex": ["cod_lignee_ancres"], "rewardId": "ch3_03" },
+     "next": "ch3_04_deduction"
+    }
+   ]
+  },
+
+  "ch3_04_deduction": {
+   "id": "ch3_04_deduction", "chapter": 3, "route": "commune",
+   "title": "Ce que sept noms veulent dire",
+   "background": "bg_chambre_ancre", "music": "music_tension", "ambiance": "amb_faille",
+   "characters": [],
+   "lines": [
+    { "text": "Sept noms. Dix-neuf ans. Six rayés, un frais. Et une date à côté de chaque rature — jamais plus de quatre ans d’écart." }
+   ],
+   "choices": [
+    {
+     "id": "ch3_04_c_ded", "text": "La Faille est tenue par une personne, remplacée quand elle cède.",
+     "tone": "methodique",
+     "deduction": {
+      "requires": { "all": [{ "clue": "clue_sept_steles" }, { "any": [{ "deduction": "ded_ancre_vivante" }, { "clue": "clue_ancre_humaine" }, { "clue": "clue_voix_theo" }, { "clue": "clue_six_ancres" }] }] },
+      "successEffects": { "deductions": ["ded_ancre_vivante", "ded_theo_ancre"], "stats": { "perspicacite": 2 }, "codex": ["cod_ancre"], "clues": ["clue_theo_ancre"] },
+      "failEffects": { "falseLead": "fl_memorial", "stats": { "sangfroid": 1 } },
+      "successScene": "ch3_05_porte", "failScene": "ch3_05_porte"
+     }
+    },
+    {
+     "id": "ch3_04_c_refus", "text": "Refuser de conclure. Pas devant ce nom-là.",
+     "tone": "sincere",
+     "effects": { "stats": { "empathie": 1 }, "flags": { "refus_conclure": true }, "rewardId": "ch3_04" },
+     "next": "ch3_05_porte"
+    }
+   ]
+  },
+
+  "ch3_05_porte": {
+   "id": "ch3_05_porte", "chapter": 3, "route": "commune",
+   "title": "La porte qui demande",
+   "background": "bg_chambre_ancre", "music": "music_danger", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [],
+   "lines": [
+    { "text": "Au fond de la salle, la roche s’ouvre sur un couloir de lumière. Il n’y a pas de serrure : il y a une question." },
+    { "speaker": null, "text": "« Qu’as-tu promis, et à qui ? »", "sfx": "sfx_promise" },
+    { "text": "La Faille ne demande pas si tu es digne. Elle demande si tu es lié.", "thought": true }
+   ],
+   "choices": [
+    {
+     "id": "ch3_05_c_promesses", "text": "Réciter les promesses que tu as faites.",
+     "tone": "sincere",
+     "requires": { "any": [{ "promise": "prom_ysee_dabord", "status": "made" }, { "promise": "prom_noam_verite", "status": "made" }, { "promise": "prom_soi_jusquau_bout", "status": "made" }, { "promise": "prom_ysee_dabord", "status": "kept" }] },
+     "lockedHint": "Tu n’as jamais rien promis à personne. La porte le sait.",
+     "effects": { "stats": { "integrite": 1 }, "flags": { "porte_ouverte_serment": true }, "rewardId": "ch3_05" },
+     "next": "ch3_06_couloir"
+    },
+    {
+     "id": "ch3_05_c_rien", "text": "« Rien. À personne. Et j’entre quand même. »",
+     "tone": "obstine",
+     "effects": { "stats": { "courage": 2, "sangfroid": 1 }, "flags": { "porte_forcee": true }, "rel": { "theo": { "tension": 10 } }, "deferred": [{ "id": "def_porte_forcee", "chapter": 5, "when": { "flag": "porte_forcee" }, "effects": { "stats": { "sangfroid": -1 } }, "note": "Ce que tu as forcé au chapitre III te force à ton tour." }], "rewardId": "ch3_05" },
+     "next": "ch3_06_couloir"
+    },
+    {
+     "id": "ch3_05_c_mentir", "text": "Mentir à la Faille.",
+     "tone": "provocateur",
+     "effects": { "stats": { "ingeniosite": 1 }, "flags": { "menti_faille": true }, "deferred": [{ "id": "def_mensonge_faille", "chapter": 4, "when": { "flag": "menti_faille" }, "effects": { "stats": { "integrite": -1 } }, "note": "La Faille n’a pas oublié ton mensonge." }], "rewardId": "ch3_05" },
+     "next": "ch3_06_couloir"
+    }
+   ]
+  },
+
+  "ch3_06_couloir": {
+   "id": "ch3_06_couloir", "chapter": 3, "route": "commune",
+   "title": "Le couloir des voix",
+   "background": "bg_coeur_faille", "music": "music_emotion", "ambiance": "amb_faille",
+   "weather": "particles",
+   "characters": [],
+   "lines": [
+    { "text": "Le couloir répète les serments de la ville. Des milliers. Des mariages, des dettes, des menaces, des enfants promis à des grands-parents morts." },
+    { "text": "Et à mesure que tu avances, elles se réduisent à une seule voix.", "condition": { "clue": "clue_voix_theo" } },
+    { "speaker": null, "text": "« Ne descends pas. »" },
+    { "speaker": null, "text": "« {nom}, s’il te plaît. Ne descends pas. »", "fx": "darken" }
+   ],
+   "next": "ch3_07_chambre"
+  },
+
+  "ch3_07_chambre": {
+   "id": "ch3_07_chambre", "chapter": 3, "route": "commune",
+   "title": "Ce qui tient la ville",
+   "background": "bg_coeur_faille", "music": "music_revelation", "ambiance": "amb_faille",
+   "cg": "cg_theo_revelation_ancre", "weather": "particles",
+   "characters": [],
+   "lines": [
+    { "text": "Il flotte au centre d’un anneau de lumière, à trois mètres du sol, les bras légèrement écartés, comme quelqu’un qui a fini par s’habituer à une position inconfortable.", "sfx": "sfx_discovery" },
+    { "text": "Ses cheveux sont blancs. Des veines cyan lui remontent du poignet gauche jusqu’à la tempe. Il a trente ans et il en paraît cinquante." },
+    { "text": "Théo.", "thought": true, "fx": "impact" }
+   ],
+   "next": "ch3_08_theo"
+  },
+
+  "ch3_08_theo": {
+   "id": "ch3_08_theo", "chapter": 3, "route": "commune",
+   "title": "Théo",
+   "background": "bg_coeur_faille", "music": "music_emotion", "ambiance": "amb_faille",
+   "weather": "particles", "toneTarget": "theo",
+   "characters": [{ "id": "theo", "pose": "neutral", "expression": "exhausted", "state": "aura", "position": "center" }],
+   "speaker": "theo",
+   "lines": [
+    { "speaker": "theo", "text": "Tu as mis six ans. Je t’avais laissé quatre indices. Quatre.", "set": [{ "id": "theo", "expression": "smile_soft" }] },
+    { "speaker": "theo", "text": "Je plaisante. Enfin — j’essaie. Je ne sais plus très bien comment on fait." },
+    { "text": "Il parle lentement. Entre chaque phrase, la lumière autour de lui se resserre, comme si elle le rappelait à l’ordre.", "thought": true },
+    { "speaker": "theo", "text": "La sixième ancre s’appelait Ilaria Bost. Elle avait quarante-huit ans et il lui restait onze jours. On m’a proposé de la remplacer.", "set": [{ "id": "theo", "expression": "sad" }] },
+    { "speaker": "theo", "text": "Ils ne m’ont pas forcé, {nom}. C’est la partie que tu vas détester." }
+   ],
+   "choices": [
+    {
+     "id": "ch3_08_c_colere", "text": "« Tu m’as laissé six ans avec un manteau sur une chaise. »",
+     "tone": "provocateur",
+     "effects": { "rel": { "theo": { "tension": 22, "vulnerability": 18, "affinity": 8 } }, "stats": { "courage": 1 }, "flags": { "theo_reproche": true }, "rewardId": "ch3_08" },
+     "next": "ch3_09_verite"
+    },
+    {
+     "id": "ch3_08_c_tendresse", "text": "« Tu as l’air fatigué. Assieds-toi. » — bêtement, comme avant.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "theo": { "affinity": 24, "trust": 20, "vulnerability": 22, "memory": "mem_theo_assieds" } }, "stats": { "empathie": 2 }, "rewardId": "ch3_08" },
+     "next": "ch3_09_verite"
+    },
+    {
+     "id": "ch3_08_c_technique", "text": "« Combien de temps il te reste ? »",
+     "tone": "methodique",
+     "effects": { "clues": ["clue_temps_theo"], "rel": { "theo": { "respect": 16 } }, "stats": { "perspicacite": 1 }, "rewardId": "ch3_08" },
+     "next": "ch3_09_verite"
+    }
+   ]
+  },
+
+  "ch3_09_verite": {
+   "id": "ch3_09_verite", "chapter": 3, "route": "commune",
+   "title": "Le Premier Serment",
+   "background": "bg_coeur_faille", "music": "music_revelation", "ambiance": "amb_faille",
+   "characters": [{ "id": "theo", "pose": "neutral", "expression": "determined", "state": "aura", "position": "center" }],
+   "speaker": "theo",
+   "lines": [
+    { "speaker": "theo", "text": "Il y a dix-neuf ans, sept personnes ont juré de tenir la Faille. Le Premier Serment. Ce n’était pas une métaphore : il faut un corps." },
+    { "speaker": "theo", "text": "Une ancre tient trois, quatre ans. Après, elle se dissout. Ce que tu appelles les Rompus, ce sont les fuites : quand l’ancre faiblit, la Faille se sert ailleurs." },
+    { "speaker": "theo", "text": "Ourdan, Line, les trente-deux d’hier soir : ce sont mes fuites. Je suis en train de céder, et la ville paie ma fatigue.", "set": [{ "id": "theo", "expression": "vulnerable" }], "effects": { "clues": ["clue_fuites_ancre"], "deductions": ["ded_rompus_sont_fuites"] } },
+    { "speaker": "theo", "text": "Le chancelier a raison sur un point : il faut me remplacer. Il a tort sur tout le reste." }
+   ],
+   "next": "ch3_10_options"
+  },
+
+  "ch3_10_options": {
+   "id": "ch3_10_options", "chapter": 3, "route": "commune",
+   "title": "Trois manières de finir",
+   "background": "bg_coeur_faille", "music": "music_tension", "ambiance": "amb_faille",
+   "characters": [{ "id": "theo", "pose": "defensive", "expression": "worried", "state": "aura", "position": "center" }],
+   "speaker": "theo",
+   "lines": [
+    { "speaker": "theo", "text": "Une : on me remplace par une autre personne. Ça marche. Ça marche depuis dix-neuf ans, et ça tue quelqu’un tous les quatre ans." },
+    { "speaker": "theo", "text": "Deux : le Grand Serment de Vaugrise-Loret. On répartit la charge sur toute la ville. Plus jamais d’ancre. Mais tout le monde est lié pour toujours, et les deux cents Rompus actuels — ceux dont le lien est déjà brisé — meurent dans l’heure." },
+    { "speaker": "theo", "text": "Trois : on me laisse finir. La Faille descend. Vaurance ne survit pas.", "set": [{ "id": "theo", "expression": "exhausted" }], "effects": { "codex": ["cod_trois_options"], "clues": ["clue_trois_options"] } }
+   ],
+   "choices": [
+    {
+     "id": "ch3_10_c_quatre", "text": "« Il y a une quatrième. Tu ne me l’as pas dite. »",
+     "tone": "obstine",
+     "requires": { "all": [{ "stat": "perspicacite", "op": ">=", "value": 6 }, { "deduction": "ded_ancre_vivante" }] },
+     "secret": true,
+     "revealIf": { "all": [{ "stat": "perspicacite", "op": ">=", "value": 6 }, { "deduction": "ded_ancre_vivante" }] },
+     "effects": { "routes": { "open": ["secret"] }, "clues": ["clue_quatrieme_voie"], "rel": { "theo": { "respect": 24, "tension": 14 } }, "stats": { "perspicacite": 1 }, "flags": { "quatrieme_voie": true }, "rewardId": "ch3_10" },
+     "next": "ch3_11_promesse"
+    },
+    {
+     "id": "ch3_10_c_liberer", "text": "« Je vais te sortir de là. Je ne sais pas encore comment. »",
+     "tone": "sincere", "irreversible": true,
+     "effects": { "promises": { "prom_theo_liberer": "made" }, "rel": { "theo": { "affinity": 22, "trust": 18, "vulnerability": 16 } }, "routes": { "open": ["truth"] }, "stats": { "courage": 1 }, "sfx": "sfx_promise", "rewardId": "ch3_10" },
+     "next": "ch3_11_promesse"
+    },
+    {
+     "id": "ch3_10_c_calcul", "text": "« Deux cents contre quatre cent mille. Ton chancelier a peut-être raison. »",
+     "tone": "institutionnel",
+     "effects": { "routes": { "open": ["opposition"] }, "rel": { "theo": { "tension": 20, "affinity": -10 }, "damien": { "trust": 14 } }, "factions": { "bureau": 14, "rompus": -12 }, "stats": { "sangfroid": 1 }, "flags": { "penche_grand_serment": true }, "rewardId": "ch3_10" },
+     "next": "ch3_11_promesse"
+    }
+   ]
+  },
+
+  "ch3_11_promesse": {
+   "id": "ch3_11_promesse", "chapter": 3, "route": "commune",
+   "title": "Ce qu’il te demande",
+   "background": "bg_coeur_faille", "music": "music_emotion", "ambiance": "amb_faille",
+   "characters": [{ "id": "theo", "pose": "neutral", "expression": "vulnerable", "state": "aura", "position": "center" }],
+   "speaker": "theo",
+   "lines": [
+    { "speaker": "theo", "text": "Une seule chose. Quoi que tu décides, ne le décide pas pour moi tout seul dans ta tête, comme tu fais toujours." },
+    { "speaker": "theo", "text": "Parle à quelqu’un. N’importe qui. Le contrebandier, le capitaine, la médecin. Quelqu’un qui te dira non." },
+    { "speaker": "theo", "text": "C’est la seule chose que je n’ai pas faite, moi.", "set": [{ "id": "theo", "expression": "sad" }] }
+   ],
+   "next": "ch3_12_damien"
+  },
+
+  "ch3_12_damien": {
+   "id": "ch3_12_damien", "chapter": 3, "route": "commune",
+   "title": "Le chancelier au bord de la lumière",
+   "background": "bg_chambre_ancre", "music": "music_danger", "ambiance": "amb_faille",
+   "toneTarget": "damien",
+   "characters": [{ "id": "damien", "pose": "neutral", "expression": "determined", "state": "aura", "position": "left" }],
+   "speaker": "damien",
+   "lines": [
+    { "speaker": "damien", "text": "Vous l’avez vu. Bien." },
+    { "speaker": "damien", "text": "Maintenant, une question honnête, et je vous demande d’y répondre honnêtement : si c’était votre frère contre deux cents inconnus, vous choisiriez quoi ?" },
+    { "text": "Il a une alliance noire à la main droite. Tu ne la lui as jamais vue retirer.", "thought": true },
+    { "speaker": "damien", "text": "Ma fille a vingt-trois ans. Elle a rompu il y a huit mois. Elle a perdu son nom en février.", "set": [{ "id": "damien", "expression": "vulnerable" }], "effects": { "clues": ["clue_fille_damien"], "codex": ["cod_celia"] } },
+    { "speaker": "damien", "text": "Le Grand Serment la tue. Je le sais. Je le fais quand même, parce que je ne sais pas faire autrement.", "set": [{ "id": "damien", "expression": "breakup" }] }
+   ],
+   "choices": [
+    {
+     "id": "ch3_12_c_compassion", "text": "« Vous n’êtes pas obligé de la tuer pour prouver que vous êtes juste. »",
+     "tone": "sincere",
+     "effects": { "rel": { "damien": { "affinity": 16, "vulnerability": 18, "trust": 10 } }, "stats": { "empathie": 1 }, "flags": { "damien_touche": true }, "rewardId": "ch3_12" },
+     "next": "ch3_13_remontee"
+    },
+    {
+     "id": "ch3_12_c_dur", "text": "« Vous vous êtes construit une arithmétique pour ne pas avoir à choisir. »",
+     "tone": "provocateur",
+     "effects": { "rel": { "damien": { "tension": 24, "respect": 14, "affinity": -8 } }, "stats": { "integrite": 1 }, "flags": { "damien_confronte": true }, "rewardId": "ch3_12" },
+     "next": "ch3_13_remontee"
+    },
+    {
+     "id": "ch3_12_c_alliance", "text": "« Montrez-moi votre main droite, chancelier. »",
+     "tone": "methodique",
+     "requires": { "stat": "perspicacite", "op": ">=", "value": 6 },
+     "lockedHint": "Tu n’as pas encore assez regardé ses mains.",
+     "effects": { "clues": ["clue_alliance_noire"], "stats": { "perspicacite": 1 }, "rel": { "damien": { "tension": 20, "distrust": 12 } }, "rewardId": "ch3_12" },
+     "next": "ch3_13_remontee"
+    }
+   ]
+  },
+
+  "ch3_13_remontee": {
+   "id": "ch3_13_remontee", "chapter": 3, "route": "commune",
+   "title": "Remonter avec ça",
+   "background": "bg_archives_bureau_dark", "music": "music_calm", "ambiance": null,
+   "characters": [],
+   "lines": [
+    { "text": "Quarante secondes de remontée. Le bourdon décroît. Ta bouche a le goût du métal." },
+    { "text": "Tu sais maintenant ce que trois cent mille personnes ignorent : la ville où elles dorment est tenue par un homme de trente ans qui n’a pas dormi depuis six ans.", "thought": true },
+    { "text": "Et tu as promis de ne pas décider seul.", "thought": true, "condition": { "not": { "flag": "solitaire" } } }
+   ],
+   "choices": [
+    {
+     "id": "ch3_13_c_kael", "text": "Aller voir Kaël.",
+     "tone": "complice",
+     "effects": { "rel": { "kael": { "trust": 14, "affinity": 12, "vulnerability": 12 } }, "routes": { "open": ["kael"] }, "flags": { "confie_ch3": "kael" }, "rewardId": "ch3_13" },
+     "next": "ch3_14_fin"
+    },
+    {
+     "id": "ch3_13_c_noam", "text": "Aller voir Noam.",
+     "tone": "sincere",
+     "effects": { "rel": { "noam": { "trust": 14, "affinity": 12, "vulnerability": 12 } }, "routes": { "open": ["noam"] }, "promises": { "prom_noam_verite": "kept" }, "flags": { "confie_ch3": "noam" }, "rewardId": "ch3_13" },
+     "next": "ch3_14_fin"
+    },
+    {
+     "id": "ch3_13_c_ysee", "text": "Aller voir Ysée.",
+     "tone": "chaleureux",
+     "effects": { "rel": { "ysee": { "trust": 16, "affinity": 12 } }, "routes": { "open": ["coop"] }, "promises": { "prom_ysee_dabord": "kept" }, "flags": { "confie_ch3": "ysee" }, "rewardId": "ch3_13" },
+     "next": "ch3_14_fin"
+    },
+    {
+     "id": "ch3_13_c_seul", "text": "N’aller voir personne.",
+     "tone": "distant",
+     "effects": { "flags": { "confie_ch3": "personne", "solitaire": true }, "stats": { "sangfroid": 1 }, "rel": { "theo": { "tension": 16 } }, "promises": { "prom_theo_liberer": "made" }, "deferred": [{ "id": "def_seul_ch3", "chapter": 5, "when": { "flag": "solitaire" }, "effects": { "rel": { "kael": { "trust": -12 }, "noam": { "trust": -12 }, "ysee": { "trust": -12 } } }, "note": "Personne ne se souvient de t’avoir vu demander de l’aide." }], "rewardId": "ch3_13" },
+     "next": "ch3_14_fin"
+    }
+   ]
+  },
+
+  "ch3_14_fin": {
+   "id": "ch3_14_fin", "chapter": 3, "route": "commune",
+   "title": "Fin du chapitre III",
+   "background": "bg_hall_vide", "music": "music_danger", "ambiance": null,
+   "autosave": true,
+   "characters": [],
+   "lines": [
+    { "text": "À l’aube, le Bureau publie un avis d’urgence : « Cérémonie de consolidation — participation obligatoire — Grand hall — dans neuf jours »." },
+    { "text": "Quatre cent mille convocations partent dans la ville en même temps.", "fx": "impact", "sfx": "sfx_chapter" },
+    { "text": "Neuf jours pour trouver une quatrième voie.", "thought": true, "condition": { "flag": "quatrieme_voie" } },
+    { "text": "Neuf jours pour choisir laquelle des trois mauvaises réponses tu peux porter.", "thought": true, "condition": { "not": { "flag": "quatrieme_voie" } } }
+   ],
+   "next": "ch4_01_neuf_jours"
+  }
+ }
+}
