@@ -191,10 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#ending-restart').addEventListener('click', () => { $('#ending-screen').hidden = true; showTitle(); });
   $('#ending-gallery').addEventListener('click', () => UI.openPanel('gallery'));
   $('#btn-menu-title').addEventListener('click', () => {
+    if (!Engine.state) { UI.closePanel(); return; }
     UI.confirm('Retour au titre', 'La progression non sauvegardée sera perdue (l’auto-sauvegarde est conservée).',
       () => { UI.closePanel(); showTitle(); });
   });
   $('#btn-restart-chapter').addEventListener('click', () => {
+    if (!Engine.state) { UI.toast({ kind: 'bad', text: 'Aucune partie en cours.' }); return; }
     const ch = DATA.chapters.list.find(c => c.number === Engine.state.chapter);
     if (!ch) return;
     UI.confirm('Recommencer le chapitre', `Reprendre au début de « ${ch.title} » ?`, () => {

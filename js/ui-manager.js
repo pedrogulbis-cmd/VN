@@ -230,7 +230,15 @@ export const UI = {
     p.querySelector('.panel__body').innerHTML = '';
     p.querySelector('.panel__title').textContent = this.labels.panels[id] || id;
     const body = p.querySelector('.panel__body');
-    (this.panels[id] || (() => body.append(el('p', '', 'Section vide.'))))(body, this);
+    // Galerie, fins, sauvegardes, paramètres et crédits sont consultables depuis
+    // l'écran-titre ; les autres n'ont de sens qu'avec une partie en cours.
+    const needsGame = ['stats', 'relations', 'clues', 'deductions', 'promises',
+      'journal', 'history', 'codex', 'achievements'];
+    if (needsGame.includes(id) && !Engine.state) {
+      body.append(el('p', 'note', 'Commencez ou chargez une partie pour consulter cette section.'));
+    } else {
+      (this.panels[id] || (() => body.append(el('p', '', 'Section vide.'))))(body, this);
+    }
     p.querySelector('.panel__close').focus();
     document.body.classList.add('panel-open');
   },
@@ -427,7 +435,7 @@ export const UI = {
       const all = Object.keys(Assets.data.cg);
       const grid = el('div', 'gallery');
       all.forEach(id => {
-        const unlocked = st.unlockedCG.includes(id) || (p.cg || []).includes(id);
+        const unlocked = (st?.unlockedCG || []).includes(id) || (p.cg || []).includes(id);
         const fig = el('figure', 'gallery__item' + (unlocked ? '' : ' locked'));
         if (unlocked) {
           const a = Assets.cg(id);
@@ -448,7 +456,7 @@ export const UI = {
 
     endings(body, ui) {
       const p = SaveManager.loadPersistent();
-      const got = new Set([...(p.endings || []), ...Engine.state.endings]);
+      const got = new Set([...(p.endings || []), ...(Engine.state?.endings || [])]);
       Object.entries(ui.endings).forEach(([id, e]) => {
         const c = el('article', 'ending-card' + (got.has(id) ? '' : ' locked'));
         c.append(el('h3', '', got.has(id) ? e.title : '— fin non découverte —'));
@@ -491,18 +499,21 @@ export const UI = {
           row.append(acts);
           body.append(row);
         };
+        const inGame = !!Engine.state;
         mk('Sauvegarde automatique', SaveManager.metaAuto(), null, () => ui.loadState(SaveManager.loadAuto()));
         mk('Sauvegarde rapide', SaveManager.metaQuick(),
-          () => SaveManager.quicksave(Engine.state, 'Rapide'),
+          inGame ? () => SaveManager.quicksave(Engine.state, 'Rapide') : null,
           () => ui.loadState(SaveManager.loadQuick()));
         SLOTS.forEach(n => mk('Emplacement ' + n, SaveManager.metaSlot(n),
-          () => SaveManager.saveSlot(n, Engine.state, Engine.scene?.title || ''),
+          inGame ? () => SaveManager.saveSlot(n, Engine.state, Engine.scene?.title || '') : null,
           () => ui.loadState(SaveManager.loadSlot(n)),
           () => SaveManager.deleteSlot(n)));
 
         const io = el('div', 'save-io');
         const exp = el('button', 'btn', 'Exporter en JSON');
+        exp.disabled = !Engine.state;
         exp.onclick = () => {
+          if (!Engine.state) return;
           const blob = new Blob([SaveManager.exportJSON(Engine.state)], { type: 'application/json' });
           const a = document.createElement('a');
           a.href = URL.createObjectURL(blob);
