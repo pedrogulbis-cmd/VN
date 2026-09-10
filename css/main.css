@@ -91,7 +91,9 @@ button, input, select, .btn, .tab { font-family: var(--font-ui); }
 
 /* ------------------------------------------------------------ écran-titre */
 .title {
-  position: fixed; inset: 0; z-index: 80;
+  /* z-index 50 : au-dessus de la scène (max 21), mais SOUS le panneau (60),
+     la modale (70), l'écran de fin (75) et les notifications (85). */
+  position: fixed; inset: 0; z-index: 50;
   background: var(--ink) center/cover no-repeat;
   display: grid; align-items: end;
   padding: calc(2rem + var(--safe-t)) calc(1.2rem + var(--safe-r)) calc(2rem + var(--safe-b)) calc(1.2rem + var(--safe-l));
